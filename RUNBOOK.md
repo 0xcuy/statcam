@@ -462,3 +462,20 @@ Demo soccer sample tetap Spitfire (60s kontinu, angka sehat); hero = PL 2026 (16
 **CF penting:** asset kini dilayani `Cache-Control: no-cache` → cf-cache-status REVALIDATED → **timpa nama file sama di origin LANGSUNG terpropagasi** (ETag revalidation). Rename hanya perlu jika konten berubah di bawah conf LAMA (sebelum no-cache). Query string tetap diabaikan CF.
 
 **Kuota Spark (pertanyaan user):** sample/demo mode = 0 panggilan API kecuali /api/health — chat/moments/plan/whisper/replay semua dari data bake (audit fetch() di app-8.js: semua path sample ter-guard `S.mode === "sample"`). Spark hanya jalan saat user menganalisis video/link sendiri.
+
+---
+
+## ADDENDUM 31 Okt 2026 (27) — BASKETBALL JADI TRACKING SAM ASLI + 413 PAYLOAD GUARD + YOUTUBE
+
+**Perintah user: "benerin basketball jangan jadi minus" + "emang ga ada cara link youtube ga masuk server".**
+
+**Basketball sekarang REAL (no fallback):** klip 'MVHS vs Payson Wide Angle 20250204' oleh Jared Olsen (YouTube, kamera tetap full-court HS) — diunduh dari IP LOKAL/residensial (yt-dlp kena bot-wall HANYA dari IP datacenter; IP rumah lolos), crop band lapangan `crop=1760:640:80:180`, 60s, dikirim sebagai upload job. Job terverifikasi **7cc2e583b2f5**: pipeline `sam-3.1 + spark-1.3 + e2b` semua asli, 15 objek, KPI 26.4 km/h / 0.1 km / 2 sprints. Bake via **tools/bake_demo_data.py** (baru — pulls job/result/moments/plan/whispers/chat dari API → replace entry sport di data-8.js; moments = POST + `{"query":...}`, respons `{"moments":[...]}`).
+
+**TIGA FIX API yang membuatnya real (semua di meta.py/pipeline.py):**
+1. **413 Request Entity Too Large**: SAM menerima seluruh klip sbg satu base64 data URL; 23MB → 31MB b64 → ditolak Meta (ini juga akar gagal tracking basketball LAMA 31MB!). Fix `_shrink_for_sam`: >13MB raw → transcode ≤1280px tanpa audio CRF26 (lagi >13MB → 960px CRF31), catat sbg stage `correct`. Latent bug ikut ketemu: `import json as _json` tapi kode pakai `json.` → NameError (tertutup versi container lama; scp menimpanya).
+2. **Skala meter per-olahraga**: kamera full-court = ~28 m pandang (bukan 60 m broadcast) → tanpa ini kecepatan ~2× lebih besar. `visible_width_m=28` utk basketball.
+3. **Identity-switch cap adaptif**: di lapangan kecil, switch antar pemain sembunyi di bawah ambang soccer 11 m/s → basketball pakai 9 m/s. + **sprint threshold per olahraga**: 22 km/h (basketball) vs 25 (soccer) — tanpa ini KPI sprints = 0 padahal top speed 32.
+
+**YouTube (bot-wall datacenter):** cobalt v7 mati + v10 butuh auth; invidious/piped mayoritas mati atau kena bot-wall yang SAMA. Solusi: yt-dlp retry dengan `--extractor-args youtube:player_client=tv_embedded,web_embedded,android_vr`; kalau tetap kena → error message menuntun ke Upload tab / direct URL. IP residensial (device user) TIDAK kena bot-wall. README row tetap 🟡 dengan perilaku baru.
+
+**Deploy:** FE (data-8.js + demo-basketball-court.mp4 23MB + card svg) + API (meta/pipeline/ingest). Smoke 22/22 PASS. Verifikasi browser: badge "DEMO BASKETBALL · REAL FOOTAGE · VERIFIED RUN" (SYNTH TRACK HILANG), log runtut, replay 60s jalan.
