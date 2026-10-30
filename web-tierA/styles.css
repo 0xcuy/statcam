@@ -161,6 +161,15 @@ section { scroll-margin-top: 84px; }
 .track-stage { position: relative; border-radius: 12px; overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
 #herovid { width: 100%; display: block; }
 .track-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.track-fs {
+  margin-left: 8px; background: rgba(148,163,184,.12); color: var(--dim);
+  border: 1px solid rgba(148,163,184,.3); border-radius: 8px;
+  width: 26px; height: 22px; font-size: 12px; line-height: 1; cursor: pointer; padding: 0;
+}
+.track-fs:hover { color: var(--cyan); border-color: rgba(34,211,238,.5); }
+.track-stage:fullscreen { border-radius: 0; }
+.track-stage:fullscreen video { height: 100%; width: auto; margin: 0 auto; display: block; }
+.track-stage:fullscreen canvas { width: auto; height: 100%; left: 50%; transform: translateX(-50%); right: auto; }
 .track-foot { display: flex; gap: 8px; flex-wrap: wrap; padding-top: 12px; }
 
 .chip {

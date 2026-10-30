@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://statcam.sieralabs.com/">
 <meta name="theme-color" content="#070A12">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 <div class="bg-glow" aria-hidden="true"></div>
@@ -61,9 +61,10 @@
         <div class="track-head">
           <span class="rec-dot"></span><span id="track-title">SAM 3.1 &middot; LIVE TRACKING</span>
           <span class="track-fps" id="track-fps">30 FPS</span>
+          <button id="hero-fs" class="track-fs" type="button" title="Fullscreen" aria-label="Fullscreen">&#x26F6;</button>
         </div>
         <div class="track-stage">
-          <video id="herovid" src="samples/demo-pl2026-hero.mp4?v=3" controls playsinline muted muted loop playsinline autoplay preload="auto"></video>
+          <video id="herovid" src="samples/demo-pl2026-hero.mp4?v=3" controls playsinline muted controlslist="nofullscreen" muted loop playsinline autoplay preload="auto"></video>
           <canvas id="pitch" width="640" height="360"></canvas>
         </div>
         <div class="track-foot">
@@ -285,6 +286,6 @@
 
 <script src="demo-tracks-soccer.js?v=2"></script>
 <script src="sample-data.js?v=3"></script>
-<script src="app.js?v=3"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>

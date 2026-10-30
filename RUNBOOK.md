@@ -366,3 +366,13 @@ Demo soccer sample tetap Spitfire (60s kontinu, angka sehat); hero = PL 2026 (16
 2. **Kontrol**: hero video kini punya `controls` native (pause/play/seek/replay/volume). Kanvas overlay diberi `pointer-events: none` supaya kontrol tetap bisa diklik.
 3. **Tracking anti-gap**: `findAt` kini menahan kotak terakhir hingga 30 frame (1 detik) melalui camera-cut/blur — momen tendangan tidak lagi "kosong tracking". Interpolasi antar-deteksi tetap jalan untuk gerakan halus.
 4. Cache discipline: URL video di sample-data.js diberi `?v=2`, hero `?v=3`, app.js `?v=3` (bump tiap deploy — CF edge).
+
+---
+
+## ADDENDUM 31 Okt 2026 (9) — UNMUTE OTOMATIS, DETEKSI CAMERA-CUT, FULLSCREEN OVERLAY-AWARE
+
+**Keluhan user lanjutan: suara masih tidak ada, kotak menggantung di frame tanpa orang, overlay hilang saat fullscreen.**
+
+1. **Suara**: autoplay policy memaksa muted — kini **unmute otomatis pada interaksi pertama** (pointerdown/keydown, capture, once-semangat: listener dilepas setelah jalan). File memang sudah bersuara (addendum 19).
+2. **Kotak menggantung di scene baru** = efek hold-30-frame saat camera cut. Fix: **deteksi cut** — offscreen 32×18 canvas, mean-abs-diff frame-to-frame > 40 → frame itu dikosongkan (kotak lama tidak pernah melayang di scene baru). Occlusion pendek tetap ditahan.
+3. **Fullscreen**: kontrol native mem-fullscreen elemen VIDEO saja → overlay (canvas di luar video) hilang. Fix: `controlslist="nofullscreen"` + tombol ⛶ sendiri di track-head yang me-fullscreen `.track-stage` (video + canvas ikut). CSS `:fullscreen` menengahkan video dan mencocokkan canvas.

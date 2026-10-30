@@ -56,6 +56,13 @@
     var scale = T.meta.video_w / T.meta.visible_width_m;  // meters -> source pixels
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var started = false;
+    var unmute = function () {
+      vid.muted = false;
+      document.removeEventListener("pointerdown", unmute, true);
+      document.removeEventListener("keydown", unmute, true);
+    };
+    document.addEventListener("pointerdown", unmute, true);
+    document.addEventListener("keydown", unmute, true);
     window.__events = [];
     ["canplay", "loadeddata", "playing", "error", "stalled"].forEach(function (ev) {
       vid.addEventListener(ev, function () { window.__events.push(ev + " rs=" + vid.readyState); });
@@ -120,8 +127,31 @@
       ctx.lineTo(hx - ux * 9 + uy * 5, hy - uy * 9 - ux * 5);
       ctx.closePath(); ctx.fill();
     }
+    var diffCv = document.createElement("canvas");
+    diffCv.width = 32; diffCv.height = 18;
+    var dctx = diffCv.getContext("2d", { willReadFrequently: true });
+    var prevPix = null;
+    function isCameraCut() {
+      try {
+        dctx.drawImage(vid, 0, 0, 32, 18);
+        var px = dctx.getImageData(0, 0, 32, 18).data;
+        if (prevPix) {
+          var diff = 0;
+          for (var i = 0; i < px.length; i += 4) {
+            diff += Math.abs(px[i] - prevPix[i]) + Math.abs(px[i+1] - prevPix[i+1]) + Math.abs(px[i+2] - prevPix[i+2]);
+          }
+          diff /= px.length / 4;
+          prevPix = px;
+          return diff > 40;   // scene cut — old boxes would float on the new shot
+        }
+        prevPix = px;
+      } catch (e) {}
+      return false;
+    }
     function draw() {
       ctx.clearRect(0, 0, W, H);
+      var cut = isCameraCut();
+      if (cut) return;                     // never float boxes over a new scene
       var f = Math.floor((vid.currentTime || 0) * 30);
       T.objects.forEach(function (o) {
         var isBall = o.label === "ball";
@@ -162,6 +192,12 @@
     vid.style.display = "none";     // sim runs until the real footage is buffered
     try { heroSim(); } catch (err) { window.__errs.push("heroSim: " + err.message); }
     try { takeOver(); } catch (err) { window.__errs.push("takeOver: " + err.message); }
+    var fsBtn = $("hero-fs");
+    if (fsBtn) fsBtn.addEventListener("click", function () {
+      var stage = vid.parentElement;
+      if (document.fullscreenElement) document.exitFullscreen();
+      else if (stage.requestFullscreen) stage.requestFullscreen();
+    });
   })();
 
   /* ================= tabs ================= */
