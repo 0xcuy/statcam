@@ -61,16 +61,16 @@ There is no signup and no login. The landing page is the application, and the th
 
 ```mermaid
 graph TD
-    U([Browser<br/>statcam.sieralabs.com]) -->|upload or URL<br/>+ sport + segment| API[FastAPI<br/>nginx + Cloudflare in front]
+    U(["Browser<br/>statcam.sieralabs.com"]) -->|"upload or URL<br/>plus sport and segment"| API["FastAPI<br/>nginx + Cloudflare in front"]
 
-    API -->|1. frames<br/>one noun-phrase concept| SAM["Meta SAM 3.1<br/>POST /v1/responses<br/>per-frame box + mask tokens"]
-    API -->|2. track table + sport<br/>write code to a fixed contract| Spark["Muse Spark 1.3<br/>POST /v1/chat/completions<br/>reasoning model"]
-    API -->|3. run that script<br/>KPIs come from execution| E2B["E2B sandbox<br/>Python runtime"]
+    API -->|"1. frames<br/>one noun-phrase concept"| SAM["Meta SAM 3.1<br/>POST /v1/responses<br/>per-frame box + mask tokens"]
+    API -->|"2. track table + sport<br/>write code to a fixed contract"| Spark["Muse Spark 1.3<br/>POST /v1/chat/completions<br/>reasoning model"]
+    API -->|"3. run that script<br/>KPIs come from execution"| E2B["E2B sandbox<br/>Python runtime"]
 
-    SAM -->|30 fps track table,<br/>players + ball| Spark
-    Spark -->|analysis.py,<br/>compile()-validated| E2B
-    E2B -->|KPIs, tactical reads,<br/>sprint episodes| API
-    API -->|dashboard · chat · moments<br/>plan · whisper · SVG card| U
+    SAM -->|"30 fps track table,<br/>players + ball"| Spark
+    Spark -->|"analysis.py<br/>compile-validated"| E2B
+    E2B -->|"KPIs, tactical reads,<br/>sprint episodes"| API
+    API -->|"dashboard · chat · moments<br/>plan · whisper · SVG card"| U
 ```
 
 Three ways in, one pipeline. People use the web app in a browser; any HTTP client drives the same job lifecycle through the API; the demo buttons replay recorded verified runs client-side with a `VERIFIED RUN · REPLAY` label so a judge is never looking at an unlabeled recording.
