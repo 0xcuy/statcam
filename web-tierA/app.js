@@ -84,18 +84,17 @@
     vid.addEventListener("error", function () { vid.style.display = "none"; });
 
     function findAt(frames, f, maxGap) {
-      maxGap = 30;  // hold boxes through camera cuts / blur for up to 1 s
-      // interpolate between the detections bracketing the frame — smooth
-      // boxes even when SAM only samples a player intermittently
+      // tight: interpolate only across short gaps (0.6 s) and hold the last
+      // box briefly (0.3 s) — long bridges made boxes drift off the players
       var prev = null, next = null;
       for (var i = 0; i < frames.length; i++) {
         var fr = frames[i];
         if (fr[0] <= f && (!prev || fr[0] > prev[0])) prev = fr;
         if (fr[0] > f && (!next || fr[0] < next[0])) next = fr;
       }
-      if (!prev) return (next && next[0] - f <= maxGap) ? next : null;
-      if (f - prev[0] > maxGap) return null;
-      if (!next || next[0] - prev[0] > 60) return prev;
+      if (!prev) return (next && next[0] - f <= 10) ? next : null;
+      if (f - prev[0] > 10) return null;
+      if (!next || next[0] - prev[0] > 18) return prev;
       var a = (f - prev[0]) / (next[0] - prev[0]);
       return [f,
         prev[1] + (next[1] - prev[1]) * a,

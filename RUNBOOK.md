@@ -406,3 +406,17 @@ Demo soccer sample tetap Spitfire (60s kontinu, angka sehat); hero = PL 2026 (16
 - Alternatif window 429-441 (tendangan wide + keeper dive) diuji SAM: **hanya 1 pemain ter-track** (shot terlalu jauh) — TIDAK dipakai. Loop 458-470.2 tetap yang terbaik (13-16 pemain, 88% coverage).
 - Verifikasi akhir seluruh loop (12 sampel @0.75s): 11/12 sampel ≈4145 px overlay; 1 gap 1 detik di awal klip (t≈1.5, SAM memang minim di sana — diterima).
 - Sisa usaha (addendum 21): SAM tidak mampu track close-up kick (3 konsep, respons terpotong) — keputusan tetap: loop = bagian wide yang 100% ter-track.
+
+---
+
+## ADDENDUM 31 Okt 2026 (13) — AKAR KAOS OVERLAY: VIDEO & DATA BEDA TIMELINE + CF IGNORE QUERY STRING
+
+**Keluhan user: "kotak nambah rame dan ga pas sama orangnya, cek per frame."**
+
+**Akar: MISMATCH TIMELINE.** Video di-deploy versi 7,3s (462.9-470.2) tapi data tracking yang ter-serve masih data 16s (CF meng-ignore query string → `?v=N` TIDAK MEMBUST cache untuk ekstensi ter-cache; data baru tak pernah sampai ke browser) → kotak digambar dari momen lain = melayang nggak nyambung + crowd ikut ke-box (prune 0.25 terlalu longgar utk 720p).
+
+**Fix final (pola nama-file-baru):**
+- Data di-bake ULANG dari video 7,3s itu sendiri (`bake_hero2.py`): konsep "soccer player" + prune KERAS (median area ≥35% dari max, cap 11) → **8 pemain + BALL, coverage 184/184 frame (100%)** — kerumunan dibuang.
+- **Semua aset hero pakai NAMA FILE BARU** (query-string dihindari sepenuhnya): `app-8.js`, `styles-8.css`, `data-8.js`, `tracks-8.js`, `samples/hero-pl1031.mp4` (7.3s + audio). Video dan data kini dari pasangan yang sama — round-trip meter→px eksak → kotak dijamin nempel.
+- `findAt` diperketat: interpolasi hanya gap ≤18 frame (0.6s), hold ≤10 frame (0.33s) — kotak menempel, tidak melayang saat pemain bergerak cepat.
+- Verifikasi visual per frame (t=2.5): kotak nempel di pemain goalmouth, bola glow, SPRINT callout, dur 7.36, nol error.
