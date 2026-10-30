@@ -32,7 +32,7 @@
     .then(function (h) {
       var chip = $("mode-chip");
       if (h && h.live_ready) {
-        chip.textContent = "LIVE · SAM 3.1 + SPARK + E2B";
+        chip.textContent = "LIVE · SAM 3.1 + SPARK";
         chip.classList.add("live");
       } else {
         chip.textContent = "DEMO MODE · NO API KEYS";
@@ -71,7 +71,10 @@
       players.push(new Player(0, W * r[0], H * r[1]));
       players.push(new Player(1, W * (1 - r[0]), H * (1 - r[1])));
     });
-    var ball = { x: W / 2, y: H / 2, vx: 1.2, vy: 0.6, trail: [] };
+    var ball = { x: W / 2, y: H / 2, vx: 1.2, vy: 0.6, trail: [],
+      mode: "dribble", left: 90, target: [W / 2, H / 2] };
+    var THIRD = W / 3;
+    function thirdOf(x) { return x < THIRD ? 0 : (x < 2 * THIRD ? 1 : 2); }
     var COLORS = ["#22D3EE", "#F87171"];
     var SCAN = 0;
 
@@ -90,16 +93,33 @@
         p.trail.push([p.x, p.y]);
         if (p.trail.length > 22) p.trail.shift();
       });
-      var near = null, nd = 1e9;
-      players.forEach(function (p) {
-        var d = Math.hypot(p.x - ball.x, p.y - ball.y);
-        if (d < nd) { nd = d; near = p; }
-      });
-      if (near) {
-        ball.vx += (near.x - ball.x) * 0.004 + (Math.random() - 0.5) * 0.35;
-        ball.vy += (near.y - ball.y) * 0.004 + (Math.random() - 0.5) * 0.35;
-        var bv = Math.hypot(ball.vx, ball.vy) || 1;
-        if (bv > 2.4) { ball.vx = ball.vx / bv * 2.4; ball.vy = ball.vy / bv * 2.4; }
+      if (ball.left <= 0) {
+        if (ball.mode === "dribble") {
+          var others = [0, 1, 2].filter(function (i) { return i !== thirdOf(ball.x); });
+          var ti = others[Math.floor(Math.random() * others.length)];
+          ball.target = [THIRD * (ti * 2 + 1) + (Math.random() - 0.5) * 70,
+                         H * 0.25 + Math.random() * H * 0.5];
+          ball.mode = "pass"; ball.left = 50 + Math.random() * 60;
+        } else { ball.mode = "dribble"; ball.left = 60 + Math.random() * 80; }
+      } else ball.left--;
+      if (ball.mode === "dribble") {
+        var near = null, nd = 1e9;
+        players.forEach(function (p) {
+          var d = Math.hypot(p.x - ball.x, p.y - ball.y);
+          if (d < nd) { nd = d; near = p; }
+        });
+        if (near) {
+          ball.vx += (near.x - ball.x) * 0.008 + (Math.random() - 0.5) * 0.4;
+          ball.vy += (near.y - ball.y) * 0.008 + (Math.random() - 0.5) * 0.4;
+        }
+        var cap1 = 2.3, bv1 = Math.hypot(ball.vx, ball.vy) || 1;
+        if (bv1 > cap1) { ball.vx = ball.vx / bv1 * cap1; ball.vy = ball.vy / bv1 * cap1; }
+      } else {
+        ball.vx += (ball.target[0] - ball.x) * 0.03 + (Math.random() - 0.5) * 0.3;
+        ball.vy += (ball.target[1] - ball.y) * 0.03 + (Math.random() - 0.5) * 0.3;
+        var cap2 = 3.6, bv2 = Math.hypot(ball.vx, ball.vy) || 1;
+        if (bv2 > cap2) { ball.vx = ball.vx / bv2 * cap2; ball.vy = ball.vy / bv2 * cap2; }
+        if (Math.hypot(ball.target[0] - ball.x, ball.target[1] - ball.y) < 26) ball.left = 0;
       }
       ball.x = Math.max(10, Math.min(W - 10, ball.x + ball.vx));
       ball.y = Math.max(10, Math.min(H - 10, ball.y + ball.vy));
@@ -309,7 +329,7 @@
   /* ================= results ================= */
   function modeBadge(result, source) {
     if (source === "sample") return '<span class="badge sample">VERIFIED RUN · REPLAY</span>';
-    if (result.mode === "live") return '<span class="badge live">LIVE · SAM 3.1 + SPARK + E2B</span>';
+    if (result.mode === "live") return '<span class="badge live">LIVE · SAM 3.1 + SPARK</span>';
     return '<span class="badge demo">DEMO · SYNTHETIC TRACKING (NO API KEYS)</span>';
   }
 

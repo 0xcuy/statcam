@@ -15,7 +15,7 @@ from PIL import Image, ImageDraw
 W, H, FPS, DUR = 640, 360, 30, 90
 N = FPS * DUR
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "web-tierA" / "samples" / "sample-match.mp4"
+OUT = ROOT / "web-tierA" / "samples" / "sample-match-v3.mp4"
 
 random.seed(20261031)
 
@@ -59,24 +59,50 @@ class Ball:
         self.x, self.y = W / 2, H / 2
         self.vx, self.vy = 0.0, 0.0
         self.trail = []
+        self.b_mode, self.b_left = "dribble", random.randint(50, 130)
+        self.b_target = (W / 2, H / 2)
+        self.b_player = None
+
+    def third(self):
+        return 0 if self.x < W / 3 else (1 if self.x < 2 * W / 3 else 2)
 
     def step(self, players, t):
-        if t % FPS == 0 and random.random() < 0.5:
-            tx = random.uniform(W * 0.55, W - 60) if random.random() < 0.5 else random.uniform(60, W * 0.45)
-            ty = random.uniform(50, H - 50)
-            self.vx += (tx - self.x) * 0.02 + random.uniform(-.6, .6)
-            self.vy += (ty - self.y) * 0.02 + random.uniform(-.6, .6)
-        near = min(players, key=lambda p: math.hypot(p.x - self.x, p.y - self.y))
-        self.vx += (near.x - self.x) * 0.006 + random.uniform(-.5, .5)
-        self.vy += (near.y - self.y) * 0.006 + random.uniform(-.5, .5)
+        if self.b_left <= 0:
+            if self.b_mode == "dribble":
+                # pass to a DIFFERENT third — decisive switch of play
+                others = [i for i in (0, 1, 2) if i != self.third()]
+                ti = random.choice(others)
+                tx = (W / 6 + random.uniform(-40, 40) if ti == 0
+                      else W / 2 + random.uniform(-40, 40) if ti == 1
+                      else 5 * W / 6 + random.uniform(-40, 40))
+                self.b_target = (tx, random.uniform(60, H - 60))
+                self.b_mode, self.b_left = "pass", random.randint(45, 100)
+            else:
+                # dribble near a random player for a while
+                self.b_player = random.choice(players)
+                self.b_mode, self.b_left = "dribble", random.randint(50, 130)
+        else:
+            self.b_left -= 1
+
+        if self.b_mode == "dribble":
+            p = self.b_player or min(players, key=lambda q: math.hypot(q.x - self.x, q.y - self.y))
+            tx, ty = p.x + random.uniform(-26, 26), p.y + random.uniform(-18, 18)
+            k, cap = 0.045, 2.7
+        else:
+            tx, ty = self.b_target
+            k, cap = 0.06, 5.4
+        self.vx += (tx - self.x) * k + random.uniform(-.45, .45)
+        self.vy += (ty - self.y) * k + random.uniform(-.35, .35)
         v = math.hypot(self.vx, self.vy) or 1
-        if v > 5.0:
-            self.vx, self.vy = self.vx / v * 5.0, self.vy / v * 5.0
+        if v > cap:
+            self.vx, self.vy = self.vx / v * cap, self.vy / v * cap
         self.x = max(20, min(W - 20, self.x + self.vx))
         self.y = max(24, min(H - 20, self.y + self.vy))
         self.trail.append((self.x, self.y))
         if len(self.trail) > 16:
             self.trail.pop(0)
+        if self.b_mode == "pass" and math.hypot(tx - self.x, ty - self.y) < 30:
+            self.b_left = 0  # arrived — switch play again soon
 
 
 roles = [(0.14, 0.50), (0.30, 0.22), (0.30, 0.78), (0.46, 0.38), (0.46, 0.62)]

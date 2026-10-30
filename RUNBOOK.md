@@ -241,3 +241,19 @@ Regresi penuh setelah deploy: chat/plan/moments 200, nol traceback baru.
 **Backup dua arah (31 Okt):** tests/ + watchdog.sh + .gitignore tersinkron ke lokal; git bundle `statcam-web.bundle` + `statcam-api.bundle` (semua history) di `backups/` lokal. GitHub push belum ada remote — butuh user (gh auth login / tambah remote + push), keys tidak pernah via chat.
 
 **Verifikasi browser penuh (31 Okt, tab baru post-deploy):** hero + kanvas OK; sample replay (timeline animasi → dashboard → momen 3 kartu + klip inline → chat Q&A → plan → live replay + ticker sinkron); job link NYATA end-to-end (~4s: timeline → hasil kredibel → chat computed → momen → plan → replay); FAQ; Export CSV tanpa error; mobile 390px rapi. **NOL error konsol.** Old build tersimpan di `out-react-backup/` + git (rollback = git checkout + docker cp).
+
+---
+
+## ADDENDUM 31 Okt 2026 (2) — BOLA SAMPLE + E2B DIHAPUS DARI LANDING (keputusan user)
+
+**Keputusan user: "E2B · Verified execution sama ini hapus saja dari landing".** E2B (penyedia eksekusi pihak ketiga, kredit hackathon) kini TIDAK DISEBUT di mana pun di halaman publik — konsisten dengan keputusan 21 Okt (Baseten/Modal/Fireworks keluar dari landing): strip "POWERED BY META AI MODELS" kini 2 item saja (SAM 3.1 · Vision tracking / Muse Spark · Match intelligence); tahap 5 pipeline jadi "Verified execution" (konsep dipertahankan, brand tidak); mode chip + badge LIVE jadi "LIVE · SAM 3.1 + SPARK". /admin/keys tetap menerima E2B_API_KEY (backend tak berubah).
+
+**"Bolanya lama di over" (user) — bola dibuat pindah third secara decisif, 3 lapisan:**
+1. Video sample → `sample-match-v3.mp4` (90s, nama baru untuk bust CF edge cache mp4; v2 & testsrc lama tetap ada untuk halaman stale). Generator `tools/make_sample_video.py`: state machine dribble (50-130 frame dekat pemain acak) → pass ke third BERBEDA (cap 5.4 px/frame, sampai radius 30px), bukan lagi mengejar pemain terdekat terus-terusan.
+2. Kanvas hero di `app.js` — state machine yang sama (dribble cap 2.3, pass cap 3.6, target third berbeda).
+3. Backend `mock.py` — bola: pass selalu ke third berbeda (goal 16-22 m/s), dribble lokal; hasil: distribusi zona bola tersebar (kiri 21 / tengah 49 / kanan 110 sampel per 90s) — whisper ticker tidak monoton "middle third" lagi.
+- Rerun + rebake: sample-data.js kini dari job **20b56885d430** (KPI: 0.2 km / 32.5 km/h / 31 sprints; zona whisper: middle/attacking bergantian). sample-card.svg di-refresh dari endpoint card job itu.
+
+**Bug ditemukan saat verifikasi & fix:** atribut `hidden` TIDAK berefek pada elemen ber-class (`.btn{display:inline-flex}` menang atas UA `[hidden]{display:none}`) — tombol "View analysis code" bocor tampil di mode sample. Fix: `[hidden]{display:none!important}` di styles.css. Verifikasi: sebelum play → results + codebtn none; setelah play sample → codebtn tetap none, 3 KPI tampil, 0 error.
+
+Smoke suite: API hanya berubah di mock.py (bola) — regresi cepat OK (health 200 internal + publik).

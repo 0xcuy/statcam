@@ -29,21 +29,30 @@ def mock_tracks(video_meta: dict, seed: str = "debug", n_players: int = 11) -> d
     tracks = []
 
     # ---- ball first (players chase it on sprints) --------------------------
+    THIRD = PITCH_W / 3
+
+    def _ball_third(x: float) -> int:
+        return min(2, int(x / THIRD))
+
     bx, by, bvx, bvy = PITCH_W / 2, PITCH_H / 2, 3.0, 1.5
-    b_target = (rng.uniform(30, 75), rng.uniform(18, 50))
-    b_mode, b_left = "dribble", rng.randint(6, 16)
+    b_target = (PITCH_W / 2, PITCH_H / 2)
+    b_mode, b_left = "dribble", rng.randint(6, 14)
     bframes = []
     for f in range(0, int(duration * FPS), step):
         if b_left <= 0:
             if b_mode == "dribble":
+                # switch play: pass into a DIFFERENT third
+                others = [i for i in (0, 1, 2) if i != _ball_third(bx)]
+                ti = rng.choice(others)
+                b_target = (THIRD * (ti * 2 + 1) + rng.uniform(-10, 10),
+                            rng.uniform(12, PITCH_H - 12))
                 b_mode, b_left = "pass", rng.randint(3, 6)
-                b_target = (rng.uniform(12, PITCH_W - 12), rng.uniform(8, PITCH_H - 8))
             else:
-                b_mode, b_left = "dribble", rng.randint(6, 16)
-                b_target = (bx + rng.uniform(-16, 16), by + rng.uniform(-10, 10))
+                b_mode, b_left = "dribble", rng.randint(6, 14)
+                b_target = (bx + rng.uniform(-14, 14), by + rng.uniform(-9, 9))
         else:
             b_left -= 1
-        goal = 21.0 if b_mode == "pass" else rng.uniform(3.0, 6.0)
+        goal = rng.uniform(16.0, 22.0) if b_mode == "pass" else rng.uniform(2.5, 5.5)
         dx, dy = b_target[0] - bx + rng.uniform(-6, 6), b_target[1] - by + rng.uniform(-4, 4)
         d = math.hypot(dx, dy) or 1
         bvx += (dx / d * goal - bvx) * 0.4
