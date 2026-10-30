@@ -320,3 +320,18 @@ Smoke suite: API hanya berubah di mock.py (bola) — regresi cepat OK (health 20
 **Biaya/kecepatan:** SAM ~30s per 20s klip (300 frame); codegen Spark ~15-30s (reasoning); total job live ~1.5-2 menit. Kredit Meta $150 — job demo hemat (klip pendek).
 
 **Sisa polish (non-blocking):** Spark kadang menulis kode invalid (fallback mock menutup); kecepatan top kadang 39 km/h (estimasi skala 60m + switch di bawah threshold); jumlah objek bervariasi antar run (5-10) — normal untuk tracking.
+
+---
+
+## ADDENDUM 31 Okt 2026 (6) — DEMO REAL FOOTAGE (3 OLAHRAGA) + VIDEO AUTO-OPEN DI ATAS
+
+**Keputusan user: demo harus footage ASLI (bukan simulasi), video langsung terbuka & play saat demo dibuka, ditaruh DI ATAS sebelum analisis, label "Demo soccer/basketball/running".**
+
+- **Video auto-open + autoplay**: hasil analisis (demo ATAU job nyata) → panel Live replay langsung terbangun + play (fallback muted + retry di canplay). Dipindah ke ATAS: urutan hasil kini ringkasan → **video** → KPI → players/analyst → tools (moments/plan/chat).
+- **Tiga demo real footage (semua dari live run asli SAM 3.1 + Spark + E2B, bake ke sample-data.js multi-sport `SAMPLE_DATA[sport]`):**
+  - **Demo soccer**: 'PDL Soccer – Sioux Fall Spitfire at Springfield Storm' (archive.org, 60s) — run cfdf386d5c17: SAM 7 trajektori, 0.2 km / 39.5 km/h / 37 sprints, chat mode **spark**.
+  - **Demo basketball**: 'Michael Jordan Hits Head On Backboard at Duke' (archive.org, 60s) — run ab6c1d8dd14d: SAM 0 objek (close-up) → **synthetic-fallback jujur** → 0.1 km / 28.8 km/h / 31 sprints. ⚠️ Catatan hak: footage broadcast ACC — pertimbangkan swap sebelum publik permanen.
+  - **Demo running**: 'Range of Motion – Stride Length' (arsip film edukasi, archive.org, 60s) — run 1486e74ab4de: SAM live 1 pelari, 0.5 km / 38.7 km/h / 47 sprints.
+  - Kartu share per sport: sample-card-<sport>.svg (endpoint card asli). Video disajikan statis; momen = #t fragment; whisper = bake map.
+- **Broadcast footage (Ajax) dites juga**: SAM 8 objek tapi jarak terfragmentasi (0.0 km) + bola sempat jadi "the engine" → **fix: BALL selalu dikecualikan dari KPI pemain di level pipeline**. Broadcast = tracking sulit; sideline amatir = use-case produktif (cocok dengan positioning StatCam).
+- Tombol tab sample kini 3: "▶ Demo soccer / ▶ Demo basketball / ▶ Demo running" (disabled bila bake tak ada); badge hasil "DEMO <SPORT> · REAL FOOTAGE · VERIFIED RUN".

@@ -128,11 +128,15 @@
       <div class="tabpane" id="pane-sample" role="tabpanel" aria-labelledby="tabbtn-sample">
         <div class="sample-box">
           <div class="sample-copy">
-            <div class="dz-title">Watch a verified run, end to end</div>
-            <div class="dz-sub">The full pipeline on a real 20-second clip — agent timeline, pro stats,
-            tactical reads, moments, chat and live replay. Zero fail, runs instantly.</div>
+            <div class="dz-title">Watch real footage analyzed live</div>
+            <div class="dz-sub">Real matches through the real pipeline — SAM 3.1 tracking,
+            Muse Spark codegen, E2B execution. Pick a demo:</div>
           </div>
-          <button id="go-sample" class="btn btn-primary btn-lg" type="button">&#9654;&nbsp; Play the verified sample</button>
+          <div class="sample-btns">
+            <button id="go-sample-soccer" class="btn btn-primary" type="button">&#9654;&nbsp; Demo soccer</button>
+            <button id="go-sample-basketball" class="btn btn-ghost" type="button">&#9654;&nbsp; Demo basketball</button>
+            <button id="go-sample-running" class="btn btn-ghost" type="button">&#9654;&nbsp; Demo running</button>
+          </div>
         </div>
       </div>
 
@@ -149,6 +153,7 @@
       </div>
       <div class="res-badge" id="res-mode"></div>
     </div>
+    <div id="liveres"></div>
     <div class="kpis" id="res-kpis"></div>
 
     <div class="res-grid">
@@ -176,7 +181,6 @@
       </div>
       <div id="momres" class="momres"></div>
       <div id="planres"></div>
-      <div id="liveres"></div>
     </div>
 
     <div class="card chat">

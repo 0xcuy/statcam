@@ -15,7 +15,11 @@ from PIL import Image, ImageDraw
 W, H, FPS, DUR = 640, 360, 30, 90
 N = FPS * DUR
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "web-tierA" / "samples" / "sample-match-v3.mp4"
+import sys
+SPORT = sys.argv[1] if len(sys.argv) > 1 else "soccer"
+NAMES = {"soccer": "sample-match-v3.mp4", "basketball": "sample-basketball-v1.mp4",
+         "running": "sample-running-v1.mp4"}
+OUT = ROOT / "web-tierA" / "samples" / NAMES[SPORT]
 
 random.seed(20261031)
 
@@ -107,9 +111,17 @@ class Ball:
 
 roles = [(0.14, 0.50), (0.30, 0.22), (0.30, 0.78), (0.46, 0.38), (0.46, 0.62)]
 players = []
-for i, (rx, ry) in enumerate(roles):
-    players.append(Player(0, i + 1, W * rx, H * ry))
-    players.append(Player(1, i + 1, W * (1 - rx), H * (1 - ry)))
+if SPORT == "running":
+    lanes = 6
+    for i in range(lanes):
+        p = Player(0, i + 1, W * 0.12, 40 + (i + 0.5) * (H - 80) / lanes)
+        p.lane_y = p.hy
+        p.speed = random.uniform(2.0, 2.9)       # steady lap pace
+        players.append(p)
+else:
+    for i, (rx, ry) in enumerate(roles):
+        players.append(Player(0, i + 1, W * rx, H * ry))
+        players.append(Player(1, i + 1, W * (1 - rx), H * (1 - ry)))
 ball = Ball()
 
 TCOL = {0: (34, 211, 238), 1: (248, 113, 113)}
@@ -144,15 +156,37 @@ def _png(img):
 
 
 def pitch(d):
-    for i in range(8):
-        c = (10, 46, 20) if i % 2 else (12, 52, 23)
-        d.rectangle([i * W / 8, 0, (i + 1) * W / 8, H], fill=c)
-    lc = (255, 255, 255, 60)
-    d.rectangle([12, 14, W - 12, H - 12], outline=lc, width=2)
-    d.line([W / 2, 14, W / 2, H - 12], fill=lc, width=2)
-    d.ellipse([W / 2 - 40, H / 2 - 40, W / 2 + 40, H / 2 + 40], outline=lc, width=2)
-    d.rectangle([12, H / 2 - 55, 68, H / 2 + 55], outline=lc, width=2)
-    d.rectangle([W - 68, H / 2 - 55, W - 12, H / 2 + 55], outline=lc, width=2)
+    if SPORT == "basketball":
+        d.rectangle([0, 0, W, H], fill=(64, 44, 24))
+        for i in range(10):
+            d.line([0, i * H / 10, W, i * H / 10], fill=(74, 52, 28, 120), width=3)
+        lc = (255, 255, 255, 110)
+        d.rectangle([16, 26, W - 16, H - 26], outline=lc, width=2)
+        d.line([W / 2, 26, W / 2, H - 26], fill=lc, width=2)
+        d.ellipse([W / 2 - 34, H / 2 - 34, W / 2 + 34, H / 2 + 34], outline=lc, width=2)
+        d.rectangle([16, H / 2 - 52, 96, H / 2 + 52], outline=lc, width=2)
+        d.rectangle([W - 96, H / 2 - 52, W - 16, H / 2 + 52], outline=lc, width=2)
+        d.ellipse([26, H / 2 - 12, 50, H / 2 + 12], outline=(255, 140, 40, 220), width=3)
+        d.ellipse([W - 50, H / 2 - 12, W - 26, H / 2 + 12], outline=(255, 140, 40, 220), width=3)
+    elif SPORT == "running":
+        d.rectangle([0, 0, W, H], fill=(140, 42, 34))
+        lanes = 6
+        for i in range(lanes + 1):
+            y = 40 + i * (H - 80) / lanes
+            d.line([0, y, W, y], fill=(255, 255, 255, 130), width=2)
+        for x0 in range(0, W, 46):
+            d.line([x0, 40, x0 - 12, H - 40], fill=(255, 255, 255, 45), width=1)
+        _txt(d, (W - 150, 16), "HEAT 1 - 5000 M", (255, 255, 255, 170))
+    else:
+        for i in range(8):
+            c = (10, 46, 20) if i % 2 else (12, 52, 23)
+            d.rectangle([i * W / 8, 0, (i + 1) * W / 8, H], fill=c)
+        lc = (255, 255, 255, 60)
+        d.rectangle([12, 14, W - 12, H - 12], outline=lc, width=2)
+        d.line([W / 2, 14, W / 2, H - 12], fill=lc, width=2)
+        d.ellipse([W / 2 - 40, H / 2 - 40, W / 2 + 40, H / 2 + 40], outline=lc, width=2)
+        d.rectangle([12, H / 2 - 55, 68, H / 2 + 55], outline=lc, width=2)
+        d.rectangle([W - 68, H / 2 - 55, W - 12, H / 2 + 55], outline=lc, width=2)
 
 
 def frame(t):
@@ -174,11 +208,17 @@ def frame(t):
         _txt(d, (p.x - 5, p.y - 14), p.pid, (7, 10, 18, 255))
         if p.burst > 40:
             _txt(d, (p.x + 10, p.y - 8), "SPRINT", (251, 191, 36, 230))
-    d.ellipse([ball.x - 3.4, ball.y - 3.4, ball.x + 3.4, ball.y + 3.4], fill=(255, 255, 255, 255))
+    if SPORT != "running":
+        d.ellipse([ball.x - 3.4, ball.y - 3.4, ball.x + 3.4, ball.y + 3.4], fill=(255, 255, 255, 255))
     # HUD: scoreboard + scan sweep + label
     mm, ss = divmod(int(t // FPS), 60)
     d.rectangle([12, 12, 148, 30], fill=(7, 10, 18, 190))
-    _txt(d, (18, 17), f"HOM 1 - 0 AWY  {mm:02d}:{ss:02d}", (243, 245, 248, 235))
+    if SPORT == "basketball":
+        _txt(d, (18, 17), f"HOM 42-38 AWY  {mm:02d}:{ss:02d}", (243, 245, 248, 235))
+    elif SPORT == "running":
+        _txt(d, (18, 17), f"PELOTON  {mm:02d}:{ss:02d}", (243, 245, 248, 235))
+    else:
+        _txt(d, (18, 17), f"HOM 1 - 0 AWY  {mm:02d}:{ss:02d}", (243, 245, 248, 235))
     sweep = (t * 2.2) % (W + 120) - 60
     for k in range(40):
         a = int(38 * (1 - k / 40))
@@ -197,9 +237,24 @@ def main():
              "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(OUT)],
             stdin=subprocess.PIPE)
         for t in range(N):
-            for p in players:
-                p.step(ball, t)
-            ball.step(players, t)
+            if SPORT == "running":
+                for p in players:
+                    if p.burst <= 0 and random.random() < 0.006:
+                        p.burst = random.randint(50, 110)
+                    spd = p.speed * (1.55 if p.burst > 0 else 1.0)
+                    p.x += spd
+                    if p.x > W - 30:
+                        p.x = 30                       # next lap re-enters left
+                    p.y = p.lane_y + math.sin((t / 40.0) + p.hy) * 4
+                    p.trail.append((p.x, p.y))
+                    if len(p.trail) > 26:
+                        p.trail.pop(0)
+                    if p.burst > 0:
+                        p.burst -= 1
+            else:
+                for p in players:
+                    p.step(ball, t)
+                ball.step(players, t)
             pipe.stdin.write(_png(frame(t)))
             if t % 300 == 0:
                 print(f"frame {t}/{N}", file=sys.stderr)

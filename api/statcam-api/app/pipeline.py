@@ -291,6 +291,9 @@ async def run_pipeline(job_id: str):
 
         # ---- finalize ----
         _set(job_id, stage="finalize", progress=94, message="Building dashboard…")
+        # The ball is not a player: never let it win player KPIs, whatever
+        # code (Spark-written or bundled) produced the stats.
+        stats["players"] = [p for p in stats.get("players", []) if p.get("id") != "BALL"]
         analysis = analyze_stats(stats, job)
         result = normalize_result(job, stats, probe)
         result["analysis"] = analysis

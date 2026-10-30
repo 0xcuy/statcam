@@ -15,6 +15,7 @@
   };
 
   var $ = function (id) { return document.getElementById(id); };
+  function SD() { return SAMPLE_DATA[S.sampleSport || "soccer"] || SD().soccer; }
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
@@ -328,7 +329,8 @@
 
   /* ================= results ================= */
   function modeBadge(result, source) {
-    if (source === "sample") return '<span class="badge sample">VERIFIED RUN · REPLAY</span>';
+    if (source === "sample") return '<span class="badge sample">DEMO ' +
+      (S.sampleSport || "soccer").toUpperCase() + ' · REAL FOOTAGE · VERIFIED RUN</span>';
     if (result.mode === "live") return '<span class="badge live">LIVE · SAM 3.1 + SPARK</span>';
     return '<span class="badge demo">DEMO · SYNTHETIC TRACKING (NO API KEYS)</span>';
   }
@@ -389,6 +391,7 @@
     if (window.__sampleTimer) { clearInterval(window.__sampleTimer); window.__sampleTimer = null; }
     if (S.live && S.live.int) { clearInterval(S.live.int); S.live = null; }
 
+    buildLive();  // video opens and plays with the results — never hidden behind a click
     $("results").scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
@@ -417,11 +420,11 @@
       '<a class="st-c" target="_blank" rel="noopener" href="' + cardHref(m) + '">Share card ↗</a></div>';
   }
   function cardHref(m) {
-    if (S.mode === "sample") return SAMPLE_DATA.cardFile;
+    if (S.mode === "sample") return SD().cardFile;
     return "/api/jobs/" + S.job.id + "/card?start=" + m.start_s + "&end=" + m.end_s;
   }
   function clipHref(m) {
-    if (S.mode === "sample") return SAMPLE_DATA.video + "#t=" + m.start_s + "," + m.end_s;
+    if (S.mode === "sample") return SD().video + "#t=" + m.start_s + "," + m.end_s;
     return "/api/jobs/" + S.job.id + "/clip?start=" + m.start_s + "&end=" + m.end_s;
   }
 
@@ -442,7 +445,7 @@
 
   function sampleMoments(q) {
     var res = $("momres");
-    var ms = SAMPLE_DATA.moments;
+    var ms = SD().moments;
     S.moments = ms;
     res.innerHTML = '<div class="msg">Searching tracking data…</div>';
     setTimeout(function () {
@@ -456,7 +459,7 @@
     var res = $("planres");
     if (res.innerHTML) { res.innerHTML = ""; return; }
     if (S.mode === "sample") {
-      var p = SAMPLE_DATA.plan;
+      var p = SD().plan;
       res.innerHTML = planHtml(p) +
         '<div class="plan-note">Plan replays the verified sample run. Analyze your own video for a plan built from your match.</div>';
       return;
@@ -482,15 +485,10 @@
   }
 
   /* ================= live replay ================= */
-  $("livebtn").addEventListener("click", function () {
+  function buildLive() {
     var res = $("liveres");
-    if (res.innerHTML) {
-      res.innerHTML = "";
-      if (S.live && S.live.int) { clearInterval(S.live.int); S.live = null; }
-      return;
-    }
     var videoSrc, sample = S.mode === "sample";
-    if (sample) videoSrc = SAMPLE_DATA.video;
+    if (sample) videoSrc = SD().video;
     else if (S.job && S.job.id) videoSrc = "/api/jobs/" + S.job.id + "/video";
     else return;
     res.innerHTML = '<div class="live-box"><div class="live-head">' +
@@ -508,10 +506,11 @@
       });
     };
     attemptPlay();
+    vid.addEventListener("canplay", function () { attemptPlay(); }, { once: true });
     var whisperAt = function (t) {
       if (sample) {
         var best = null;
-        (SAMPLE_DATA.whispers || []).forEach(function (w) {
+        (SD().whispers || []).forEach(function (w) {
           if (w.t <= t + 2 && (!best || w.t > best.t)) best = w;
         });
         tick.textContent = "💬 " + (best ? best.text : "match starting…");
@@ -532,6 +531,16 @@
     vid.addEventListener("pause", function () {
       if (S.live.int) { clearInterval(S.live.int); S.live.int = null; }
     });
+  }
+
+  $("livebtn").addEventListener("click", function () {
+    var res = $("liveres");
+    if (res.innerHTML) {
+      res.innerHTML = "";
+      if (S.live && S.live.int) { clearInterval(S.live.int); S.live = null; }
+      return;
+    }
+    buildLive();
   });
 
   /* ================= chat ================= */
@@ -540,7 +549,7 @@
 
   function renderChatSuggest() {
     var box = $("chat-suggest");
-    var qs = S.mode === "sample" ? SAMPLE_DATA.chat.map(function (c) { return c.q; }).slice(0, 4) : [
+    var qs = S.mode === "sample" ? SD().chat.map(function (c) { return c.q; }).slice(0, 4) : [
       "Why did we look weak in the second half?",
       "Who worked the hardest?",
       "What should we train this week?",
@@ -588,7 +597,7 @@
       S.chat.busy = false;
       var words = msg.toLowerCase().split(/\W+/).filter(function (w) { return w.length > 3; });
       var best = null, bs = 0;
-      SAMPLE_DATA.chat.forEach(function (c) {
+      SD().chat.forEach(function (c) {
         var s = 0;
         c.q.toLowerCase().split(/\W+/).forEach(function (w) { if (words.indexOf(w) !== -1) s++; });
         if (s > bs) { bs = s; best = c; }
@@ -629,10 +638,11 @@
   });
 
   /* ================= sample replay ================= */
-  function playSample() {
+  function playSample(sport) {
+    if (sport) S.sampleSport = sport;
     showTab("sample");
     S.phase = "running"; S.mode = "sample";
-    var D = SAMPLE_DATA;
+    var D = SD();
     S.job = { progress: 2, message: "Replaying verified run…", agent_log: [] };
     var i = 0;
     $("status").innerHTML = '<div class="bar"><div class="bar-fill" style="width:4%"></div></div><div class="msg">Replaying verified run…</div><div class="timeline" id="samt1"></div>';
@@ -657,9 +667,16 @@
       }
     }, 720);
   }
-  $("go-sample").addEventListener("click", playSample);
+  [["go-sample-soccer", "soccer"],
+   ["go-sample-basketball", "basketball"],
+   ["go-sample-running", "running"]].forEach(function (pair) {
+    var b = $(pair[0]);
+    if (!b) return;
+    if (!SAMPLE_DATA[pair[1]]) b.disabled = true;
+    b.addEventListener("click", function () { playSample(pair[1]); });
+  });
   $("hero-sample").addEventListener("click", function () {
     document.getElementById("analyze").scrollIntoView({ behavior: "smooth" });
-    playSample();
+    playSample(S.sampleSport || "soccer");
   });
 })();
