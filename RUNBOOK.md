@@ -376,3 +376,14 @@ Demo soccer sample tetap Spitfire (60s kontinu, angka sehat); hero = PL 2026 (16
 1. **Suara**: autoplay policy memaksa muted — kini **unmute otomatis pada interaksi pertama** (pointerdown/keydown, capture, once-semangat: listener dilepas setelah jalan). File memang sudah bersuara (addendum 19).
 2. **Kotak menggantung di scene baru** = efek hold-30-frame saat camera cut. Fix: **deteksi cut** — offscreen 32×18 canvas, mean-abs-diff frame-to-frame > 40 → frame itu dikosongkan (kotak lama tidak pernah melayang di scene baru). Occlusion pendek tetap ditahan.
 3. **Fullscreen**: kontrol native mem-fullscreen elemen VIDEO saja → overlay (canvas di luar video) hilang. Fix: `controlslist="nofullscreen"` + tombol ⛶ sendiri di track-head yang me-fullscreen `.track-stage` (video + canvas ikut). CSS `:fullscreen` menengahkan video dan mencocokkan canvas.
+
+---
+
+## ADDENDUM 31 Okt 2026 (10) — BOLA FOKUS DI SHOT + LOOP DIPOTONG SAMPAI SEBELUM CUT
+
+**User: "gerakannya ke bola pas shot, bukan ke manusia" + kick tetap tanpa kotak.**
+
+- **SAM sungguh tidak mampu track close-shot tendangan** (3 konsep × retry: respons terpotong <1 detik — blur + gerak ledak; data membuktikan dets/sec runtuh 248→1 di detik 12-15). Keputusan jujur: **loop hero dipotong ke 12,2s** (bagian lebar yang 100% ter-track) — segmen tanpa kotak dihapus dari loop.
+- **Bola jadi bintang overlay** (data bola terlacak justru menembus cut kamera: t=4.9-11.6): trail cyan memudar 3 detik + glow ring + panah tebal — "gerakan ke bola pas shot". Kotak pemain tetap ada saat deteksi ada.
+- Bug fix: sisa referensi `isBall` di loop pemain (ReferenceError mematikan draw — tertangkap oleh hook __errs, terverifikasi cepat berkat instrumentation).
+- Verifikasi pixel: t=7 → 9.436 px, t=8.5 → 10.641, t=11 → 9.498. app.js ?v=7.

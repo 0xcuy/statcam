@@ -154,26 +154,24 @@
       if (cut) return;                     // never float boxes over a new scene
       var f = Math.floor((vid.currentTime || 0) * 30);
       T.objects.forEach(function (o) {
-        var isBall = o.label === "ball";
-        var now = findAt(o.frames, f, isBall ? 18 : 10);
+        if (o.label === "ball") return;   // the ball gets its own featured treatment below
+        var now = findAt(o.frames, f, 10);
         if (!now) return;
         var cx = now[1] * scale * sx, cy = now[2] * scale * sy;
         var w = Math.max(12, now[3] * scale * sx), h = Math.max(16, now[4] * scale * sy);
-        var col = isBall ? "255,255,255" : "34,211,238";
+        var col = "34,211,238";
         ctx.strokeStyle = "rgba(" + col + ",.95)";
         ctx.lineWidth = 2;
         ctx.strokeRect(cx - w / 2, cy - h / 2 - 2, w, h);
         ctx.fillStyle = "rgba(" + col + ",.95)";
         ctx.fillRect(cx - w / 2, cy - h / 2 - 7, w, 4);
-        if (!isBall) {
-          ctx.font = "700 10px ui-monospace, monospace";
-          ctx.fillText(o.id, cx - w / 2 + 2, cy - h / 2 - 10);
-        }
+        ctx.font = "700 10px ui-monospace, monospace";
+        ctx.fillText(o.id, cx - w / 2 + 2, cy - h / 2 - 10);
         var old = findOlder(o.frames, now[0], 15);
         if (old) {
           var ox = old[1] * scale * sx, oy = old[2] * scale * sy;
           var sp = Math.hypot(cx - ox, cy - oy) / ((now[0] - old[0]) / 30) * 3.6;
-          if (sp > 6) arrow(ox, oy, cx, cy, isBall ? "255,255,255" : "34,211,238");
+          if (sp > 6) arrow(ox, oy, cx, cy, "34,211,238");
           if (sp > 25) {
             ctx.font = "800 10px ui-monospace, monospace";
             ctx.fillStyle = "rgba(251,191,36,.95)";
@@ -181,7 +179,43 @@
           }
         }
       });
+      drawBallFeature(f);
     }
+    function drawBallFeature(f) {
+      var bo = null;
+      T.objects.forEach(function (o) { if (o.label === "ball") bo = o; });
+      if (!bo) return;
+      var pts = [];
+      bo.frames.forEach(function (fr) { if (fr[0] <= f && fr[0] >= f - 90) pts.push(fr); });
+      if (!pts.length) return;
+      var X = function (fr) { return fr[1] * scale * sx; };
+      var Y = function (fr) { return fr[2] * scale * sy; };
+      // fading trajectory trail
+      for (var i = 1; i < pts.length; i++) {
+        var a = i / pts.length;
+        ctx.strokeStyle = "rgba(34,211,238," + (0.12 + 0.6 * a).toFixed(2) + ")";
+        ctx.lineWidth = 2 + 3.5 * a;
+        ctx.beginPath();
+        ctx.moveTo(X(pts[i - 1]), Y(pts[i - 1]));
+        ctx.lineTo(X(pts[i]), Y(pts[i]));
+        ctx.stroke();
+      }
+      var cur = pts[pts.length - 1];
+      var bx = X(cur), by = Y(cur);
+      // velocity arrow
+      if (pts.length >= 4) {
+        var oldp = pts[Math.max(0, pts.length - 8)];
+        var sp = Math.hypot(bx - X(oldp), by - Y(oldp));
+        if (sp > 8) arrow(X(oldp), Y(oldp), bx, by, "34,211,238");
+      }
+      // glowing ball marker
+      ctx.beginPath(); ctx.arc(bx, by, 13, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(34,211,238,.25)"; ctx.fill();
+      ctx.beginPath(); ctx.arc(bx, by, 5.5, 0, Math.PI * 2);
+      ctx.fillStyle = "#fff"; ctx.fill();
+      ctx.lineWidth = 2; ctx.strokeStyle = "rgba(34,211,238,.95)"; ctx.stroke();
+    }
+
     if (reduce) {
       vid.pause();
       vid.style.display = "none";
