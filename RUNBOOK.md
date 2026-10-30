@@ -397,3 +397,12 @@ Demo soccer sample tetap Spitfire (60s kontinu, angka sehat); hero = PL 2026 (16
 **Fix:** deteksi cut kini hanya bereaksi pada **SPIKE** (diff > 40 tepat setelah frame tenang < 15). Zoom/pan = diff tinggi berkelanjutan → kotak DIPERTAHANKAN (data SAM memang men track through zoom). Verifikasi pixel: t=10.5 → 10.822, t=11.5 → 9.683, t=12 → 9.083 (sebelumnya 0). app.js ?v=8.
 
 **Pelajaran:** bedakan CUT (spike — clear sekali) dari KAMERA GERAK (sustained — biarkan); frame-diff polos tidak bisa membedakan keduanya.
+
+---
+
+## ADDENDUM 31 Okt 2026 (12) — KELUHAN "MASIH NENDANG TANPA KOTAK" = VIDEO LAMA TER-CACHE + KEPUTUSAN FINAL LOOP
+
+- Screenshot close-up kicker user = dari **video lama ter-cache** (loop sekarang 12,2s tidak memuat close-up itu). URL video di-bump `?v=5` + user perlu hard refresh.
+- Alternatif window 429-441 (tendangan wide + keeper dive) diuji SAM: **hanya 1 pemain ter-track** (shot terlalu jauh) — TIDAK dipakai. Loop 458-470.2 tetap yang terbaik (13-16 pemain, 88% coverage).
+- Verifikasi akhir seluruh loop (12 sampel @0.75s): 11/12 sampel ≈4145 px overlay; 1 gap 1 detik di awal klip (t≈1.5, SAM memang minim di sana — diterima).
+- Sisa usaha (addendum 21): SAM tidak mampu track close-up kick (3 konsep, respons terpotong) — keputusan tetap: loop = bagian wide yang 100% ter-track.
