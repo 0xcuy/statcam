@@ -355,3 +355,14 @@ Smoke suite: API hanya berubah di mock.py (bola) — regresi cepat OK (health 20
 4. `.track-stage { aspect-ratio: 16/9 }` wajib — kanvas overlay absolut akan kolaps saat video display:none.
 
 Demo soccer sample tetap Spitfire (60s kontinu, angka sehat); hero = PL 2026 (16s wow). Smoke suite 22/22 PASS era multi-konsep.
+
+---
+
+## ADDENDUM 31 Okt 2026 (8) — SUARA + KONTROL HERO + TRACKING ANTI-GAP (keluhan user)
+
+**Keluhan user: pas tendangan tracking hilang, video tanpa suara, tidak ada pause/play/replay.**
+
+1. **Suara**: semua clip demo/hero sebelumnya di-encode `-an` (TANPA audio). Re-encode DENGAN audio (`-c:a aac -b:a 96-128k`) — sumbernya memang punya audio (Spitfire = suara lapangan, Jordan + PL = broadcast): `samples/demo-{soccer,basketball,running}-real.mp4` + `demo-pl2026-hero.mp4` kini bersuara. Browser autopolicy memaksa start muted — pengguna unmute lewat kontrol native (satu klik speaker).
+2. **Kontrol**: hero video kini punya `controls` native (pause/play/seek/replay/volume). Kanvas overlay diberi `pointer-events: none` supaya kontrol tetap bisa diklik.
+3. **Tracking anti-gap**: `findAt` kini menahan kotak terakhir hingga 30 frame (1 detik) melalui camera-cut/blur — momen tendangan tidak lagi "kosong tracking". Interpolasi antar-deteksi tetap jalan untuk gerakan halus.
+4. Cache discipline: URL video di sample-data.js diberi `?v=2`, hero `?v=3`, app.js `?v=3` (bump tiap deploy — CF edge).

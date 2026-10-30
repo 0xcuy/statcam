@@ -327,7 +327,7 @@ window.SAMPLE_DATA = {
     "text": "t+54s — ball in the ?; peak intensity 39.6 km/h (P5), 5 sprints in the last 5s, block spread 24.5 m. High chaos window — look for the transition outlet."
    }
   ],
-  "video": "samples/demo-soccer-real.mp4",
+  "video": "samples/demo-soccer-real.mp4?v=2",
   "cardFile": "sample-card-soccer.svg"
  },
  "basketball": {
@@ -654,7 +654,7 @@ window.SAMPLE_DATA = {
     "text": "t+54s — ball in the attacking third; peak intensity 29.8 km/h (P6), 7 sprints in the last 5s, block spread 72.4 m. Block is stretched — press as a unit. High chaos window — look for the transition outlet."
    }
   ],
-  "video": "samples/demo-basketball-real.mp4",
+  "video": "samples/demo-basketball-real.mp4?v=2",
   "cardFile": "sample-card-basketball.svg"
  },
  "running": {
@@ -901,7 +901,7 @@ window.SAMPLE_DATA = {
     "text": "t+54s — ball in the ?; peak intensity 39.4 km/h (P1), 33 sprints in the last 5s, block spread 10.7 m. High chaos window — look for the transition outlet."
    }
   ],
-  "video": "samples/demo-running-real.mp4",
+  "video": "samples/demo-running-real.mp4?v=2",
   "cardFile": "sample-card-running.svg"
  }
 };

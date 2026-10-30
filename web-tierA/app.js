@@ -77,6 +77,7 @@
     vid.addEventListener("error", function () { vid.style.display = "none"; });
 
     function findAt(frames, f, maxGap) {
+      maxGap = 30;  // hold boxes through camera cuts / blur for up to 1 s
       // interpolate between the detections bracketing the frame — smooth
       // boxes even when SAM only samples a player intermittently
       var prev = null, next = null;
