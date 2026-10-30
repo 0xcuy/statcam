@@ -110,16 +110,25 @@ def download_video(url: str, dest_dir: Path, on_progress=None) -> Path:
         raise RuntimeError(
             "this looks like a page link (YouTube/social) and yt-dlp is not installed "
             "on the server — paste a direct video link (.mp4/.webm/.mov/.m4v) or upload the file")
-    proc = subprocess.run(
-        [ytd, "-f", YTDL_FMT, "--no-playlist", "--no-progress",
-         "--max-filesize", str(MAX_BYTES), "-o", str(dest_dir / "raw.%(ext)s"), url],
-        capture_output=True, text=True, timeout=900)
-    files = sorted(p for p in dest_dir.glob("raw.*") if p.is_file())
-    if proc.returncode != 0 or not files:
-        lines = [l for l in (proc.stderr or proc.stdout or "").strip().splitlines() if l.strip()]
-        tail = " | ".join(lines[-2:]) if lines else "unknown yt-dlp error"
-        raise RuntimeError(f"could not download from this link — yt-dlp says: {tail}")
-    return files[0]
+    # YouTube bot-walls datacenter IPs; alternate player clients sometimes pass.
+    attempts = ([[], ["--extractor-args", "youtube:player_client=tv_embedded,web_embedded,android_vr"]])
+    proc, files = None, []
+    for extra in attempts:
+        proc = subprocess.run(
+            [ytd, "-f", YTDL_FMT, "--no-playlist", "--no-progress",
+             "--max-filesize", str(MAX_BYTES), "-o", str(dest_dir / "raw.%(ext)s"), url] + extra,
+            capture_output=True, text=True, timeout=900)
+        files = sorted(p for p in dest_dir.glob("raw.*") if p.is_file())
+        if proc.returncode == 0 and files:
+            return files[0]
+    lines = [l for l in (proc.stderr or proc.stdout or "").strip().splitlines() if l.strip()]
+    tail = " | ".join(lines[-2:]) if lines else "unknown yt-dlp error"
+    if "not a bot" in tail.lower() or is_page_link(url):
+        raise RuntimeError(
+            "YouTube blocks automated downloads from server IPs ('confirm you're not a "
+            "bot'). Download the video on your device and use the Upload tab, or paste a "
+            "direct video link (.mp4/.webm/.mov/.m4v)")
+    raise RuntimeError(f"could not download from this link — yt-dlp says: {tail}")
 
 
 def cut_segment(src: Path, start: float, end: float, dest: Path) -> dict:

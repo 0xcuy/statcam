@@ -20,7 +20,7 @@ import math
 import os
 import re
 import subprocess
-import json as _json
+import json
 from pathlib import Path
 
 import httpx
@@ -110,7 +110,7 @@ _FRAME_RE = re.compile(r"<(\d+)f>")
 _BOX_RE = re.compile(r"(\d+)<\|box;x1=([\d.]+);y1=([\d.]+);x2=([\d.]+);y2=([\d.]+)[^|]*\|")
 
 
-def _parse_sam_text(text: str, src_fps: float, mpp: float):
+def _parse_sam_text(text: str, src_fps: float, mpp: float, max_mps: float = 11.0):
     """SAM special-token text -> (tracks, frames_with_match, total_frames).
 
     Frames are renumbered onto a 30 fps timeline so the analysis contract's
@@ -142,7 +142,7 @@ def _parse_sam_text(text: str, src_fps: float, mpp: float):
             frames_with += 1
     tracks = []
     for ordinal, fr in sorted(per_obj.items()):
-        fr = _drop_identity_switches(fr)
+        fr = _drop_identity_switches(fr, max_mps=max_mps)
         if len(fr) < 4:
             continue  # barely-seen object — drop it, never invent
         tracks.append({"id": f"P{len(tracks) + 1}", "label": "player", "frames": fr})
@@ -192,13 +192,41 @@ def _probe_stream(video_path: Path) -> tuple[int, int, float]:
          "-show_entries", "stream=width,height,r_frame_rate", "-of", "json",
          str(video_path)],
         capture_output=True, text=True, timeout=30)
-    st = _json.loads(r.stdout or "{}")["streams"][0]
+    st = json.loads(r.stdout or "{}")["streams"][0]
     num, den = (st.get("r_frame_rate") or "30/1").split("/")
     fps = float(num) / float(den or 1) or 30.0
     return int(st["width"]), int(st["height"]), fps
 
 
-async def sam_track_video(video_path: Path, prompt: str) -> dict:
+SAM_MAX_RAW_BYTES = 13 * 1024 * 1024  # 13 MB raw ≈ 17.4 MB base64; past that Meta answers 413
+
+
+def _shrink_for_sam(video_path: Path) -> Path:
+    """SAM takes the whole clip as one base64 data URL; oversized payloads answer
+    413 Request Entity Too Large. Re-encode to ≤1280px without audio (audio is
+    never sent, and 720p has proven sufficient for tracking) until it fits."""
+    if video_path.stat().st_size <= SAM_MAX_RAW_BYTES:
+        return video_path
+    out = video_path.with_name(video_path.stem + "-sam.mp4")
+    subprocess.run(
+        ["ffmpeg", "-y", "-v", "error", "-i", str(video_path),
+         "-vf", "scale='min(1280,iw)':-2", "-an",
+         "-c:v", "libx264", "-preset", "fast", "-crf", "26",
+         "-movflags", "+faststart", str(out)],
+        capture_output=True, timeout=900, check=True)
+    if out.stat().st_size > SAM_MAX_RAW_BYTES:  # dense footage — squeeze once more
+        subprocess.run(
+            ["ffmpeg", "-y", "-v", "error", "-i", str(video_path),
+             "-vf", "scale='min(960,iw)':-2", "-an",
+             "-c:v", "libx264", "-preset", "fast", "-crf", "31",
+             "-movflags", "+faststart", str(out)],
+            capture_output=True, timeout=900, check=True)
+    return out
+
+
+async def sam_track_video(video_path: Path, prompt: str, note_cb=None,
+                          visible_width_m: float | None = None,
+                          max_mps: float = 11.0) -> dict:
     """SAM 3.1 live tracking -> tracks.json schema.
 
     One API call per concept (person, then the ball when configured). The
@@ -207,30 +235,40 @@ async def sam_track_video(video_path: Path, prompt: str) -> dict:
     with at least one match (computed, not invented). meters are estimated
     from an assumed visible pitch width — an approximation, labeled as such.
     """
-    w, h, fps = _probe_stream(video_path)
-    mpp = VISIBLE_WIDTH_M / max(w, 1)
-    best = ([], 0, 0, PLAYER_CONCEPTS[0])
-    for concept in PLAYER_CONCEPTS:
-        text = await _sam_text(concept, video_path)
-        cand = _parse_sam_text(text, fps, mpp)
-        cand_pruned = _prune_background(json.loads(json.dumps(cand[0])))
-        if len(cand_pruned) > len(best[0]):
-            best = (cand[0], cand[1], cand[2], concept)
-        if len(cand_pruned) >= 6:
-            break
-    tracks, frames_with, total, used_concept = best
-    tracks = _prune_background(json.loads(json.dumps(tracks)))
-    if BALL_CONCEPT:
-        try:
-            btext = await _sam_text(BALL_CONCEPT, video_path)
-            btracks, _, _ = _parse_sam_text(btext, fps, mpp)
-            if btracks:
-                ball = max(btracks, key=lambda t: len(t["frames"]))
-                ball = dict(ball)
-                ball.update({"id": "BALL", "label": "ball"})
-                tracks.append(ball)
-        except httpx.HTTPError:
-            pass  # ball is optional — never fail the job over it
+    sam_video = _shrink_for_sam(video_path)
+    if sam_video != video_path and note_cb:
+        note_cb(f"SAM payload re-encoded to {min(_probe_stream(sam_video)[0], 1280)}px "
+                f"without audio ({video_path.stat().st_size // (1024*1024)} MB → "
+                f"{sam_video.stat().st_size // (1024*1024)} MB) — Meta rejects larger uploads")
+    try:
+        w, h, fps = _probe_stream(sam_video)
+        vis_m = visible_width_m or VISIBLE_WIDTH_M
+        mpp = vis_m / max(w, 1)
+        best = ([], 0, 0, PLAYER_CONCEPTS[0])
+        for concept in PLAYER_CONCEPTS:
+            text = await _sam_text(concept, sam_video)
+            cand = _parse_sam_text(text, fps, mpp, max_mps=max_mps)
+            cand_pruned = _prune_background(json.loads(json.dumps(cand[0])))
+            if len(cand_pruned) > len(best[0]):
+                best = (cand[0], cand[1], cand[2], concept)
+            if len(cand_pruned) >= 6:
+                break
+        tracks, frames_with, total, used_concept = best
+        tracks = _prune_background(json.loads(json.dumps(tracks)))
+        if BALL_CONCEPT:
+            try:
+                btext = await _sam_text(BALL_CONCEPT, sam_video)
+                btracks, _, _ = _parse_sam_text(btext, fps, mpp, max_mps=max_mps)
+                if btracks:
+                    ball = max(btracks, key=lambda t: len(t["frames"]))
+                    ball = dict(ball)
+                    ball.update({"id": "BALL", "label": "ball"})
+                    tracks.append(ball)
+            except httpx.HTTPError:
+                pass  # ball is optional — never fail the job over it
+    finally:
+        if sam_video != video_path:
+            sam_video.unlink(missing_ok=True)  # temp re-encode — free the job dir
     return {"tracks": tracks, "confidence": round(frames_with / max(total, 1), 3),
             "mock": False,
             "note": (f"SAM 3.1 live tracking — concepts: {used_concept}"

@@ -1,5 +1,3 @@
-/* StatCam verified demo runs — baked from REAL live jobs (SAM 3.1 + Spark + E2B).
-   soccer cfdf386d5c17 · basketball ab6c1d8dd14d · running 1486e74ab4de */
 window.SAMPLE_DATA = {
  "soccer": {
   "_provenance": "VERIFIED LIVE RUN cfdf386d5c17 (SAM 3.1 + Muse Spark + E2B) on real amateur footage: 'PDL Soccer - Sioux Fall Spitfire at Springfield Storm' (2005, archive.org).",
@@ -331,68 +329,74 @@ window.SAMPLE_DATA = {
   "cardFile": "sample-card-soccer.svg"
  },
  "basketball": {
-  "_provenance": "VERIFIED LIVE RUN ab6c1d8dd14d on real footage: 'Michael Jordan Hits Head On Backboard Blocking Shot at Duke' (archive.org). SAM 3.1 found no trackable wide-court objects on this close-up clip — synthetic tracking fallback used, honestly labeled.",
+  "_provenance": "VERIFIED LIVE RUN 7cc2e583b2f5 (SAM 3.1 + Muse Spark + E2B, no fallback) on real footage: 'MVHS vs Payson Wide Angle 20250204' by Jared Olsen (YouTube) — fixed full-court camera, court-band crop. Demo use with credit; all rights remain with the rights holder.",
   "job": {
-   "id": "ab6c1d8dd14d",
+   "id": "7cc2e583b2f5",
    "agent_log": [
     {
-     "t": 1793387736.3,
+     "t": 1793397838.8,
      "stage": "plan",
-     "text": "Plan: ① download from link → ② extract frames → ③ track players (sam-3.1) → ④ write stats code (spark-1.3) → ⑤ execute (e2b) → ⑥ dashboard"
+     "text": "Plan: ① ingest upload → ② extract frames → ③ track players (sam-3.1) → ④ write stats code (spark-1.3) → ⑤ execute (e2b) → ⑥ dashboard"
     },
     {
-     "t": 1793387749.2,
+     "t": 1793397841.7,
      "stage": "frames",
      "text": "8 preview frames extracted from a 30 fps source"
     },
     {
-     "t": 1793387880.4,
+     "t": 1793397851.1,
      "stage": "correct",
-     "text": "SAM 3.1 unavailable on this clip (413 request too large) — switching to the synthetic tracker, labeled below"
+     "text": "SAM payload re-encoded to 1280px without audio (22 MB → 7 MB) — Meta rejects larger uploads"
     },
     {
-     "t": 1793387880.4,
+     "t": 1793398022.8,
      "stage": "track",
-     "text": "Synthetic tracker locked 12 simulated objects at 97.0% coverage — no live SAM boxes on this clip"
+     "text": "Tracking locked: 15 objects at 99.9% confidence"
     },
     {
-     "t": 1793387913.8,
+     "t": 1793398063.9,
      "stage": "codegen",
      "text": "Stats code ready (spark-1.3)"
     },
     {
-     "t": 1793387917.6,
+     "t": 1793398067.3,
      "stage": "analyze",
-     "text": "Analyst read: P4 is the engine: 0.1 km covered — 115% of the squad-median workload."
+     "text": "Analyst read: P13 is the engine: 0.1 km covered — 204% of the squad-median workload."
     }
    ]
   },
   "result": {
    "mode": "live",
+   "pipeline": {
+    "track": "sam-3.1",
+    "codegen": "spark-1.3",
+    "exec": "e2b"
+   },
    "sport": "basketball",
    "label": "Basketball",
-   "fileName": "link · archive.org",
+   "fileName": "mvhs-court.mp4",
    "duration": "01:00",
-   "trackedLabel": "SIMULATED TRACKING · 11 PLAYERS",
-   "confidence": "100.0%",
-   "frames": "1,801",
-   "positionsCount": "19,811",
-   "summaryText": "P4 ran 0.1 km",
+   "trackedLabel": "TRACKING · 11 PLAYERS",
+   "confidence": "75.0%",
+   "frames": "1,800",
+   "positionsCount": "19,800",
+   "summaryText": "P13 ran 0.1 km",
+   "notes": "fps=30.0 threshold=22.0km/h; 15 players, 22216 points total. x,y used as center meters, no rescale. distance=sum centroid steps; top_speed=max 1s-window path/time; sprints=non-overlapping 1s windows>thr; heatmap=3x8 global-bounds occupancy proportion.",
    "kpis": [
     {
      "value": "0.1",
      "unit": " km",
      "label": "TOP DISTANCE",
-     "sub": "P4"
+     "sub": "P13"
     },
     {
-     "value": "28.8",
+     "value": "26.4",
      "unit": " km/h",
      "label": "TOP SPEED",
-     "sub": "P6"
+     "sub": "P13"
     },
     {
-     "value": "31",
+     "value": "2",
      "unit": "",
      "label": "SPRINTS",
      "sub": "TEAM"
@@ -402,145 +406,1070 @@ window.SAMPLE_DATA = {
     "P1": {
      "id": "P1",
      "name": "P1 · Tracked",
+     "color": "#4DA3FF",
+     "badgeBg": "#0064E0",
      "distance": "0.1 km",
-     "pct": 86,
-     "topSpeed": "28.6 km/h",
-     "sprints": 4
+     "pct": 49,
+     "topSpeed": "17.3 km/h",
+     "sprints": 0,
+     "animClass": "sc-p7",
+     "heatmap": [
+      [
+       0.0,
+       0.028409090909090908,
+       0.003977272727272727,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.3886363636363636,
+       0.2528409090909091,
+       0.07670454545454546,
+       0.02784090909090909,
+       0.03579545454545455,
+       0.08125,
+       0.09147727272727273
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.013068181818181817
+      ]
+     ]
     },
     "P2": {
      "id": "P2",
      "name": "P2 · Tracked",
+     "color": "#FF6B6B",
+     "badgeBg": "#E0245E",
      "distance": "0.1 km",
-     "pct": 88,
-     "topSpeed": "26.3 km/h",
-     "sprints": 2
+     "pct": 58,
+     "topSpeed": "17.3 km/h",
+     "sprints": 0,
+     "animClass": "sc-p10",
+     "heatmap": [
+      [
+       0.0,
+       0.018679119412941963,
+       0.2008005336891261,
+       0.11274182788525684,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.00066711140760507,
+       0.142761841227485,
+       0.03602401601067378,
+       0.0266844563042028,
+       0.04136090727151434,
+       0.24549699799866578,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.14209472981987992,
+       0.03268845897264843,
+       0.0
+      ]
+     ]
     },
     "P3": {
      "id": "P3",
      "name": "P3 · Tracked",
-     "distance": "0.1 km",
-     "pct": 97,
-     "topSpeed": "25.9 km/h",
-     "sprints": 3
+     "color": "#4DA3FF",
+     "badgeBg": "#0064E0",
+     "distance": "0.0 km",
+     "pct": 19,
+     "topSpeed": "4.2 km/h",
+     "sprints": 0,
+     "animClass": "sc-p4",
+     "heatmap": [
+      [
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ]
+     ]
     },
     "P4": {
      "id": "P4",
      "name": "P4 · Tracked",
+     "color": "#4DA3FF",
+     "badgeBg": "#E0245E",
      "distance": "0.1 km",
-     "pct": 100,
-     "topSpeed": "27.9 km/h",
-     "sprints": 4
+     "pct": 37,
+     "topSpeed": "8.3 km/h",
+     "sprints": 0,
+     "animClass": "sc-p4",
+     "heatmap": [
+      [
+       0.0,
+       0.011333333333333334,
+       0.027333333333333334,
+       0.0,
+       0.002,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.628,
+       0.24666666666666667,
+       0.046,
+       0.03866666666666667,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ]
+     ]
     },
     "P5": {
      "id": "P5",
      "name": "P5 · Tracked",
-     "distance": "0.1 km",
-     "pct": 88,
-     "topSpeed": "28.3 km/h",
-     "sprints": 5
+     "color": "#FF6B6B",
+     "badgeBg": "#0064E0",
+     "distance": "0.0 km",
+     "pct": 24,
+     "topSpeed": "10.5 km/h",
+     "sprints": 0,
+     "animClass": "sc-p4",
+     "heatmap": [
+      [
+       0.0,
+       0.007518796992481203,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.37593984962406013,
+       0.5585392051557465,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.05800214822771214,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ]
+     ]
     },
     "P6": {
      "id": "P6",
      "name": "P6 · Tracked",
-     "distance": "0.1 km",
-     "pct": 87,
-     "topSpeed": "28.8 km/h",
-     "sprints": 3
+     "color": "#4DA3FF",
+     "badgeBg": "#E0245E",
+     "distance": "0.0 km",
+     "pct": 15,
+     "topSpeed": "12.8 km/h",
+     "sprints": 0,
+     "animClass": "sc-p4",
+     "heatmap": [
+      [
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.7521551724137931,
+       0.010775862068965518,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.004310344827586207,
+       0.02586206896551724,
+       0.20689655172413793,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ]
+     ]
     },
     "P7": {
      "id": "P7",
      "name": "P7 · Tracked",
+     "color": "#FF6B6B",
+     "badgeBg": "#0064E0",
      "distance": "0.1 km",
-     "pct": 92,
-     "topSpeed": "25.6 km/h",
-     "sprints": 3
+     "pct": 58,
+     "topSpeed": "22.4 km/h",
+     "sprints": 1,
+     "animClass": "sc-p4",
+     "heatmap": [
+      [
+       0.0,
+       0.02008520998174072,
+       0.017650639074863056,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.05356055995130858,
+       0.5946439440048692,
+       0.05356055995130858,
+       0.04747413268411443,
+       0.06999391357273281,
+       0.03712720632988436,
+       0.0
+      ],
+      [
+       0.06999391357273281,
+       0.035909920876445525,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ]
+     ]
     },
     "P8": {
      "id": "P8",
      "name": "P8 · Tracked",
-     "distance": "0.1 km",
-     "pct": 79,
-     "topSpeed": "25.7 km/h",
-     "sprints": 1
+     "color": "#4DA3FF",
+     "badgeBg": "#E0245E",
+     "distance": "0.0 km",
+     "pct": 28,
+     "topSpeed": "12.1 km/h",
+     "sprints": 0,
+     "animClass": "sc-p4",
+     "heatmap": [
+      [
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.20828258221680876,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.034713763702801465,
+       0.7570036540803897
+      ]
+     ]
     },
     "P9": {
      "id": "P9",
      "name": "P9 · Tracked",
+     "color": "#4DA3FF",
+     "badgeBg": "#0064E0",
      "distance": "0.1 km",
-     "pct": 82,
-     "topSpeed": "28.2 km/h",
-     "sprints": 4
+     "pct": 48,
+     "topSpeed": "12.6 km/h",
+     "sprints": 0,
+     "animClass": "sc-p4",
+     "heatmap": [
+      [
+       0.0,
+       0.0,
+       0.040381379697139654,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.04374649467190129,
+       0.49242849130678634,
+       0.16769489624228828,
+       0.03365114974761638,
+       0.03813796971396523,
+       0.07739764441951767,
+       0.10544026920919798,
+       0.0
+      ],
+      [
+       0.0,
+       0.0011217049915872126,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ]
+     ]
     },
     "P10": {
      "id": "P10",
      "name": "P10 · Tracked",
+     "color": "#FF6B6B",
+     "badgeBg": "#E0245E",
      "distance": "0.1 km",
-     "pct": 84,
-     "topSpeed": "25.1 km/h",
-     "sprints": 1
+     "pct": 67,
+     "topSpeed": "16.7 km/h",
+     "sprints": 0,
+     "animClass": "sc-p4",
+     "heatmap": [
+      [
+       0.0,
+       0.0,
+       0.07579462102689487,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.07090464547677261,
+       0.3404645476772616,
+       0.1356968215158924,
+       0.034229828850855744,
+       0.0550122249388753,
+       0.10941320293398533,
+       0.08251833740831296,
+       0.0
+      ],
+      [
+       0.09596577017114914,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ]
+     ]
     },
     "P11": {
      "id": "P11",
      "name": "P11 · Tracked",
+     "color": "#4DA3FF",
+     "badgeBg": "#0064E0",
      "distance": "0.1 km",
-     "pct": 74,
-     "topSpeed": "26.3 km/h",
-     "sprints": 1
+     "pct": 62,
+     "topSpeed": "19.5 km/h",
+     "sprints": 0,
+     "animClass": "sc-p4",
+     "heatmap": [
+      [
+       0.0,
+       0.002898550724637681,
+       0.01565217391304348,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.1443478260869565,
+       0.2110144927536232,
+       0.3130434782608696,
+       0.02666666666666667,
+       0.029565217391304348,
+       0.034782608695652174,
+       0.13391304347826086,
+       0.0
+      ],
+      [
+       0.04,
+       0.03246376811594203,
+       0.01565217391304348,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ]
+     ]
     }
    },
    "analysis": {
     "tactical": [
-     "P4 is the engine: 0.1 km covered — 115% of the squad-median workload.",
-     "Speed profile: P6 peaks at 28.8 km/h — that is the transition outlet when possession turns over.",
-     "Work-rate spread is 26% between the most and least active player (P4 vs P11) — pressing is not collective yet.",
-     "Team sprint volume: 31 in the analyzed segment — high-intensity chaos, expect late-game fatigue."
+     "P13 is the engine: 0.1 km covered — 204% of the squad-median workload.",
+     "Speed profile: P13 peaks at 26.4 km/h — that is the transition outlet when possession turns over.",
+     "Work-rate spread is 85% between the most and least active player (P13 vs P6) — pressing is not collective yet.",
+     "Team sprint volume: 2 in the analyzed segment — controlled intensity."
     ],
     "forward": "Next session: build drills that lift the median (0.1 km) rather than the top — collective pressing over individual workload. Re-run the other segment of this match to compare halves.",
     "computed": true,
     "note": "Computed from tracking data. Spark's full tactical reasoning activates with API keys."
+   },
+   "_raw_stats": {
+    "players": [
+     {
+      "id": "P1",
+      "distance_m": 69.76910477349439,
+      "top_speed_kmh": 17.274922163460428,
+      "sprints": 0,
+      "heatmap": [
+       [
+        0.0,
+        0.028409090909090908,
+        0.003977272727272727,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.3886363636363636,
+        0.2528409090909091,
+        0.07670454545454546,
+        0.02784090909090909,
+        0.03579545454545455,
+        0.08125,
+        0.09147727272727273
+       ],
+       [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.013068181818181817
+       ]
+      ]
+     },
+     {
+      "id": "P2",
+      "distance_m": 82.21038553946653,
+      "top_speed_kmh": 17.31609447647786,
+      "sprints": 0,
+      "heatmap": [
+       [
+        0.0,
+        0.018679119412941963,
+        0.2008005336891261,
+        0.11274182788525684,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.00066711140760507,
+        0.142761841227485,
+        0.03602401601067378,
+        0.0266844563042028,
+        0.04136090727151434,
+        0.24549699799866578,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.14209472981987992,
+        0.03268845897264843,
+        0.0
+       ]
+      ]
+     },
+     {
+      "id": "P3",
+      "distance_m": 27.00653458529266,
+      "top_speed_kmh": 4.201762787008808,
+      "sprints": 0,
+      "heatmap": [
+       [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ]
+      ]
+     },
+     {
+      "id": "P4",
+      "distance_m": 52.81710260565756,
+      "top_speed_kmh": 8.348948331068213,
+      "sprints": 0,
+      "heatmap": [
+       [
+        0.0,
+        0.011333333333333334,
+        0.027333333333333334,
+        0.0,
+        0.002,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.628,
+        0.24666666666666667,
+        0.046,
+        0.03866666666666667,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      ]
+     },
+     {
+      "id": "P5",
+      "distance_m": 33.9273135515866,
+      "top_speed_kmh": 10.528643321465406,
+      "sprints": 0,
+      "heatmap": [
+       [
+        0.0,
+        0.007518796992481203,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.37593984962406013,
+        0.5585392051557465,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.05800214822771214,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      ]
+     },
+     {
+      "id": "P6",
+      "distance_m": 21.31431342990984,
+      "top_speed_kmh": 12.825776374747312,
+      "sprints": 0,
+      "heatmap": [
+       [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.7521551724137931,
+        0.010775862068965518,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.004310344827586207,
+        0.02586206896551724,
+        0.20689655172413793,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      ]
+     },
+     {
+      "id": "P7",
+      "distance_m": 83.19124693849267,
+      "top_speed_kmh": 22.40630582667384,
+      "sprints": 1,
+      "heatmap": [
+       [
+        0.0,
+        0.02008520998174072,
+        0.017650639074863056,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.05356055995130858,
+        0.5946439440048692,
+        0.05356055995130858,
+        0.04747413268411443,
+        0.06999391357273281,
+        0.03712720632988436,
+        0.0
+       ],
+       [
+        0.06999391357273281,
+        0.035909920876445525,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      ]
+     },
+     {
+      "id": "P8",
+      "distance_m": 40.11921135840281,
+      "top_speed_kmh": 12.100012210381175,
+      "sprints": 0,
+      "heatmap": [
+       [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.20828258221680876,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.034713763702801465,
+        0.7570036540803897
+       ]
+      ]
+     },
+     {
+      "id": "P9",
+      "distance_m": 68.24438814528219,
+      "top_speed_kmh": 12.580045638966936,
+      "sprints": 0,
+      "heatmap": [
+       [
+        0.0,
+        0.0,
+        0.040381379697139654,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.04374649467190129,
+        0.49242849130678634,
+        0.16769489624228828,
+        0.03365114974761638,
+        0.03813796971396523,
+        0.07739764441951767,
+        0.10544026920919798,
+        0.0
+       ],
+       [
+        0.0,
+        0.0011217049915872126,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      ]
+     },
+     {
+      "id": "P10",
+      "distance_m": 95.98489850724177,
+      "top_speed_kmh": 16.70815792371203,
+      "sprints": 0,
+      "heatmap": [
+       [
+        0.0,
+        0.0,
+        0.07579462102689487,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.07090464547677261,
+        0.3404645476772616,
+        0.1356968215158924,
+        0.034229828850855744,
+        0.0550122249388753,
+        0.10941320293398533,
+        0.08251833740831296,
+        0.0
+       ],
+       [
+        0.09596577017114914,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      ]
+     },
+     {
+      "id": "P11",
+      "distance_m": 88.33920289426015,
+      "top_speed_kmh": 19.450396129438953,
+      "sprints": 0,
+      "heatmap": [
+       [
+        0.0,
+        0.002898550724637681,
+        0.01565217391304348,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.1443478260869565,
+        0.2110144927536232,
+        0.3130434782608696,
+        0.02666666666666667,
+        0.029565217391304348,
+        0.034782608695652174,
+        0.13391304347826086,
+        0.0
+       ],
+       [
+        0.04,
+        0.03246376811594203,
+        0.01565217391304348,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      ]
+     },
+     {
+      "id": "P12",
+      "distance_m": 76.7024897605817,
+      "top_speed_kmh": 15.267002563668363,
+      "sprints": 0,
+      "heatmap": [
+       [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.24050632911392406,
+        0.4593128390596745,
+        0.07655213984327909,
+        0.028933092224231464,
+        0.02230259192284509,
+        0.029535864978902954,
+        0.05304400241109102,
+        0.06329113924050633
+       ],
+       [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.02652200120554551
+       ]
+      ]
+     },
+     {
+      "id": "P13",
+      "distance_m": 142.6368842209449,
+      "top_speed_kmh": 26.350567014707714,
+      "sprints": 1,
+      "heatmap": [
+       [
+        0.0,
+        0.008258258258258258,
+        0.16441441441441443,
+        0.04804804804804805,
+        0.027777777777777776,
+        0.0015015015015015015,
+        0.0,
+        0.0
+       ],
+       [
+        0.024024024024024024,
+        0.11036036036036036,
+        0.11036036036036036,
+        0.0,
+        0.0015015015015015015,
+        0.025525525525525526,
+        0.4774774774774775,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0007507507507507507
+       ]
+      ]
+     },
+     {
+      "id": "P14",
+      "distance_m": 63.18895594405897,
+      "top_speed_kmh": 13.818245460303269,
+      "sprints": 0,
+      "heatmap": [
+       [
+        0.0,
+        0.0011467889908256881,
+        0.005733944954128441,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.16341743119266056,
+        0.44036697247706424,
+        0.1628440366972477,
+        0.06307339449541284,
+        0.16341743119266056,
+        0.0,
+        0.0
+       ],
+       [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ]
+      ]
+     }
+    ],
+    "confidence": 0.75,
+    "notes": "fps=30.0 threshold=22.0km/h; 15 players, 22216 points total. x,y used as center meters, no rescale. distance=sum centroid steps; top_speed=max 1s-window path/time; sprints=non-overlapping 1s windows>thr; heatmap=3x8 global-bounds occupancy proportion."
    }
   },
   "moments": [
    {
-    "peak_kmh": 29.8,
-    "peak_by": "P6",
-    "sprints": 7,
-    "ball_kmh": 12.6,
-    "spread_m": 76.3,
-    "start_s": 50.0,
-    "end_s": 55.0,
-    "label": "Fastest burst",
-    "description": "peak 29.8 km/h (P6), 7 sprints, ball at 12.6 km/h, block spread 76.3 m",
-    "intent": "speed"
-   },
-   {
-    "peak_kmh": 29.7,
-    "peak_by": "P1",
-    "sprints": 6,
-    "ball_kmh": 69.9,
-    "spread_m": 76.4,
-    "start_s": 35.0,
-    "end_s": 40.0,
-    "label": "Fastest burst",
-    "description": "peak 29.7 km/h (P1), 6 sprints, ball at 69.9 km/h, block spread 76.4 m",
-    "intent": "speed"
-   },
-   {
-    "peak_kmh": 29.6,
-    "peak_by": "P1",
-    "sprints": 9,
-    "ball_kmh": 60.0,
-    "spread_m": 81.0,
+    "peak_kmh": 32.4,
+    "peak_by": "P13",
+    "sprints": 15,
+    "ball_kmh": 31.5,
+    "spread_m": 27.4,
     "start_s": 55.0,
     "end_s": 60.0,
     "label": "Fastest burst",
-    "description": "peak 29.6 km/h (P1), 9 sprints, ball at 60.0 km/h, block spread 81.0 m",
+    "description": "peak 32.4 km/h (P13), 15 sprints, ball at 31.5 km/h, block spread 27.4 m",
+    "intent": "speed"
+   },
+   {
+    "peak_kmh": 32.3,
+    "peak_by": "P12",
+    "sprints": 14,
+    "ball_kmh": 31.1,
+    "spread_m": 15.3,
+    "start_s": 5.0,
+    "end_s": 10.0,
+    "label": "Fastest burst",
+    "description": "peak 32.3 km/h (P12), 14 sprints, ball at 31.1 km/h, block spread 15.3 m",
+    "intent": "speed"
+   },
+   {
+    "peak_kmh": 32.3,
+    "peak_by": "P13",
+    "sprints": 19,
+    "ball_kmh": 29.0,
+    "spread_m": 25.1,
+    "start_s": 35.0,
+    "end_s": 40.0,
+    "label": "Fastest burst",
+    "description": "peak 32.3 km/h (P13), 19 sprints, ball at 29.0 km/h, block spread 25.1 m",
     "intent": "speed"
    }
   ],
   "plan": {
    "focus": [
-    "Repeat-sprint conditioning — 31 team sprints, expect late-game fatigue"
+    "Collective pressing — work-rate gap is 85% (P13 vs P6)",
+    "Tempo control — low sprint volume, raise intentional off-ball movement",
+    "Raise the floor — P6 covered 0.02 km, half the median"
    ],
    "sessions": [
     {
@@ -550,7 +1479,7 @@ window.SAMPLE_DATA = {
       {
        "name": "5v5 +3 press triggers",
        "duration_min": 25,
-       "why": "Close the 26% work-rate gap as a unit, not individually"
+       "why": "Close the 85% work-rate gap as a unit, not individually"
       },
       {
        "name": "Shadow-press rondo",
@@ -566,7 +1495,7 @@ window.SAMPLE_DATA = {
       {
        "name": "10 × 30m shuttles @ 90%",
        "duration_min": 20,
-       "why": "Match the peak demand: P6 hit 28.8 km/h"
+       "why": "Match the peak demand: P13 hit 26.4 km/h"
       },
       {
        "name": "Transition 3v2 chains",
@@ -587,7 +1516,7 @@ window.SAMPLE_DATA = {
       {
        "name": "Median-load conditioning test",
        "duration_min": 10,
-       "why": "Target: lift squad median from 0.12 km toward 0.14 km"
+       "why": "Target: lift squad median from 0.07 km toward 0.14 km"
       }
      ]
     }
@@ -598,65 +1527,64 @@ window.SAMPLE_DATA = {
   "chat": [
    {
     "q": "Who was the fastest player?",
-    "a": "P6 was fastest: 28.8 km/h top speed, 3 sprints, 0.1 km covered.",
+    "a": "Fastest player was P13 at 26.4 km/h top speed, per TOP SPEED KPI.\n\nNext best among listed players is P7 at 22.4 km/h with 1 sprint.",
     "mode": "spark"
    },
    {
-    "q": "Why did we look weak?",
-    "a": "You looked weak because pressing was not collective. P4 at 100% vs P11 at 74% - 26% spread. P8, P10, P11 managed 1 sprint each vs P5 with 5, P1/P4/P9 with 4. Team total 31 sprints in 60.0s segment = high-intensity chaos. P6 top speed 28.8 km/h isolated as outlet. Top distance only 0.1 km by P4.",
+    "q": "Who worked the hardest?",
+    "a": "P13 worked hardest.\n\nTOP DISTANCE 0.1 km (P13), TOP SPEED 26.4 km/h (P13), summary: \"P13 ran 0.1 km\".\n\nNext tracked: P7 0.1 km, 22.4 km/h, 1 sprint.\nTEAM SPRINTS: 2.\n\nFile mvhs-court.mp4, 60.0s, 1800 frames.",
     "mode": "spark"
    },
    {
-    "q": "Which player covered the most distance?",
-    "a": "P4 covered the most distance: 0.1 km — TOP DISTANCE, pct 100.",
+    "q": "What should we train this week?",
+    "a": "60-s live sample mvhs-court.mp4 (1,800 frames, 75.0% confidence, 11 PLAYERS): train transition running.\n\nTEAM only 2 SPRINTS >22.0km/h - P13 26.4km/h and P7 22.4km/h with 1 sprint. Replicate outlets with P11 19.5km/h, P1/P2 17.3km/h.\n\nRaise floor: P3 0.0km 4.2km/h 19%, P6 0.0km 15%, P5 0.0km 24%, P8 0.0km 28%. Use P10 67% and P11 62% as connectors.",
     "mode": "spark"
    }
   ],
   "whispers": [
    {
     "t": 0.0,
-    "text": "t+0s — ball in the middle third; peak intensity 8.1 km/h (P1), 0 sprints in the last 5s, block spread 72.7 m. Block is stretched — press as a unit."
+    "text": "t+0s — ball in the defensive third; peak intensity 31.9 km/h (P7), 8 sprints in the last 5s, block spread 15.8 m. High chaos window — look for the transition outlet."
    },
    {
     "t": 6.0,
-    "text": "t+6s — ball in the attacking third; peak intensity 19.6 km/h (P2), 0 sprints in the last 5s, block spread 86.8 m. Block is stretched — press as a unit."
+    "text": "t+6s — ball in the defensive third; peak intensity 31.7 km/h (P1), 4 sprints in the last 5s, block spread 10.9 m. High chaos window — look for the transition outlet."
    },
    {
     "t": 12.0,
-    "text": "t+12s — ball in the attacking third; peak intensity 28.5 km/h (P4), 12 sprints in the last 5s, block spread 86.4 m. Block is stretched — press as a unit. High chaos window — look for the transition outlet."
+    "text": "t+12s — ball in the defensive third; peak intensity 32.3 km/h (P12), 16 sprints in the last 5s, block spread 18.3 m. High chaos window — look for the transition outlet."
    },
    {
     "t": 18.0,
-    "text": "t+18s — ball in the middle third; peak intensity 28.2 km/h (P5), 9 sprints in the last 5s, block spread 83.9 m. Block is stretched — press as a unit. High chaos window — look for the transition outlet."
+    "text": "t+18s — ball in the defensive third; peak intensity 32.1 km/h (P7), 16 sprints in the last 5s, block spread 23.9 m. High chaos window — look for the transition outlet."
    },
    {
     "t": 24.0,
-    "text": "t+24s — ball in the attacking third; peak intensity 28.7 km/h (P9), 1 sprints in the last 5s, block spread 67.5 m. Block is stretched — press as a unit."
+    "text": "t+24s — ball in the defensive third; peak intensity 31.9 km/h (P13), 21 sprints in the last 5s, block spread 27.5 m. High chaos window — look for the transition outlet."
    },
    {
     "t": 30.0,
-    "text": "t+30s — ball in the attacking third; peak intensity 28.5 km/h (P6), 5 sprints in the last 5s, block spread 82.0 m. Block is stretched — press as a unit. High chaos window — look for the transition outlet."
+    "text": "t+30s — ball in the defensive third; peak intensity 32.2 km/h (P13), 24 sprints in the last 5s, block spread 27.6 m. High chaos window — look for the transition outlet."
    },
    {
     "t": 36.0,
-    "text": "t+36s — ball in the middle third; peak intensity 26.7 km/h (P3), 2 sprints in the last 5s, block spread 80.8 m. Block is stretched — press as a unit."
+    "text": "t+36s — ball in the defensive third; peak intensity 32.3 km/h (P13), 28 sprints in the last 5s, block spread 27.4 m. High chaos window — look for the transition outlet."
    },
    {
     "t": 42.0,
-    "text": "t+42s — ball in the attacking third; peak intensity 29.7 km/h (P1), 7 sprints in the last 5s, block spread 77.0 m. Block is stretched — press as a unit. High chaos window — look for the transition outlet."
+    "text": "t+42s — ball in the defensive third; peak intensity 32.3 km/h (P13), 14 sprints in the last 5s, block spread 25.1 m. High chaos window — look for the transition outlet."
    },
    {
     "t": 48.0,
-    "text": "t+48s — ball in the attacking third; peak intensity 27.3 km/h (P9), 9 sprints in the last 5s, block spread 72.2 m. Block is stretched — press as a unit. High chaos window — look for the transition outlet."
+    "text": "t+48s — ball in the defensive third; peak intensity 31.6 km/h (P13), 24 sprints in the last 5s, block spread 25.1 m. High chaos window — look for the transition outlet."
    },
    {
     "t": 54.0,
-    "text": "t+54s — ball in the attacking third; peak intensity 29.8 km/h (P6), 7 sprints in the last 5s, block spread 72.4 m. Block is stretched — press as a unit. High chaos window — look for the transition outlet."
+    "text": "t+54s — ball in the defensive third; peak intensity 32.1 km/h (P9), 19 sprints in the last 5s, block spread 27.3 m. High chaos window — look for the transition outlet."
    }
   ],
-  "video": "samples/demo-basketball-fs.mp4",
-  "cardFile": "sample-card-basketball.svg",
-  "badgeSuffix": " · SYNTH TRACK"
+  "video": "samples/demo-basketball-court.mp4",
+  "cardFile": "sample-card-basketball.svg"
  },
  "running": {
   "_provenance": "VERIFIED LIVE RUN 1486e74ab4de (SAM 3.1 + Muse Spark + E2B) on real footage: 'Range of Motion - Stride Length' running film (archive.org) — a single-subject film, so SAM 3.1 tracks one athlete.",

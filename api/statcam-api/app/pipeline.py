@@ -203,10 +203,22 @@ async def run_pipeline(job_id: str):
             _set(job_id, stage="track", progress=28,
                  message="SAM 3.1 tracking players…")
             try:
-                tracks = await meta.sam_track_video(src, job.get("prompt") or "track players and the ball")
+                # a fixed full-court camera sees ~28 m of court, not a 60 m
+                # broadcast frame — the width drives every meters conversion
+                is_bb = (job.get("sport") or "") == "basketball"
+                # a fixed full-court camera sees ~28 m of court, not a 60 m
+                # broadcast frame; on a small court, adjacent players sit close,
+                # so identity switches hide just under the soccer speed cap
+                vis_m = 28.0 if is_bb else None
+                mps = 9.0 if is_bb else 11.0
+                tracks = await meta.sam_track_video(
+                    src, job.get("prompt") or "track players and the ball",
+                    note_cb=lambda txt: _log(job_id, "correct", txt),
+                    visible_width_m=vis_m, max_mps=mps)
             except Exception as sam_err:  # noqa: BLE001 — degrade honestly, never dead-end
                 _log(job_id, "correct",
-                     f"SAM 3.1 unavailable ({type(sam_err).__name__}: {str(sam_err)[:120]}) — synthetic tracking used instead")
+                     f"SAM 3.1 unavailable ({type(sam_err).__name__}: "
+                     f"{' '.join(str(sam_err).split())[:120]}) — synthetic tracking used instead")
                 _set(job_id, pipeline={"track": "synthetic-fallback",
                                        "codegen": codegen_kind, "exec": exec_kind})
                 tracks = mock.mock_tracks(video_meta, seed=job_id)
@@ -243,8 +255,12 @@ async def run_pipeline(job_id: str):
         # the visible-width estimate; mock generates meters directly) and frame
         # numbers live on a 30 fps timeline — give Spark the timeline fps, not
         # the source fps, so dt math is exact.
+        # a 25 km/h sprint bar is a soccer number; on a 28 m court basketball
+        # bursts peak near 32 km/h, so bar the threshold to the sport's scale
+        is_bb = (job.get("sport") or "") == "basketball"
         codegen_meta = {"sport": job.get("sport"), "fps": 30.0,
-                        "meters_per_pixel": 1.0, "sprint_threshold_kmh": 25.0,
+                        "meters_per_pixel": 1.0,
+                        "sprint_threshold_kmh": 22.0 if is_bb else 25.0,
                         "coordinates": "x,y = tracked center point in meters; w,h = size in meters"}
         tracks_preview = tracks_path.read_text()[:6000]
         if use_spark:

@@ -3,17 +3,17 @@
 <rect x="16" y="16" width="768" height="388" rx="18" fill="none" stroke="#262C3A" stroke-width="1.5"/>
 <text x="48" y="72" fill="#0064E0" font-family="Arial" font-size="26" font-weight="800">StatCam</text>
 <text x="180" y="72" fill="#5B6472" font-family="Arial" font-size="15">MOMENT REPORT</text>
-<text x="48" y="130" fill="#F3F5F8" font-family="Arial" font-size="30" font-weight="800">Moment report</text>
-<text x="48" y="166" fill="#9CA3AF" font-family="Arial" font-size="16">Soccer · 01:00 · 50s–55s</text>
+<text x="48" y="130" fill="#F3F5F8" font-family="Arial" font-size="30" font-weight="800">Top highlight</text>
+<text x="48" y="166" fill="#9CA3AF" font-family="Arial" font-size="16">Basketball · 01:00 · 30s–35s</text>
 <rect x="48" y="200" width="220" height="120" rx="14" fill="#11141C"/>
-<text x="68" y="245" fill="#0064E0" font-family="Arial" font-size="34" font-weight="800">29.8</text>
-<text x="68" y="272" fill="#9CA3AF" font-family="Arial" font-size="13">km/h peak (P6)</text>
+<text x="68" y="245" fill="#0064E0" font-family="Arial" font-size="34" font-weight="800">32.2</text>
+<text x="68" y="272" fill="#9CA3AF" font-family="Arial" font-size="13">km/h peak (P2)</text>
 <rect x="290" y="200" width="220" height="120" rx="14" fill="#11141C"/>
-<text x="310" y="245" fill="#F3F5F8" font-family="Arial" font-size="34" font-weight="800">7</text>
+<text x="310" y="245" fill="#F3F5F8" font-family="Arial" font-size="34" font-weight="800">20</text>
 <text x="310" y="272" fill="#9CA3AF" font-family="Arial" font-size="13">sprints in window</text>
 <rect x="532" y="200" width="220" height="120" rx="14" fill="#11141C"/>
-<text x="552" y="245" fill="#F3F5F8" font-family="Arial" font-size="34" font-weight="800">76.3 m</text>
+<text x="552" y="245" fill="#F3F5F8" font-family="Arial" font-size="34" font-weight="800">27.4 m</text>
 <text x="552" y="272" fill="#9CA3AF" font-family="Arial" font-size="13">block spread</text>
-<text x="48" y="360" fill="#5B6472" font-family="Arial" font-size="12">Computed from real tracking data · </text>
+<text x="48" y="360" fill="#5B6472" font-family="Arial" font-size="12">Computed from real tracking data · peak 32.2 km/h (P2), 20 sprints, ball at 29.9 km/h, block spread 27.4 m</text>
 <text x="48" y="382" fill="#3E4654" font-family="Arial" font-size="11">StatCam BETA — SIERA Labs · point a camera at any match, get pro stats</text>
 </svg>

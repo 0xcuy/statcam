@@ -115,9 +115,11 @@ The interesting engineering is all in the seams between the three model calls.
 
 Three findings from running it against real footage shaped the adapter ([`app/providers/meta.py`](api/statcam-api/app/providers/meta.py)):
 
-- **Concepts are content-dependent.** On a 720p Premier League clip, `soccer player` returns 16 objects at 88% frame coverage while `person` returns 1–3. On an amateur sideline clip it inverts: `soccer player` returns nothing and `person` works. So the adapter walks a concept chain (`META_PLAYER_CONCEPTS`, default `soccer player,person`) and keeps the first concept that yields ≥6 objects. The same clip at 640p drops to 4.2% coverage, so frames are never downscaled before tracking.
-- **Identities switch, and the data shows it.** A re-association between two adjacent boxes appears as a physically impossible jump. Steps faster than 11 m/s are dropped from a player's path (the worst observed switch implied 302 m/s), which is what keeps distances honest.
+- **Concepts are content-dependent.** On a 720p Premier League clip, `soccer player` returns 16 objects at 88% frame coverage while `person` returns 1–3. On an amateur sideline clip it inverts: `soccer player` returns nothing and `person` works. So the adapter walks a concept chain (`META_PLAYER_CONCEPTS`, default `soccer player,person`) and keeps the first concept that yields ≥6 objects. The same clip at 640p drops to 4.2% coverage, so frames are never downscaled before tracking — except when they must be: Meta accepts the whole clip as one base64 data URL, and oversized payloads answer `413 Request Entity Too Large`, so the adapter re-encodes to ≤1280 px without audio and retries, logging the adjustment as a correction.
+- **Identities switch, and the data shows it.** A re-association between two adjacent boxes appears as a physically impossible jump. Steps faster than 11 m/s are dropped from a player's path (the worst observed switch implied 302 m/s), which is what keeps distances honest — and the cap adapts to the sport, because on a 28 m basketball court adjacent players sit close enough for switches to hide just under a soccer-tuned threshold.
 - **Crowd members track fine and mean nothing.** Objects whose median area is under 25% of the largest object's are pruned, capped at 14 tracks, because the broadcast camera's zoom changes what "small" means and a fixed pixel threshold lies.
+
+The meters conversion is sport-aware too: a fixed full-court camera sees ~28 m of court, not a 60 m broadcast frame, and every distance and speed scales off that estimate — without it, basketball speeds read roughly double.
 
 The ball is tracked like any other object and then **excluded from player KPIs** at the pipeline level — the ball travels 10+ km over a match and would win every leaderboard otherwise.
 
@@ -187,13 +189,13 @@ What works, and exactly what that means, read from the live deployment on 2026-1
 
 | Component | State | In one line |
 | --- | --- | --- |
-| Full pipeline on real footage | 🟢 **Live and verified** | SAM 3.1 → Spark → E2B ran end to end on an uploaded amateur match; KPIs physically plausible; smoke 22/22 in the live era. |
-| Three-sport demos | 🟢 **Live** | Soccer, basketball and running: real footage, audio, verified-run replays, auto-opening video above the results. |
+| Full pipeline on real footage | 🟢 **Live and verified** | SAM 3.1 → Spark → E2B ran end to end on uploaded matches across two sports; smoke 22/22 in the live era. |
+| Three-sport demos | 🟢 **Live, all real SAM tracking** | Soccer and running from verified live runs; basketball re-shot as a fixed full-court high-school camera ('MVHS vs Payson Wide Angle' by Jared Olsen, YouTube) — 15 objects at 90% coverage, no fallback, no synthetic label. |
 | Hero tracking overlay | 🟢 **Live** | Real SAM 3.1 tracks drawn over real match footage, synced to `currentTime`, camera-cut aware. |
 | Honest fallbacks | 🟢 **Live on all three stages** | Every degradation labeled; fallback paths covered by smoke tests. |
 | Chat / moments / plan / whisper | 🟢 **Live** | All computed from the job's own result; demo replays serve them from the baked verified run. |
-| Basketball demo lineage | 🟡 **Real footage, synthetic track** | The basketball clip's tracking came back unusable, so that demo honestly runs the `synthetic-fallback` label on real footage — the label is visible, the limitation is stated here too. |
-| YouTube source URLs | 🟡 **Constrained by YouTube, not by us** | Datacenter fetches hit YouTube's bot wall ("confirm you're not a bot"); direct file URLs and uploads work. |
+| Basketball demo lineage | 🟢 **Closed** | Was a synthetic track on real footage; the demo now replays a verified run where SAM 3.1 genuinely tracked the court (see Honest status above). |
+| YouTube source URLs | 🟡 **YouTube's datacenter bot-wall, handled honestly** | YouTube blocks automated downloads from server IPs. The API retries alternate player clients first; when still blocked it answers with a clear message pointing to the Upload tab or a direct video URL. Direct file URLs and uploads always work. |
 | Account system | 🟢 **Deliberately absent** | No signup, no login, nothing to leak; jobs are anonymous by design. |
 | MCP server | 🟡 **Planned** | An MCP wrapper over the job API is scoped as an optional bonus; the HTTP surface above is the complete public contract today. |
 
