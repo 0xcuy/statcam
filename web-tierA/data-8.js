@@ -44,7 +44,7 @@ window.SAMPLE_DATA = {
    "label": "Soccer",
    "fileName": "sample_soccer_real.mp4",
    "duration": "01:00",
-   "trackedLabel": "TRACKING · 11 PLAYERS",
+   "trackedLabel": "SIMULATED TRACKING · 11 PLAYERS",
    "confidence": "20.7%",
    "frames": "1,801",
    "positionsCount": "19,811",
@@ -327,7 +327,7 @@ window.SAMPLE_DATA = {
     "text": "t+54s — ball in the ?; peak intensity 39.6 km/h (P5), 5 sprints in the last 5s, block spread 24.5 m. High chaos window — look for the transition outlet."
    }
   ],
-  "video": "samples/demo-soccer-real.mp4?v=2",
+  "video": "samples/demo-soccer-fs.mp4",
   "cardFile": "sample-card-soccer.svg"
  },
  "basketball": {
@@ -348,12 +348,12 @@ window.SAMPLE_DATA = {
     {
      "t": 1793387880.4,
      "stage": "correct",
-     "text": "SAM 3.1 unavailable (HTTPStatusError: Client error '413 Request Entity Too Large' for url 'https://api.meta.ai/v1/responses'\nFor more information check: https) — synthetic tracking used instead"
+     "text": "SAM 3.1 unavailable on this clip (413 request too large) — switching to the synthetic tracker, labeled below"
     },
     {
      "t": 1793387880.4,
      "stage": "track",
-     "text": "Tracking locked: 12 objects at 97.0% confidence"
+     "text": "Synthetic tracker locked 12 simulated objects at 97.0% coverage — no live SAM boxes on this clip"
     },
     {
      "t": 1793387913.8,
@@ -373,7 +373,7 @@ window.SAMPLE_DATA = {
    "label": "Basketball",
    "fileName": "link · archive.org",
    "duration": "01:00",
-   "trackedLabel": "TRACKING · 11 PLAYERS",
+   "trackedLabel": "SIMULATED TRACKING · 11 PLAYERS",
    "confidence": "100.0%",
    "frames": "1,801",
    "positionsCount": "19,811",
@@ -654,11 +654,12 @@ window.SAMPLE_DATA = {
     "text": "t+54s — ball in the attacking third; peak intensity 29.8 km/h (P6), 7 sprints in the last 5s, block spread 72.4 m. Block is stretched — press as a unit. High chaos window — look for the transition outlet."
    }
   ],
-  "video": "samples/demo-basketball-real.mp4?v=2",
-  "cardFile": "sample-card-basketball.svg"
+  "video": "samples/demo-basketball-fs.mp4",
+  "cardFile": "sample-card-basketball.svg",
+  "badgeSuffix": " · SYNTH TRACK"
  },
  "running": {
-  "_provenance": "VERIFIED LIVE RUN 1486e74ab4de (SAM 3.1 + Muse Spark + E2B) on real footage: 'Range of Motion - Stride Length' running film (archive.org).",
+  "_provenance": "VERIFIED LIVE RUN 1486e74ab4de (SAM 3.1 + Muse Spark + E2B) on real footage: 'Range of Motion - Stride Length' running film (archive.org) — a single-subject film, so SAM 3.1 tracks one athlete.",
   "job": {
    "id": "1486e74ab4de",
    "agent_log": [
@@ -675,12 +676,12 @@ window.SAMPLE_DATA = {
     {
      "t": 1793387905.9,
      "stage": "track",
-     "text": "Tracking locked: 1 objects at 100.0% confidence"
+     "text": "Tracking locked: 1 object at 100.0% coverage"
     },
     {
      "t": 1793387905.9,
      "stage": "correct",
-     "text": "Correction: only 1 objects tracked — pitch coverage is thin, treat squad-level stats as a lower bound"
+     "text": "Correction: only 1 object tracked — this is a single-runner training film, so squad-level stats are a lower bound"
     },
     {
      "t": 1793387955.9,
@@ -700,7 +701,7 @@ window.SAMPLE_DATA = {
    "label": "Running",
    "fileName": "link · archive.org",
    "duration": "01:00",
-   "trackedLabel": "TRACKING · 1 PLAYERS",
+   "trackedLabel": "TRACKING · 1 RUNNER",
    "confidence": "28.3%",
    "frames": "1,800",
    "positionsCount": "1,800",
@@ -901,7 +902,7 @@ window.SAMPLE_DATA = {
     "text": "t+54s — ball in the ?; peak intensity 39.4 km/h (P1), 33 sprints in the last 5s, block spread 10.7 m. High chaos window — look for the transition outlet."
    }
   ],
-  "video": "samples/demo-running-real.mp4?v=2",
+  "video": "samples/demo-running-fs.mp4",
   "cardFile": "sample-card-running.svg"
  }
 };

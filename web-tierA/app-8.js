@@ -530,7 +530,7 @@
   /* ================= results ================= */
   function modeBadge(result, source) {
     if (source === "sample") return '<span class="badge sample">DEMO ' +
-      (S.sampleSport || "soccer").toUpperCase() + ' · REAL FOOTAGE · VERIFIED RUN</span>';
+      (S.sampleSport || "soccer").toUpperCase() + ' · REAL FOOTAGE · VERIFIED RUN' + (SD().badgeSuffix || "") + '</span>';
     if (result.mode === "live") return '<span class="badge live">LIVE · SAM 3.1 + SPARK</span>';
     return '<span class="badge demo">DEMO · SYNTHETIC TRACKING (NO API KEYS)</span>';
   }

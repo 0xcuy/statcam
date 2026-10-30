@@ -124,8 +124,10 @@ def health():
         "live_ready": _live_ready(),
         "meta_configured": meta.configured(),
         "e2b_configured": e2bexec.configured(),
-        "llm_configured": llm.configured(),
-        "llm_model": llm.model_name() if llm.configured() else None,
+        # the product's LLM is Muse Spark, served by the Meta key; the generic
+        # llm.* provider remains available but is not what codegen uses today
+        "llm_configured": meta.configured() or llm.configured(),
+        "llm_model": ("spark-1.3" if meta.configured() else (llm.model_name() if llm.configured() else None)),
         "providers": _providers(),
         "link_ingest": True,
         "yt_dlp": bool(yt_dlp_path()),
