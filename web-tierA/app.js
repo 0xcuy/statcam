@@ -1,6 +1,9 @@
 /* StatCam — Tier A frontend application (vanilla JS, no framework). */
 (function () {
   "use strict";
+  window.__errs = [];
+  window.addEventListener("error", function (e) { window.__errs.push("ERR: " + e.message + " @" + (e.lineno || "?")); });
+  window.addEventListener("unhandledrejection", function (e) { window.__errs.push("REJ: " + ((e.reason && e.reason.message) || e.reason)); });
 
   var S = {
     mode: null,        // 'sample' | 'job'
@@ -41,6 +44,125 @@
     })
     .catch(function () { $("mode-chip").textContent = "DEMO MODE · API OFFLINE"; });
 
+
+  /* ================= hero: real footage + real SAM 3.1 overlay ================= */
+  (function heroOverlay() {
+    var T = window.DEMO_TRACKS;
+    var vid = $("herovid"), cv = $("pitch");
+    if (!T || !T.objects || !T.objects.length || !vid || !cv) { heroSim(); return; }
+    var ctx = cv.getContext("2d");
+    var W = cv.width, H = cv.height;
+    var sx = W / T.meta.video_w, sy = H / T.meta.video_h;
+    var scale = T.meta.video_w / T.meta.visible_width_m;  // meters -> source pixels
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var started = false;
+    window.__events = [];
+    ["canplay", "loadeddata", "playing", "error", "stalled"].forEach(function (ev) {
+      vid.addEventListener(ev, function () { window.__events.push(ev + " rs=" + vid.readyState); });
+    });
+    function takeOver() {
+      window.__events.push("takeOver rs=" + vid.readyState + " started=" + started);
+      if (started || !window.__heroSimActive) return;
+      if (vid.readyState < 2) return;
+      started = true;
+      window.__heroSimActive = false;
+      window.__heroDrawOnce = draw;
+      vid.style.display = "block";
+      var p = vid.play(); if (p && p.catch) p.catch(function () {});
+      (function loop() { draw(); requestAnimationFrame(loop); })();
+    }
+    vid.addEventListener("canplay", takeOver);
+    vid.addEventListener("loadeddata", takeOver);
+    vid.addEventListener("playing", takeOver);
+    vid.addEventListener("error", function () { vid.style.display = "none"; });
+
+    function findAt(frames, f, maxGap) {
+      // interpolate between the detections bracketing the frame — smooth
+      // boxes even when SAM only samples a player intermittently
+      var prev = null, next = null;
+      for (var i = 0; i < frames.length; i++) {
+        var fr = frames[i];
+        if (fr[0] <= f && (!prev || fr[0] > prev[0])) prev = fr;
+        if (fr[0] > f && (!next || fr[0] < next[0])) next = fr;
+      }
+      if (!prev) return (next && next[0] - f <= maxGap) ? next : null;
+      if (f - prev[0] > maxGap) return null;
+      if (!next || next[0] - prev[0] > 60) return prev;
+      var a = (f - prev[0]) / (next[0] - prev[0]);
+      return [f,
+        prev[1] + (next[1] - prev[1]) * a,
+        prev[2] + (next[2] - prev[2]) * a,
+        prev[3] + (next[3] - prev[3]) * a,
+        prev[4] + (next[4] - prev[4]) * a];
+    }
+    function findOlder(frames, f, minAge) {
+      var best = null;
+      for (var i = 0; i < frames.length; i++) {
+        var fr = frames[i];
+        if (fr[0] <= f - minAge && (!best || fr[0] > best[0])) best = fr;
+      }
+      return best;
+    }
+    function arrow(x1, y1, x2, y2, col) {
+      var dx = x2 - x1, dy = y2 - y1;
+      var len = Math.hypot(dx, dy);
+      if (len < 6) return;
+      var ux = dx / len, uy = dy / len;
+      var hx = x2 + ux * 30, hy = y2 + uy * 30;
+      ctx.strokeStyle = "rgba(" + col + ",.9)";
+      ctx.fillStyle = "rgba(" + col + ",.9)";
+      ctx.lineWidth = 2.5;
+      ctx.beginPath(); ctx.moveTo(x2 - ux * 12, y2 - uy * 12); ctx.lineTo(hx, hy); ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(hx, hy);
+      ctx.lineTo(hx - ux * 9 - uy * 5, hy - uy * 9 + ux * 5);
+      ctx.lineTo(hx - ux * 9 + uy * 5, hy - uy * 9 - ux * 5);
+      ctx.closePath(); ctx.fill();
+    }
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      var f = Math.floor((vid.currentTime || 0) * 30);
+      T.objects.forEach(function (o) {
+        var isBall = o.label === "ball";
+        var now = findAt(o.frames, f, isBall ? 18 : 10);
+        if (!now) return;
+        var cx = now[1] * scale * sx, cy = now[2] * scale * sy;
+        var w = Math.max(12, now[3] * scale * sx), h = Math.max(16, now[4] * scale * sy);
+        var col = isBall ? "255,255,255" : "34,211,238";
+        ctx.strokeStyle = "rgba(" + col + ",.95)";
+        ctx.lineWidth = 2;
+        ctx.strokeRect(cx - w / 2, cy - h / 2 - 2, w, h);
+        ctx.fillStyle = "rgba(" + col + ",.95)";
+        ctx.fillRect(cx - w / 2, cy - h / 2 - 7, w, 4);
+        if (!isBall) {
+          ctx.font = "700 10px ui-monospace, monospace";
+          ctx.fillText(o.id, cx - w / 2 + 2, cy - h / 2 - 10);
+        }
+        var old = findOlder(o.frames, now[0], 15);
+        if (old) {
+          var ox = old[1] * scale * sx, oy = old[2] * scale * sy;
+          var sp = Math.hypot(cx - ox, cy - oy) / ((now[0] - old[0]) / 30) * 3.6;
+          if (sp > 6) arrow(ox, oy, cx, cy, isBall ? "255,255,255" : "34,211,238");
+          if (sp > 25) {
+            ctx.font = "800 10px ui-monospace, monospace";
+            ctx.fillStyle = "rgba(251,191,36,.95)";
+            ctx.fillText("SPRINT", cx + w / 2 + 4, cy);
+          }
+        }
+      });
+    }
+    if (reduce) {
+      vid.pause();
+      vid.style.display = "none";
+      heroSim();
+      vid.addEventListener("loadeddata", function () { vid.currentTime = 2; draw(); }, { once: true });
+      return;
+    }
+    vid.style.display = "none";     // sim runs until the real footage is buffered
+    try { heroSim(); } catch (err) { window.__errs.push("heroSim: " + err.message); }
+    try { takeOver(); } catch (err) { window.__errs.push("takeOver: " + err.message); }
+  })();
+
   /* ================= tabs ================= */
   var TABS = ["link", "upload", "sample"];
   function showTab(name) {
@@ -54,8 +176,8 @@
     $("tabbtn-" + t).addEventListener("click", function () { showTab(t); });
   });
 
-  /* ================= hero pitch animation ================= */
-  (function () {
+  /* ================= hero: sim fallback ================= */
+  function heroSim() {
     var cv = $("pitch");
     if (!cv) return;
     var ctx = cv.getContext("2d");
@@ -183,7 +305,9 @@
     if (reduce) { for (var i = 0; i < 240; i++) step(); draw(); return; }
     var frames = 0, last = performance.now();
     (function loop(now) {
-      step(); draw();
+      if (!window.__heroSimActive) return;   // overlay takes over when the real footage is ready
+      window.__simFrames = (window.__simFrames || 0) + 1;
+      try { step(); draw(); } catch (e) { window.__errs.push("sim: " + e.message); }
       frames++;
       if (now - last > 2000) {
         $("track-fps").textContent = Math.round(frames * 1000 / (now - last)) + " FPS";
@@ -191,7 +315,8 @@
       }
       requestAnimationFrame(loop);
     })(performance.now());
-  })();
+  }
+  window.__heroSimActive = true;
 
   /* ================= timeline rendering ================= */
   function timelineHtml(log, limit) {

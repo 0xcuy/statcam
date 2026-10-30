@@ -335,3 +335,23 @@ Smoke suite: API hanya berubah di mock.py (bola) — regresi cepat OK (health 20
   - Kartu share per sport: sample-card-<sport>.svg (endpoint card asli). Video disajikan statis; momen = #t fragment; whisper = bake map.
 - **Broadcast footage (Ajax) dites juga**: SAM 8 objek tapi jarak terfragmentasi (0.0 km) + bola sempat jadi "the engine" → **fix: BALL selalu dikecualikan dari KPI pemain di level pipeline**. Broadcast = tracking sulit; sideline amatir = use-case produktif (cocok dengan positioning StatCam).
 - Tombol tab sample kini 3: "▶ Demo soccer / ▶ Demo basketball / ▶ Demo running" (disabled bila bake tak ada); badge hasil "DEMO <SPORT> · REAL FOOTAGE · VERIFIED RUN".
+
+---
+
+## ADDENDUM 31 Okt 2026 (7) — HERO: FOOTAGE ASLI + OVERLAY ANALISA SAM ASLI (panah/kotak/SPRINT)
+
+**Keputusan user:** hero pakai pertandingan asli (2026, YouTube oke + credit), video harus terbuka/play, ditaruh di atas hasil, label Demo <sport>.
+
+**Hero baru:** video asli muted-loop + kanvas overlay transparan di atasnya, menggambar **data tracking SAM 3.1 ASLI** (bukan animasi): kotak cyan + label per pemain, panah kecepatan, callout SPRINT, bola putih — sinkron currentTime. Sim animasi lama tetap ada sebagai fallback (jalan dulu, lalu handoff otomatis saat video `canplay`; guard `window.__heroSimActive`).
+
+**Penemuan SAM penting:** konsep itu konten-tergantung! Klip PL 720p: `"soccer player"` = **16 objek, 88% coverage** (sementara "person" hanya 1-3!). Ajax training 640p: "soccer player" 0, "person" jalan. → `meta.py` kini **rantai konsep** `META_PLAYER_CONCEPTS="soccer player,person"`: coba berurutan sampai ≥6 objek, pakai yang terbaik. Resolusi sumber penting: JANGAN menurunkan ke 640p sebelum SAM — pemain jadi terlalu kecil (4.2% coverage di 640p vs 88% di 720p).
+
+**Footage hero:** 'The Best Goals Of The 2025/26 Premier League Season' (YouTube, unduh LOKAL karena YouTube bot-wall IP datacenter; scp ke VPS) → segmen kontinu 16s (detik 458-474 kompilasi, aksi goalmouth) → `samples/demo-pl2026-hero.mp4` (720p, 4.4MB). **Credit tampil di UI**: chip "Footage · Premier League 2025/26". User menerima risiko lisensi untuk demo + credit terlihat.
+
+**Gotcha deployment yang menghabiskan waktu (terdokumentasi ulang):**
+1. **CF edge cache mp4/js**: URL mp4 yang pernah 404→fallback index.html TER-CACHE sebagai HTML; app.js basi ter-serve ke tab baru meski origin no-cache. Solusi: **?v=N pada SEMUA aset lokal** (styles.css, app.js, sample-data.js, demo-tracks-soccer.js, video) — bump tiap deploy, disiplin lama berlaku lagi.
+2. curl -I yang 200 untuk mp4 bisa jadi fallback HTML — cek content-type, bukan status saja.
+3. rAF tidak jalan di tab IAB yang tidak terlihat — untuk verifikasi pakai hook `window.__heroDrawOnce` (satu frame paksa) + hitung pixel non-transparan (12180/6807/8658 px pada t=2/6/11 = overlay aktif).
+4. `.track-stage { aspect-ratio: 16/9 }` wajib — kanvas overlay absolut akan kolaps saat video display:none.
+
+Demo soccer sample tetap Spitfire (60s kontinu, angka sehat); hero = PL 2026 (16s wow). Smoke suite 22/22 PASS era multi-konsep.

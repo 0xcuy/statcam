@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://statcam.sieralabs.com/">
 <meta name="theme-color" content="#070A12">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
 <div class="bg-glow" aria-hidden="true"></div>
@@ -56,16 +56,19 @@
       </div>
       <p class="hero-note">What used to need a $10,000 optical rig now needs a video from your phone.</p>
     </div>
-    <div class="hero-visual" aria-hidden="true">
+    <div class="hero-visual">
       <div class="track-panel">
         <div class="track-head">
-          <span class="rec-dot"></span><span>TRACKING &middot; 11 PLAYERS</span>
+          <span class="rec-dot"></span><span id="track-title">SAM 3.1 &middot; LIVE TRACKING</span>
           <span class="track-fps" id="track-fps">30 FPS</span>
         </div>
-        <canvas id="pitch" width="560" height="350"></canvas>
+        <div class="track-stage">
+          <video id="herovid" src="samples/demo-pl2026-hero.mp4?v=2" muted loop playsinline autoplay preload="auto"></video>
+          <canvas id="pitch" width="640" height="360"></canvas>
+        </div>
         <div class="track-foot">
-          <span class="chip">SAM 3.1 &middot; vision tracking</span>
-          <span class="chip">Muse Spark &middot; match intelligence</span>
+          <span class="chip">SAM 3.1 &middot; live tracking</span>
+          <span class="chip">Footage &middot; Premier League 2025/26</span>
         </div>
       </div>
     </div>
@@ -280,7 +283,8 @@
   <div class="foot-line">StatCam <span class="beta">BETA</span> — by SIERA Labs &middot; Powered by Muse Spark + SAM 3.1</div>
 </footer>
 
-<script src="sample-data.js"></script>
-<script src="app.js"></script>
+<script src="demo-tracks-soccer.js?v=2"></script>
+<script src="sample-data.js?v=2"></script>
+<script src="app.js?v=2"></script>
 </body>
 </html>

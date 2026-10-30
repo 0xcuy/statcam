@@ -28,7 +28,12 @@ import httpx
 BASE_URL = os.environ.get("META_API_BASE", "https://api.meta.ai/v1")
 SPARK_MODEL = os.environ.get("META_SPARK_MODEL", "muse-spark-1.3")
 SAM_MODEL = os.environ.get("META_SAM_MODEL", "sam-3.1")
-PLAYER_CONCEPT = os.environ.get("META_PLAYER_CONCEPT", "person")
+# Concept chain tried in order until one yields enough objects —
+# vocabulary is content-dependent ("soccer player" hits broadcast football,
+# "person" hits amateur sideline footage).
+PLAYER_CONCEPTS = [c.strip() for c in os.environ.get(
+    "META_PLAYER_CONCEPTS", "soccer player,person").split(",") if c.strip()]
+PLAYER_CONCEPT = PLAYER_CONCEPTS[0]  # kept for result notes
 BALL_CONCEPT = os.environ.get("META_BALL_CONCEPT", "soccer ball")  # "" disables ball call
 VISIBLE_WIDTH_M = float(os.environ.get("META_VISIBLE_WIDTH_M", "60.0"))  # rough scale estimate
 
@@ -204,9 +209,17 @@ async def sam_track_video(video_path: Path, prompt: str) -> dict:
     """
     w, h, fps = _probe_stream(video_path)
     mpp = VISIBLE_WIDTH_M / max(w, 1)
-    text = await _sam_text(PLAYER_CONCEPT, video_path)
-    tracks, frames_with, total = _parse_sam_text(text, fps, mpp)
-    tracks = _prune_background(tracks)
+    best = ([], 0, 0, PLAYER_CONCEPTS[0])
+    for concept in PLAYER_CONCEPTS:
+        text = await _sam_text(concept, video_path)
+        cand = _parse_sam_text(text, fps, mpp)
+        cand_pruned = _prune_background(json.loads(json.dumps(cand[0])))
+        if len(cand_pruned) > len(best[0]):
+            best = (cand[0], cand[1], cand[2], concept)
+        if len(cand_pruned) >= 6:
+            break
+    tracks, frames_with, total, used_concept = best
+    tracks = _prune_background(json.loads(json.dumps(tracks)))
     if BALL_CONCEPT:
         try:
             btext = await _sam_text(BALL_CONCEPT, video_path)
@@ -220,7 +233,7 @@ async def sam_track_video(video_path: Path, prompt: str) -> dict:
             pass  # ball is optional — never fail the job over it
     return {"tracks": tracks, "confidence": round(frames_with / max(total, 1), 3),
             "mock": False,
-            "note": (f"SAM 3.1 live tracking — concepts: {PLAYER_CONCEPT}"
+            "note": (f"SAM 3.1 live tracking — concepts: {used_concept}"
                      f"{' + ' + BALL_CONCEPT if BALL_CONCEPT else ''}; "
                      f"meters estimated from ~{VISIBLE_WIDTH_M:.0f} m visible width")}
 
