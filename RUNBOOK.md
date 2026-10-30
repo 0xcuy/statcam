@@ -387,3 +387,13 @@ Demo soccer sample tetap Spitfire (60s kontinu, angka sehat); hero = PL 2026 (16
 - **Bola jadi bintang overlay** (data bola terlacak justru menembus cut kamera: t=4.9-11.6): trail cyan memudar 3 detik + glow ring + panah tebal — "gerakan ke bola pas shot". Kotak pemain tetap ada saat deteksi ada.
 - Bug fix: sisa referensi `isBall` di loop pemain (ReferenceError mematikan draw — tertangkap oleh hook __errs, terverifikasi cepat berkat instrumentation).
 - Verifikasi pixel: t=7 → 9.436 px, t=8.5 → 10.641, t=11 → 9.498. app.js ?v=7.
+
+---
+
+## ADDENDUM 31 Okt 2026 (11) — AKAR "KOTAK HILANG SAAT TENDANGAN": ZOOM, BUKAN CUT
+
+**Keluhan user (disertai screenshot): penendang tanpa kotak.** Diagnosa: transisi di detik ~11 BUKAN hard cut melainkan **ZOOM cepat** — deteksi cut frame-diff saya membaca diff tinggi BERKELANJUTAN sebagai cut → kotak dibersihkan terus-menerus sepanjang zoom = penendang telanjang.
+
+**Fix:** deteksi cut kini hanya bereaksi pada **SPIKE** (diff > 40 tepat setelah frame tenang < 15). Zoom/pan = diff tinggi berkelanjutan → kotak DIPERTAHANKAN (data SAM memang men track through zoom). Verifikasi pixel: t=10.5 → 10.822, t=11.5 → 9.683, t=12 → 9.083 (sebelumnya 0). app.js ?v=8.
+
+**Pelajaran:** bedakan CUT (spike — clear sekali) dari KAMERA GERAK (sustained — biarkan); frame-diff polos tidak bisa membedakan keduanya.

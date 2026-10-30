@@ -130,8 +130,11 @@
     var diffCv = document.createElement("canvas");
     diffCv.width = 32; diffCv.height = 18;
     var dctx = diffCv.getContext("2d", { willReadFrequently: true });
-    var prevPix = null;
+    var prevPix = null, prevDiff = 0;
     function isCameraCut() {
+      // clear boxes only on a hard-cut SPIKE (huge diff right after a calm
+      // frame). Sustained high diff = camera zoom/pan — SAM tracked through
+      // it, so the boxes stay.
       try {
         dctx.drawImage(vid, 0, 0, 32, 18);
         var px = dctx.getImageData(0, 0, 32, 18).data;
@@ -141,8 +144,10 @@
             diff += Math.abs(px[i] - prevPix[i]) + Math.abs(px[i+1] - prevPix[i+1]) + Math.abs(px[i+2] - prevPix[i+2]);
           }
           diff /= px.length / 4;
+          var wasCalm = prevDiff < 15;
+          prevDiff = diff;
           prevPix = px;
-          return diff > 40;   // scene cut — old boxes would float on the new shot
+          return diff > 40 && wasCalm;
         }
         prevPix = px;
       } catch (e) {}
