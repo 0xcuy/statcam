@@ -243,7 +243,15 @@ async def run_pipeline(job_id: str):
         _set(job_id, stage="execute", progress=72,
              message=f"Crunching {n_tracks} trajectories…")
         if use_e2b:
-            stats = await asyncio.to_thread(e2bexec.run_analysis, code, tracks)
+            try:
+                stats = await asyncio.to_thread(e2bexec.run_analysis, code, tracks)
+            except Exception as e2b_err:  # noqa: BLE001 — degrade honestly, never dead-end the demo
+                _log(job_id, "execute",
+                     f"E2B sandbox unavailable ({type(e2b_err).__name__}: {str(e2b_err)[:120]}) — executed locally instead")
+                _set(job_id, pipeline={"track": track_kind, "codegen": codegen_kind,
+                                       "exec": "local-fallback"})
+                stats = await asyncio.to_thread(
+                    mock.run_local, code, job_dir(job_id), tracks)
         else:
             # Local exec for test/debug: the code runs isolated in this container
             # (60s timeout). Only model output from a user-chosen key ever runs here.

@@ -499,6 +499,15 @@
       '<video id="livevid" controls preload="metadata" src="' + videoSrc + '"></video>' +
       '<div class="tick" id="livetick">waiting for playback…</div></div>';
     var vid = $("livevid"), tick = $("livetick");
+    var attemptPlay = function () {
+      var p = vid.play();
+      if (p && p.catch) p.catch(function () {
+        vid.muted = true;
+        var p2 = vid.play();
+        if (p2 && p2.catch) p2.catch(function () {});
+      });
+    };
+    attemptPlay();
     var whisperAt = function (t) {
       if (sample) {
         var best = null;

@@ -53,10 +53,11 @@ def computed_answer(job: dict, message: str) -> str:
         return (f" (segment {seg.get('start_s', 0):.0f}–{seg.get('end_s', 0):.0f}s "
                 f"of a {seg.get('raw_duration_s', 0):.0f}s video)")
 
-    if any(k in q for k in ("distance", "jarak", "km", "ran", "lari", "cover")):
+    if any(k in q for k in ("distance", "jarak", "km", "ran", "lari", "cover",
+                            "hardest", "workrate", "work rate", "engine", "kerja", "banyak")):
         return (f"{top.get('id', 'P1')} covered the most ground: {_fmt_km(top.get('distance_m', 0))} "
-                f"in the analyzed segment{segtxt()}. Squad median was {_fmt_km(med)} — the spread "
-                f"from most to least active is {_fmt_km(max(0, gap))}.")
+                f"in the analyzed segment{segtxt()} — the engine of this team. Squad median was "
+                f"{_fmt_km(med)} — the spread from most to least active is {_fmt_km(max(0, gap))}.")
     if any(k in q for k in ("speed", "fast", "cepat", "km/h", "sprint")):
         return (f"Top speed: {fast.get('id', 'P1')} at {fast.get('top_speed_kmh', 0):.1f} km/h. "
                 f"{spr.get('id', 'P1')} recorded the most sprints ({spr.get('sprints', 0)}); "
@@ -81,12 +82,23 @@ def computed_answer(job: dict, message: str) -> str:
     if any(k in q for k in ("how", "work", "cara", "pipeline", "sam", "spark", "track")):
         pipe = result.get("pipeline") or {}
         mode = result.get("mode", "?")
+        if mode == "live":
+            state = "Running fully live on SAM 3.1 + Spark + E2B."
+        else:
+            bits = []
+            if pipe.get("track") != "sam-3.1":
+                bits.append("tracking is synthetic (SAM 3.1 key not set yet)")
+            if pipe.get("codegen") == "mock":
+                bits.append("stats code is the bundled template (no Spark/LLM key yet)")
+            if str(pipe.get("exec", "")).startswith("e2b"):
+                bits.append("execution runs in the E2B sandbox")
+            else:
+                bits.append("execution runs locally on this server")
+            state = ("The numbers are real computations over the tracked trajectories — "
+                     + "; ".join(bits) + ".")
         return (f"Pipeline: ingest → frames → track ({pipe.get('track', '?')}) → codegen "
                 f"({pipe.get('codegen', '?')}) → execute ({pipe.get('exec', '?')}). "
-                f"Mode: {mode}. "
-                + ("Meta/E2B keys are not set yet, so tracking is synthetic — the numbers are real "
-                   "computations over synthetic trajectories. With keys, the same flow runs SAM 3.1 + Spark."
-                   if mode != "live" else "Running fully live on SAM 3.1 + Spark + E2B."))
+                f"Mode: {mode}. " + state)
     if any(k in q for k in ("confidence", "akurat", "accurate")):
         return (f"Tracking confidence reported: {result.get('confidence', '?')}. "
                 f"Preview frames prove the video was really ingested; every stat is computed "

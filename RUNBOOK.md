@@ -273,3 +273,28 @@ Smoke suite: API hanya berubah di mock.py (bola) — regresi cepat OK (health 20
 3. **Dockerfile web dirapikan**: buang printf rapuh (quote CSP pecahkan shell) → `COPY out/nginx-default.conf /etc/nginx/conf.d/default.conf` (conf ter-commit di out/).
 
 **BUG SAYA SENDIRI saat deploy (tercatat sebagai peringatan):** versi pertama rate limiter memanggil `_rate_limited(request, …)` di `create_job` TANPA menambahkan parameter `request: Request` → NameError → semua POST /api/jobs 500 selama ±10 menit sampai fix ter-deploy. Pelajaran: endpoint FastAPI yang menyentuh `request` WAJIB mendeklarasikan parameternya; jalankan smoke suite SEBELUM docker restart, bukan sesudah, saat mengubah signature endpoint.
+
+---
+
+## ADDENDUM 31 Okt 2026 (4) — KEYS E2B TERPASANG + STRESS TEST VIDEO/LINK SUNGGUHAN
+
+**Keys (user memberikan via chat — ROTASI setelah hackathon):**
+- **E2B_API_KEY: AKTIF** — `/data/.env` (chmod 600, volume `/opt/siera-statcam-api/data`; GOTCHA: tulis di HOST PATH volume `/opt/siera-statcam-api/data/.env`, bukan `/data/.env` di host — itu direktori liar yang bahkan pernah saya buat tak sengaja, sudah dibersihkan). Health: `e2b:true, providers.exec=e2b`, mode job jadi "test" (synthetic + mock + e2b). `live_ready` masih false (butuh META_API_KEY).
+- **LLM_API_KEY (prefix `LLM_…`): DISIMPAN, TIDAK AKTIF** — format bukan OpenAI; tanpa LLM_BASE_URL yang benar ia akan menembak api.openai.com dan 401. Tersimpan sebagai `PENDING_LLM_API_KEY` di /data/.env (tak dibaca loader) + di file keys. **Menunggu user sebut provider/base URL + model.**
+- Penyimpanan: VPS `/data/.env` + `/root/siera-private/statcam-keys.env` (600); lokal `secrets/statcam-keys.env` (600, **gitignored** — plaintext keys TIDAK masuk git karena repo akan di-push GitHub; git hanya berisi `secrets/README.md` fingerprint SHA-256).
+
+**Hardening pipeline (commit API terkait):** exec E2B gagal → **fallback jujur ke lokal** (log "E2B sandbox unavailable (…) — executed locally instead" + relabel `pipeline.exec="local-fallback"`) — demo tidak pernah mati gara-gara sandbox/quota.
+
+**STRESS TEST VIDEO & LINK SUNGGUHAN (2 job paralel, keduanya SUKSES via sandbox E2B beneran):**
+- **Link sungguhan**: `PDL Soccer – Sioux Fall Spitfire at Springfield Storm (archive.org, 6.7MB, 204s)` → unduh 3%, **self-correction nyata terpicu** ("source runs at 15 fps — tracking resolution reduced"), segmen 0–120s, E2B exec → DONE (P4 0.3 km, top 30 km/h, 34 sprints).
+- **Upload sungguhan**: `Ajax v Real Madrid 2019.webm` (Commons, 12.4MB, 25 fps) → DONE paralel (P11 0.4 km, 32.2 km/h, 62 sprints).
+- Driver test: `/tmp/statcam_stress.py` di dalam container (POST/poll urllib; host `localhost:8000` = Coolify — API hanya reachable di dalam docker network).
+
+**Temuan jujur ingest eksternal (31 Okt):**
+- **YouTube: BOT-WALL dari IP datacenter** ("Sign in to confirm you're not a bot" — yt-dlp). Jalur YouTube TIDAK bisa diandalkan saat ini; jangan demo jalur YouTube tanpa dicek dulu. (21 Okt masih jalan — reputasi IP berubah.)
+- **Wikimedia Commons: 429 dari IP datacenter** (policy UA mereka). Solusi kerja: unduh di jaringan rumah → upload sebagai file.
+- **archive.org: aman** dari IP datacenter — sumber link sungguhan terbaik untuk demo/test.
+
+**Fix chat.py (terverifikasi):** intent workload baru ("hardest/workrate/engine/kerja" → jawaban top-distance "the engine of this team"); teks "how does this work" kini sadar-konfigurasi (tidak lagi salah bilang "keys are not set" saat E2B aktif — menyebut kondisi per-stage yang sebenarnya).
+
+**FE: autoplay live replay (request user "tinggal play"):** klik ▶ Live replay → video langsung diputar (fallback muted bila autoplay-policy menolak). Terverifikasi browser: paused=false seketika, ticker jalan.
