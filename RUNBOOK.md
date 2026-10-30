@@ -479,3 +479,9 @@ Demo soccer sample tetap Spitfire (60s kontinu, angka sehat); hero = PL 2026 (16
 **YouTube (bot-wall datacenter):** cobalt v7 mati + v10 butuh auth; invidious/piped mayoritas mati atau kena bot-wall yang SAMA. Solusi: yt-dlp retry dengan `--extractor-args youtube:player_client=tv_embedded,web_embedded,android_vr`; kalau tetap kena → error message menuntun ke Upload tab / direct URL. IP residensial (device user) TIDAK kena bot-wall. README row tetap 🟡 dengan perilaku baru.
 
 **Deploy:** FE (data-8.js + demo-basketball-court.mp4 23MB + card svg) + API (meta/pipeline/ingest). Smoke 22/22 PASS. Verifikasi browser: badge "DEMO BASKETBALL · REAL FOOTAGE · VERIFIED RUN" (SYNTH TRACK HILANG), log runtut, replay 60s jalan.
+
+---
+
+## ADDENDUM 31 Okt 2026 (28) — URL TAB PANDU YOUTUBE SECARA PROAKTIF
+
+**User: "video downloader orang malah aman, jadi buat apa url itu fungsinya."** Fungsi URL tab = direct video URL (selalu jalan — terbukti smoke test link job) + halaman sosial via yt-dlp (sebagian jalan). YouTube = diblokir YouTube sendiri terhadap IP server. Sekarang URL tab **mendeteksi paste link YouTube dan langsung menampilkan hint amber**: "YouTube blocks automated downloads from server IPs for many videos. If this fails, save the video on your device and use the Upload tab — or paste a direct video URL." Ekspektasi dibentuk SEBELUM gagal; error backend tetap menuntun di err-box. Deploy terverifikasi browser (hint muncul di bawah input).
