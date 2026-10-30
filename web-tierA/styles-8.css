@@ -431,3 +431,5 @@ section { scroll-margin-top: 84px; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+.url-hint{font-size:12px;color:#F5C26B;line-height:1.5;margin-top:8px}

@@ -405,6 +405,9 @@
   /* ================= submit: link ================= */
   $("go-link").addEventListener("click", submitLink);
   $("url").addEventListener("keydown", function (e) { if (e.key === "Enter") submitLink(); });
+  $("url").addEventListener("input", function () {
+    $("url-hint").hidden = !/(?:youtube\.com|youtu\.be)/i.test($("url").value);
+  });
   function submitLink() {
     var url = $("url").value.trim();
     if (!url) { renderError("Paste a video link first."); return; }
