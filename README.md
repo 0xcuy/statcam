@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://statcam.sieralabs.com"><img src="web-tierA/samples/sample-card-soccer.svg" width="100%" alt="StatCam. Broadcast-grade sports analytics from ordinary footage. A Meta SAM 3.1 tracker follows every player and the ball, Muse Spark writes the analysis code, and a sandbox executes it. Live at statcam.sieralabs.com."></a>
+  <a href="https://statcam.sieralabs.com"><img src="web-tierA/sample-card-soccer.svg" width="100%" alt="StatCam. Broadcast-grade sports analytics from ordinary footage. A Meta SAM 3.1 tracker follows every player and the ball, Muse Spark writes the analysis code, and a sandbox executes it. Live at statcam.sieralabs.com."></a>
 </p>
 
 <h1 align="center">StatCam</h1>
