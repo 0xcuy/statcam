@@ -438,3 +438,27 @@ Demo soccer sample tetap Spitfire (60s kontinu, angka sehat); hero = PL 2026 (16
 **README.md** (gaya adexto: banner SVG, badge flat-square, subnav, tabel The loop, Mermaid Architecture, Start here 3 kolom ikon, deep-dive per stage dengan angka nyata, tabel Honest fallbacks, Honest status 🟢🟡, tabel API, Security, Local development, tabel layout repo) + LICENSE MIT © 2026 SIERA Labs + docs/icons/*.svg. Scan secrets tracked files = BERSIH (pola e2b_/LLM_/PRIVATE KEY/karakteristik key: 0 hitam).
 
 **Push:** `GIT_ASKPASS=... git push -u origin master:main` — HEAD `b7150dc` terverifikasi sama di GitHub.
+
+---
+
+## ADDENDUM 31 Okt 2026 (26) — TIGA CACAT JURI + REGRESI HERO: SEMUA DARI FILE LOKAL YANG BASI
+
+**Laporan user: (1) log basketball kontradiksi "SAM 3.1 unavailable (413)" lalu "Tracking locked: 12 objects"; (2) LIVE REPLAY di dashboard demo blank+buffering di 0:00; (3) running cuma 1 objek. + health `llm_configured: false`. Lalu MID-TURN: "hero makin parah, kotak di header".**
+
+**Cacat 2 (replay blank) — akar ganda:**
+- `demo-basketball-real.mp4` 27MB dengan **moov atom di AKHIR** (bukan faststart) + server tidak menjawab 206 Range (CF REVALIDATED, nginx conf tak men-chunk) → browser harus unduh 27MB penuh sebelum frame pertama → buffering abadi. Hero 4.9MB selamat karena kecil.
+- Fix: remux `-c copy -movflags +faststart` semua video → nama baru `*-fs.mp4` + `hero-pl1031-fs.mp4`, refs di index.html/data-8.js diganti.
+
+**REGRESI HERO (paling penting):** remux dipakai dari file LOKAL — dan `hero-pl1031.mp4` lokal = **16.0s STALE** (hasil re-cut 7.36s kemarin hanya di-deploy ke server, TIDAK PERNAH balik ke repo lokal yang di-commit!). Data tracking 7.3s diputar di atas video 16s → kotak melayang nyasar ("makin parah", "kotak di header"). MD5 bukti: lokal f6f38bae (16s, 5.1MB) vs server d9e8dcb7 (7.36s, 1.79MB). Juga ketahuan dari UI: durasi video hero terbaca **0:16** di player (harusnya 0:07).
+- Fix: tarik 4 file asli dari server (hero + 3 demo) → lokal, remux ulang → deploy ulang. Verifikasi browser: durasi 0:07, kotak nempel di pemain di frame goalmouth.
+- **PELAJARAN KERAS: sebelum sentuh aset media, BANDINGKAN MD5 lokal vs server. File yang di-deploy = ground truth. Setelah deploy aset, sinkronkan balik ke repo lokal HARI ITU.** Commit d652e52 ("audio on all demo/hero") ternyata tak pernah sampai ke server untuk soccer — server soccer tanpa stream audio; yang benar = versi git (aac).
+
+**Cacat 1 (log kontradiksi):** teks stage `correct` dibersihkan ("SAM 3.1 unavailable on this clip (413 request too large) — switching to the synthetic tracker, labeled below"), stage `track` kini jujur atribut: "Synthetic tracker locked 12 simulated objects at 97.0% coverage — no live SAM boxes on this clip"; trackedLabel → "SIMULATED TRACKING · 11 PLAYERS"; badge sample basketball + `badgeSuffix: " · SYNTH TRACK"` (app-8.js membaca SD().badgeSuffix).
+
+**Cacat 3 (running):** correction text kini jelas "single-runner training film"; trackedLabel "TRACKING · 1 RUNNER"; provenance ditambah alasan single-subject. (Tetap jujur, bukan disembunyikan.)
+
+**Health:** `llm_configured` lama = provider generik LLM_API_KEY (tak terpasang) → false padahal live. Sekarang = `meta.configured() or llm.configured()`, model = spark-1.3 via kunci Meta. Smoke 22/22 tetap PASS.
+
+**CF penting:** asset kini dilayani `Cache-Control: no-cache` → cf-cache-status REVALIDATED → **timpa nama file sama di origin LANGSUNG terpropagasi** (ETag revalidation). Rename hanya perlu jika konten berubah di bawah conf LAMA (sebelum no-cache). Query string tetap diabaikan CF.
+
+**Kuota Spark (pertanyaan user):** sample/demo mode = 0 panggilan API kecuali /api/health — chat/moments/plan/whisper/replay semua dari data bake (audit fetch() di app-8.js: semua path sample ter-guard `S.mode === "sample"`). Spark hanya jalan saat user menganalisis video/link sendiri.
