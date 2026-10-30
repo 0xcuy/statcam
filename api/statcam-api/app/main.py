@@ -1,5 +1,6 @@
 """StatCam backend — video upload -> SAM 3.1 tracking -> Spark codegen -> E2B execute."""
 import os
+import threading
 import time
 import uuid
 from pathlib import Path
@@ -15,6 +16,43 @@ from .providers import e2bexec, llm, meta
 ADMIN_TOKEN = os.environ.get("ADMIN_TOKEN", "")
 KEYS_FILE = Path("/data/.env")
 SAVABLE_KEYS = ("META_API_KEY", "E2B_API_KEY", "LLM_API_KEY", "LLM_BASE_URL", "LLM_MODEL")
+
+# ---- rate limiting (best-effort anti brute-force / anti disk-fill) ---------
+# Real client IP: Cloudflare sets CF-Connecting-IP; Traefik appends to
+# X-Forwarded-For. Loopback is exempt (smoke suite + local checks).
+RATE_LOCK = threading.Lock()
+RATE: dict[str, list[float]] = {}
+
+
+def _client_ip(request: Request) -> str:
+    cip = request.headers.get("cf-connecting-ip")
+    if cip:
+        return cip.strip()
+    xff = request.headers.get("x-forwarded-for")
+    if xff:
+        return xff.split(",")[-1].strip()
+    return request.client.host if request.client else "unknown"
+
+
+def _loopback(ip: str) -> bool:
+    return ip in ("127.0.0.1", "::1", "testclient") or ip.startswith("127.") or ip.startswith("::ffff:127.")
+
+
+def _rate_limited(request: Request, bucket: str, limit: int, window_s: float) -> bool:
+    ip = _client_ip(request)
+    if _loopback(ip):
+        return False
+    now = time.time()
+    with RATE_LOCK:
+        hits = [t for t in RATE.get(f"{bucket}:{ip}", []) if now - t < window_s]
+        hits.append(now)
+        RATE[f"{bucket}:{ip}"] = hits
+        glob = [t for t in RATE.get(f"{bucket}:__all__", []) if now - t < window_s]
+        glob.append(now)
+        RATE[f"{bucket}:__all__"] = glob
+    if len(hits) > limit:
+        return True
+    return len(glob) > limit * 6  # cap against XFF spoof-rotation
 
 
 def _keys_page(saved_msg: str) -> str:
@@ -58,6 +96,15 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.middleware("http")
+async def security_headers(request: Request, call_next):
+    response = await call_next(request)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    return response
 
 
 def _providers():
@@ -135,6 +182,8 @@ def keys_form(saved: int = 0):
 
 @app.post("/admin/keys")
 async def keys_save(request: Request):
+    if _rate_limited(request, "keys", limit=8, window_s=900):
+        raise HTTPException(429, "too many attempts — wait 15 minutes")
     form = await request.form()
     if not ADMIN_TOKEN or form.get("token") != ADMIN_TOKEN:
         return HTMLResponse(
@@ -159,6 +208,7 @@ async def keys_save(request: Request):
 
 @app.post("/api/jobs")
 async def create_job(
+    request: Request,
     background_tasks: BackgroundTasks,
     video: UploadFile | None = File(None),
     sport: str = Form("soccer"),
@@ -168,6 +218,8 @@ async def create_job(
     seg_start: float = Form(0.0),
     seg_end: float = Form(0.0),
 ):
+    if _rate_limited(request, "jobs", limit=12, window_s=300):
+        raise HTTPException(429, "too many analyses from this address — wait 5 minutes")
     if video is None and not source_url.strip():
         raise HTTPException(400, "provide a video file or source_url")
     if video is not None and source_url.strip():

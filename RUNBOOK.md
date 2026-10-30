@@ -257,3 +257,19 @@ Regresi penuh setelah deploy: chat/plan/moments 200, nol traceback baru.
 **Bug ditemukan saat verifikasi & fix:** atribut `hidden` TIDAK berefek pada elemen ber-class (`.btn{display:inline-flex}` menang atas UA `[hidden]{display:none}`) — tombol "View analysis code" bocor tampil di mode sample. Fix: `[hidden]{display:none!important}` di styles.css. Verifikasi: sebelum play → results + codebtn none; setelah play sample → codebtn tetap none, 3 KPI tampil, 0 error.
 
 Smoke suite: API hanya berubah di mock.py (bola) — regresi cepat OK (health 200 internal + publik).
+
+---
+
+## ADDENDUM 31 Okt 2026 (3) — AUDIT KEAMANAN PRA-KEYS + HARDENING (request user: "cek semua keamanan webnya dan key jangan ekpose ke publik")
+
+**Hasil audit (semua bersih):**
+- **Tidak ada nilai key di mana pun**: scan semua history git (API + web + lokal mirror) untuk pola mk-…/e2b_…/sk-…/ADMIN_TOKEN= → hanya nama variabel & dokumentasi. Tidak ada file .env liar di luar /data (VPS + lokal). ADMIN_TOKEN terpasang di container (SET, tidak dicetak nilainya — aturan keys-via-chat tetap).
+- Jalur `/admin/keys`: GET menampilkan status (sudah terpasang ✅) tanpa nilai; POST 401 untuk token salah (terverifikasi publik); key ditulis ke `/data/.env` chmod 600; `/api/health` hanya boolean configured. Frontend baru tidak pernah menyentuh key (relative /api saja). Kunci TIDAK masuk git (data volume terpisah dari repo).
+- SSRF guard, cap 200 MB, job id 12-hex tak terduga — semua dari audit 21 Okt tetap berlaku.
+
+**Hardening baru (deploy + diverifikasi):**
+1. **Rate limit per-IP** (thread-safe, in-memory): `POST /admin/keys` = 8/15 menit (anti brute-force ADMIN_TOKEN — vektor nyata: penyerang yang menebak token bisa MENIMPA key dengan miliknya dan mengalirkan tracks.json ke sandbox E2B penyerang); `POST /api/jobs` = 12/5 menit + cap global 72/5 menit (anti disk-fill). Loopback dikecualikan (smoke suite). IP klien: CF-Connecting-IP → entri terakhir XFF → client.host. **Terverifikasi publik: 12× 400 lalu 429; keys salah tetap 401.**
+2. **Security headers**: web (nginx): CSP `default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self' blob:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'` + XCTO nosniff + XFO DENY + Referrer-Policy; API (middleware FastAPI): XCTO + XFO + Referrer-Policy. Terverifikasi publik di kedua domain; browser re-test: kanvas + sample + 0 error.
+3. **Dockerfile web dirapikan**: buang printf rapuh (quote CSP pecahkan shell) → `COPY out/nginx-default.conf /etc/nginx/conf.d/default.conf` (conf ter-commit di out/).
+
+**BUG SAYA SENDIRI saat deploy (tercatat sebagai peringatan):** versi pertama rate limiter memanggil `_rate_limited(request, …)` di `create_job` TANPA menambahkan parameter `request: Request` → NameError → semua POST /api/jobs 500 selama ±10 menit sampai fix ter-deploy. Pelajaran: endpoint FastAPI yang menyentuh `request` WAJIB mendeklarasikan parameternya; jalankan smoke suite SEBELUM docker restart, bukan sesudah, saat mengubah signature endpoint.
