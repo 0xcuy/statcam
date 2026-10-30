@@ -505,3 +505,7 @@ Demo soccer sample tetap Spitfire (60s kontinu, angka sehat); hero = PL 2026 (16
 **QC pada OUTPUT:** strip 12 frame = kronologi benar; cropdetect = penuh 1280:720:0:0 (no letterbox); audio mean -21dB max -0.7dB (no clip). Timeline VO (10 line, offset presisi per segmen) total speech 57.1s.
 
 **Catatan proses:** user sempat marah karena aku salah baca pesan "Lanjut...8 detik" sebagai lampu hijau film SEBELUM brief final datang — film pertama (tanpa kartu/narasi) dibuang; yang ini dibuat SETELAH brief lengkap. Take basketball/running (frames2) tidak dipakai — user minta fokus soccer berkotak.
+
+### ADDENDUM 29b — VOICE: APOLLO DITOLAK USER ("kaya robot") → **ARCAS** (male conversational)
+
+User menolak suara Apollo (robotik) DAN menolak suara cewek — final = **aura-2-arcas-en** (male conversational). VO di-rebuild dgn offset baru (vo-arcas/, total speech 49s), gain VO 2.2 + musik 0.18 supaya suara maju (mix: VO window -21.7dB, max -0.7). Kalau mau swap voice lagi: satu command curl ganti `model=aura-2-<voice>-en` (male: arcas/orion/zeus/perseus · female: thalia/andromeda/helena), lalu `bash /tmp/statcam-film/assemble.sh`. Material lengkap /tmp/statcam-film/ (frames1-4, cards, vo, sfx, assemble.sh).
