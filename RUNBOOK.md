@@ -420,3 +420,21 @@ Demo soccer sample tetap Spitfire (60s kontinu, angka sehat); hero = PL 2026 (16
 - **Semua aset hero pakai NAMA FILE BARU** (query-string dihindari sepenuhnya): `app-8.js`, `styles-8.css`, `data-8.js`, `tracks-8.js`, `samples/hero-pl1031.mp4` (7.3s + audio). Video dan data kini dari pasangan yang sama — round-trip meter→px eksak → kotak dijamin nempel.
 - `findAt` diperketat: interpolasi hanya gap ≤18 frame (0.6s), hold ≤10 frame (0.33s) — kotak menempel, tidak melayang saat pemain bergerak cepat.
 - Verifikasi visual per frame (t=2.5): kotak nempel di pemain goalmouth, bola glow, SPRINT callout, dur 7.36, nol error.
+
+---
+
+## ADDENDUM 31 Okt 2026 (25) — REPO PUBLIK GITHUB: 0xcuy/statcam (README gaya adexto)
+
+**Perintah user: "cek adexto disana ada token github, readmenya samakan gayanya dan juga gaya tulisan dan gaya Architecture, buat repo barunya statcam".**
+
+**Token:** file `/home/cucu/Coder/Work/token github 0xcuy` (dipakai via askpass `/home/cucu/.adexto-askpass.sh` → username `0xcuy`). NILAI TOKEN TIDAK PERNAH ditampilkan di chat/log. Scope full repo — ROTATE setelah hackathon.
+
+**Repo:** https://github.com/0xcuy/statcam — PUBLIC, default branch `main`, deskripsi + homepage + 8 topics (sports-analytics, computer-vision, meta-ai, segment-anything, fastapi, video-analysis, hackathon, honest-ai) di-set via REST API.
+
+**Persiapan push (2 hal yang hampir gagal):**
+- `backups/statcam-master-local.bundle` = 100.77 MB > hard limit GitHub 100 MB/file → `git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch backups'` (strip dari SELURUH history; blob terbesar tersisa 29.6 MB). `backups/` masuk .gitignore; bundle tetap aman di disk.
+- Prune 6 video sampel tak terreferensi (era simulasi + hero lama): hanya `hero-pl1031.mp4` + `demo-{soccer,basketball,running}-real.mp4` yang dipakai frontend.
+
+**README.md** (gaya adexto: banner SVG, badge flat-square, subnav, tabel The loop, Mermaid Architecture, Start here 3 kolom ikon, deep-dive per stage dengan angka nyata, tabel Honest fallbacks, Honest status 🟢🟡, tabel API, Security, Local development, tabel layout repo) + LICENSE MIT © 2026 SIERA Labs + docs/icons/*.svg. Scan secrets tracked files = BERSIH (pola e2b_/LLM_/PRIVATE KEY/karakteristik key: 0 hitam).
+
+**Push:** `GIT_ASKPASS=... git push -u origin master:main` — HEAD `b7150dc` terverifikasi sama di GitHub.
