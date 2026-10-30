@@ -202,7 +202,14 @@ async def run_pipeline(job_id: str):
         if use_sam:
             _set(job_id, stage="track", progress=28,
                  message="SAM 3.1 tracking players…")
-            tracks = await meta.sam_track_video(src, job.get("prompt") or "track players and the ball")
+            try:
+                tracks = await meta.sam_track_video(src, job.get("prompt") or "track players and the ball")
+            except Exception as sam_err:  # noqa: BLE001 — degrade honestly, never dead-end
+                _log(job_id, "correct",
+                     f"SAM 3.1 unavailable ({type(sam_err).__name__}: {str(sam_err)[:120]}) — synthetic tracking used instead")
+                _set(job_id, pipeline={"track": "synthetic-fallback",
+                                       "codegen": codegen_kind, "exec": exec_kind})
+                tracks = mock.mock_tracks(video_meta, seed=job_id)
         else:
             _set(job_id, stage="track", progress=28,
                  message="Generating synthetic tracks (no SAM key)…")
@@ -210,6 +217,17 @@ async def run_pipeline(job_id: str):
         tracks_path = job_dir(job_id) / "tracks.json"
         tracks_path.write_text(json.dumps(tracks))
         n_tracks = len(tracks.get("tracks", []))
+        if use_sam and n_tracks == 0:
+            # SAM found nothing trackable in this clip (no people/too short) —
+            # an empty dashboard helps nobody: fall back honestly to synthetic.
+            _log(job_id, "correct",
+                 "SAM 3.1 found no trackable objects in this clip — synthetic tracking used instead")
+            _set(job_id, pipeline={"track": "synthetic-fallback",
+                                   "codegen": (get_job(job_id).get("pipeline") or {}).get("codegen", codegen_kind),
+                                   "exec": exec_kind})
+            tracks = mock.mock_tracks(video_meta, seed=job_id)
+            tracks_path.write_text(json.dumps(tracks))
+            n_tracks = len(tracks["tracks"])
         conf = tracks.get("confidence", 0)
         _set(job_id, stage="track", progress=50,
              message=f"Tracking locked — {conf:.1%} confidence",
@@ -221,12 +239,24 @@ async def run_pipeline(job_id: str):
                  f"treat squad-level stats as a lower bound")
 
         # ---- codegen (Spark > generic LLM > bundled mock) ----
-        codegen_meta = {"sport": job.get("sport"), "fps": fps_f,
-                        "meters_per_pixel": 0.05, "sprint_threshold_kmh": 25.0}
+        # tracks.json coordinates are ALREADY in meters (SAM adapter scales by
+        # the visible-width estimate; mock generates meters directly) and frame
+        # numbers live on a 30 fps timeline — give Spark the timeline fps, not
+        # the source fps, so dt math is exact.
+        codegen_meta = {"sport": job.get("sport"), "fps": 30.0,
+                        "meters_per_pixel": 1.0, "sprint_threshold_kmh": 25.0,
+                        "coordinates": "x,y = tracked center point in meters; w,h = size in meters"}
         tracks_preview = tracks_path.read_text()[:6000]
         if use_spark:
             _set(job_id, stage="codegen", progress=58, message="Spark writing stats code…")
-            code = await meta.spark_write_analysis_code(tracks_path, codegen_meta)
+            try:
+                code = await meta.spark_write_analysis_code(tracks_path, codegen_meta)
+            except Exception as spark_err:  # noqa: BLE001 — degrade honestly, never dead-end
+                _log(job_id, "correct",
+                     f"Spark unavailable ({type(spark_err).__name__}: {str(spark_err)[:120]}) — bundled analysis script used instead")
+                _set(job_id, pipeline={"track": (get_job(job_id).get("pipeline") or {}).get("track", track_kind),
+                                       "codegen": "mock-fallback", "exec": exec_kind})
+                code = mock.MOCK_ANALYSIS_CODE
         elif use_llm:
             _set(job_id, stage="codegen", progress=58,
                  message=f"{llm.model_name()} writing stats code…")

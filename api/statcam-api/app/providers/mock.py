@@ -140,7 +140,9 @@ SPRINT_KMH = 25.0
 PITCH_W, PITCH_H = 105.0, 68.0
 
 def main():
-    tracks = json.load(open(IN))["tracks"]
+    data = json.load(open(IN))
+    tracks = data["tracks"]
+    real_conf = float(data.get("confidence") or 0.9)
     players = []
     for t in tracks:
         if t.get("label") == "ball":
@@ -171,7 +173,7 @@ def main():
         players.append({"id": t["id"], "distance_m": round(dist, 1),
                         "top_speed_kmh": round(top, 1), "sprints": sprints,
                         "heatmap": heat})
-    json.dump({"players": players, "confidence": 0.97,
+    json.dump({"players": players, "confidence": round(real_conf, 3),
                "notes": "debug mock — synthetic trajectories, local execution"},
               open(OUT, "w"))
     print(f"DONE {len(players)} players")

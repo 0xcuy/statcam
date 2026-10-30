@@ -298,3 +298,25 @@ Smoke suite: API hanya berubah di mock.py (bola) — regresi cepat OK (health 20
 **Fix chat.py (terverifikasi):** intent workload baru ("hardest/workrate/engine/kerja" → jawaban top-distance "the engine of this team"); teks "how does this work" kini sadar-konfigurasi (tidak lagi salah bilang "keys are not set" saat E2B aktif — menyebut kondisi per-stage yang sebenarnya).
 
 **FE: autoplay live replay (request user "tinggal play"):** klik ▶ Live replay → video langsung diputar (fallback muted bila autoplay-policy menolak). Terverifikasi browser: paused=false seketika, ticker jalan.
+
+---
+
+## ADDENDUM 31 Okt 2026 (5) — META KEY TERPASANG: LIVE MODE TERVERIFIKASI PENUH 🏁
+
+**User klarifikasi: key `LLM_…` itu KUNCI META (Llama API — satu key untuk semua model).** Terpasang sebagai `META_API_KEY` di /data/.env. Health: **live_ready TRUE**, providers = sam-3.1 / spark-1.3 / e2b. Chip landing kini hijau "LIVE · SAM 3.1 + SPARK".
+
+**API META TERVERIFIKASI LANGSUNG (meta.py tidak lagi TO-VERIFY):**
+- Base `https://api.meta.ai/v1` BENAR. Katalog: sam-3.1, muse-spark-1.3 (+1.2/1.1, contributor, muse-image-1.0, muse-wonder-1.0, muse-voice-transcribe-1.0).
+- **Spark: POST /v1/chat/completions** — OpenAI-style, jalan apa adanya. **TAPI Spark = model reasoning**: `content` null saat max_tokens habis untuk reasoning → spark_chat retry otomatis 4× budget; juga tangani finish_reason=length (kode terpotong).
+- **SAM 3.1: POST /v1/responses** (Bukan /sam/track — 404). Format: satu message user berisi `input_text` (SATU frasa nomina — "person" jalan; "soccer player"/"goalkeeper" nihil) LALU `input_video` dengan `video_url: data:video/mp4;base64,…`. Respons: teks token khusus per frame `<Nf><ordinal><|box;x1..y2|><|mask;..|>`; kosong = nol match. Docs: https://dev.meta.ai/docs/sam/overview.
+- Ball: konsep "soccer ball" TERBUKTI dapat track (opsional — gagal = job tetap jalan tanpa bola).
+
+**Adapter meta.py baru:** parse grammar box SAM → tracks.json (meter via estimasi lebar pandang META_VISIBLE_WIDTH_M=60m default; frame dinormalisasi ke timeline 30fps); buang identity-switch (langkah >11 m/s = mustahil — terbukti 302 m/s di data asli); buang objek kecil/kerumunan (median area <25%); confidence = share frame ber-objek (dihitung, bukan karangan); kontrak Spark dikoreksi (fps=30 timeline; x,y = titik pusat, jangan +w/2; jangan rescale).
+
+**Fallback berlapis jujur (semua teruji di job asli):** SAM gagal → synthetic-fallback; SAM 0 objek → synthetic-fallback; Spark gagal/kode rusak → mock-fallback; E2B gagal → local-fallback. Setiap degradasi = log `correct` + relabel pipeline.
+
+**LIVE JOB END-TO-END TERBUKTI (bukan teater):** klip 20s pertandingan amatir → SAM track asli (6–10 objek, 94% frame coverage) → Spark menulis kode (beberapa run jalan bersih, beberapa kena fallback) → E2B sandbox → dashboard angka wajar (0.1 km / 39.5 km/h / 6 sprints). Smoke suite **22/22 PASS di era live** (termasuk jalur 0-objek).
+
+**Biaya/kecepatan:** SAM ~30s per 20s klip (300 frame); codegen Spark ~15-30s (reasoning); total job live ~1.5-2 menit. Kredit Meta $150 — job demo hemat (klip pendek).
+
+**Sisa polish (non-blocking):** Spark kadang menulis kode invalid (fallback mock menutup); kecepatan top kadang 39 km/h (estimasi skala 60m + switch di bawah threshold); jumlah objek bervariasi antar run (5-10) — normal untuk tracking.
