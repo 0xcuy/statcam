@@ -42,6 +42,7 @@ def _window_metrics(tracks: dict, t0: float, t1: float) -> dict:
     for tr in tracks.get("tracks", []):
         is_ball = tr.get("label") == "ball"
         fr = tr["frames"]
+        above, last_cross = False, -9.0  # one episode per crossing, 1.5 s cooldown
         for a, b in zip(fr, fr[1:]):
             ta, tb = a["frame"] / FPS, b["frame"] / FPS
             if tb <= t0 or ta >= t1:
@@ -55,8 +56,12 @@ def _window_metrics(tracks: dict, t0: float, t1: float) -> dict:
             else:
                 if sp > peak:
                     peak, peak_by = sp, tr["id"]
-                if sp > SPRINT_KMH:
+                if sp > SPRINT_KMH and not above and ta - last_cross > 1.5:
                     sprints += 1
+                    last_cross = ta
+                    above = True
+                elif sp <= SPRINT_KMH * 0.9:
+                    above = False
         if not is_ball:
             positions += [(p["x"], p["y"]) for p in fr
                           if t0 <= p["frame"] / FPS < t1]
@@ -120,7 +125,7 @@ def search_moments(job: dict, query: str) -> dict:
         if len(picked) == 3:
             break
     for m in picked:
-        m["label"], m["description"] = _describe(m, intent)
+        m["label"], m["description"] = _describe(m, intent, (job.get("sport") or "").lower())
         m["intent"] = intent
     return {"query": query, "intent": intent, "moments": picked,
             "mode": "computed",
@@ -128,12 +133,16 @@ def search_moments(job: dict, query: str) -> dict:
                     "reasoning upgrades to Spark with API keys."}
 
 
-def _describe(m: dict, intent: str) -> tuple[str, str]:
+def _describe(m: dict, intent: str, sport: str = "") -> tuple[str, str]:
     labels = {"speed": "Fastest burst", "chaos": "Transition chaos",
               "space": "Block stretched open", "calm": "Calm possession spell",
               "highlight": "Top highlight"}
-    desc = (f"peak {m['peak_kmh']} km/h ({m['peak_by']}), {m['sprints']} sprints, "
-            f"ball at {m['ball_kmh']} km/h, block spread {m['spread_m']} m")
+    if sport == "running":
+        desc = (f"peak {m['peak_kmh']} km/h ({m['peak_by']}), "
+                f"{m['sprints']} sprint episodes, over {m['spread_m']} m of range")
+    else:
+        desc = (f"peak {m['peak_kmh']} km/h ({m['peak_by']}), {m['sprints']} sprint episodes, "
+                f"ball at {m['ball_kmh']} km/h, block spread {m['spread_m']} m")
     return labels.get(intent, "Highlight"), desc
 
 
@@ -244,27 +253,38 @@ def training_plan(job: dict) -> dict:
 
 
 def whisper(job: dict, t: float) -> dict:
-    """One live tactical line for replay time t — state of play, honestly."""
+    """One live tactical line for replay time t — state of play, honestly,
+    phrased for the sport in the job (a single runner is not "a ball in the ?")."""
+    sport = (job.get("sport") or "").lower()
+    court_len = 28.0 if sport == "basketball" else 60.0
     tracks = _load_tracks(job)
     dur = float((job.get("video") or {}).get("duration_s") or 0)
     t = max(0.0, min(float(t), dur if dur else float(t)))
     clamped = dur and float(t) >= dur
     m = _window_metrics(tracks, max(0.0, t - 5), t + 1.0)
-    ball = _ball_track(tracks)
-    zone = "?"
-    if ball:
-        xs = [p["x"] for p in ball["frames"] if abs(p["frame"] / FPS - t) <= 0.6]
-        if xs:
-            x = xs[-1]
-            zone = "defensive third" if x < PITCH_W / 3 else (
-                "middle third" if x < 2 * PITCH_W / 3 else "attacking third")
-    text = (f"t+{t:.0f}s — ball in the {zone}; peak intensity {m['peak_kmh']} km/h "
-            f"({m['peak_by'] or 'n/a'}), {m['sprints']} sprints in the last 5s, "
-            f"block spread {m['spread_m']} m.")
+    base = f"t+{t:.0f}s — peak intensity {m['peak_kmh']} km/h ({m['peak_by'] or 'n/a'}), {m['sprints']} sprint episodes in the last 5s"
+    if sport == "running":
+        text = base + f", spanning {m['spread_m']} m of track."
+    else:
+        ball = _ball_track(tracks)
+        zone = ""
+        if ball:
+            xs = [p["x"] for p in ball["frames"] if abs(p["frame"] / FPS - t) <= 2.0]
+            if xs:
+                x = xs[-1]
+                if sport == "basketball":
+                    zone = "ball in the backcourt" if x < court_len / 2 else "ball in the frontcourt"
+                else:
+                    zone = ("ball in the defensive third" if x < court_len / 3 else
+                            "ball in the middle third" if x < 2 * court_len / 3 else
+                            "ball in the attacking third")
+        text = (f"t+{t:.0f}s — {zone}; " if zone else f"t+{t:.0f}s — ") + \
+            f"peak intensity {m['peak_kmh']} km/h ({m['peak_by'] or 'n/a'}), " \
+            f"{m['sprints']} sprint episodes in the last 5s, block spread {m['spread_m']} m."
     if clamped:
         text = f"[end of segment — {dur:.0f}s analyzed] " + text
-    if m["spread_m"] > 60:
-        text += " Block is stretched — press as a unit."
+    if m["spread_m"] > (20 if sport == "basketball" else 60):
+        text += " Space is stretched — move as a unit."
     if m["sprints"] >= 4:
-        text += " High chaos window — look for the transition outlet."
+        text += " High-intensity window — transition fitness shows here."
     return {"t": round(t, 1), "text": text, "mode": "computed"}

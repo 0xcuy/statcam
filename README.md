@@ -20,6 +20,7 @@
 
 <p align="center">
   <a href="https://statcam.sieralabs.com"><b>statcam.sieralabs.com</b></a> ·
+  <a href="film/statcam-demo-90s.mp4"><b>Film · 90 s</b></a> ·
   <a href="https://statcam.sieralabs.com/#sample">Demos</a> ·
   <a href="#start-here">Start here</a> ·
   <a href="#api-reference">API</a> ·

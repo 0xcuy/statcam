@@ -286,43 +286,43 @@ window.SAMPLE_DATA = {
   "whispers": [
    {
     "t": 0.0,
-    "text": "t+0s — ball in the ?; peak intensity 39.1 km/h (P7), 7 sprints in the last 5s, block spread 54.0 m. High chaos window — look for the transition outlet."
+    "text": "t+0s — peak intensity 39.1 km/h (P7), 3 sprint episodes in the last 5s, block spread 54.0 m."
    },
    {
     "t": 6.0,
-    "text": "t+6s — ball in the ?; peak intensity 39.3 km/h (P7), 47 sprints in the last 5s, block spread 45.3 m. High chaos window — look for the transition outlet."
+    "text": "t+6s — peak intensity 39.3 km/h (P7), 11 sprint episodes in the last 5s, block spread 45.3 m. High-intensity window — transition fitness shows here."
    },
    {
     "t": 12.0,
-    "text": "t+12s — ball in the middle third; peak intensity 39.6 km/h (P4), 61 sprints in the last 5s, block spread 56.3 m. High chaos window — look for the transition outlet."
+    "text": "t+12s — ball in the middle third; peak intensity 39.6 km/h (P4), 13 sprint episodes in the last 5s, block spread 56.3 m. High-intensity window — transition fitness shows here."
    },
    {
     "t": 18.0,
-    "text": "t+18s — ball in the defensive third; peak intensity 39.2 km/h (P11), 14 sprints in the last 5s, block spread 48.3 m. High chaos window — look for the transition outlet."
+    "text": "t+18s — ball in the attacking third; peak intensity 39.2 km/h (P11), 5 sprint episodes in the last 5s, block spread 48.3 m. High-intensity window — transition fitness shows here."
    },
    {
     "t": 24.0,
-    "text": "t+24s — ball in the defensive third; peak intensity 39.6 km/h (P12), 8 sprints in the last 5s, block spread 39.5 m. High chaos window — look for the transition outlet."
+    "text": "t+24s — ball in the middle third; peak intensity 39.6 km/h (P12), 4 sprint episodes in the last 5s, block spread 39.5 m. High-intensity window — transition fitness shows here."
    },
    {
     "t": 30.0,
-    "text": "t+30s — ball in the middle third; peak intensity 39.4 km/h (P7), 17 sprints in the last 5s, block spread 28.9 m. High chaos window — look for the transition outlet."
+    "text": "t+30s — ball in the attacking third; peak intensity 39.4 km/h (P7), 9 sprint episodes in the last 5s, block spread 28.9 m. High-intensity window — transition fitness shows here."
    },
    {
     "t": 36.0,
-    "text": "t+36s — ball in the ?; peak intensity 5.0 km/h (P5), 0 sprints in the last 5s, block spread 0.0 m."
+    "text": "t+36s — peak intensity 5.0 km/h (P5), 0 sprint episodes in the last 5s, block spread 0.0 m."
    },
    {
     "t": 42.0,
-    "text": "t+42s — ball in the ?; peak intensity 38.2 km/h (P1), 4 sprints in the last 5s, block spread 22.0 m. High chaos window — look for the transition outlet."
+    "text": "t+42s — peak intensity 38.2 km/h (P1), 2 sprint episodes in the last 5s, block spread 22.0 m."
    },
    {
     "t": 48.0,
-    "text": "t+48s — ball in the ?; peak intensity 39.1 km/h (P1), 15 sprints in the last 5s, block spread 42.4 m. High chaos window — look for the transition outlet."
+    "text": "t+48s — peak intensity 39.1 km/h (P1), 4 sprint episodes in the last 5s, block spread 42.4 m. High-intensity window — transition fitness shows here."
    },
    {
     "t": 54.0,
-    "text": "t+54s — ball in the ?; peak intensity 39.6 km/h (P5), 5 sprints in the last 5s, block spread 24.5 m. High chaos window — look for the transition outlet."
+    "text": "t+54s — peak intensity 39.6 km/h (P5), 3 sprint episodes in the last 5s, block spread 24.5 m."
    }
   ],
   "video": "samples/demo-soccer-fs.mp4",
@@ -1544,43 +1544,43 @@ window.SAMPLE_DATA = {
   "whispers": [
    {
     "t": 0.0,
-    "text": "t+0s — ball in the defensive third; peak intensity 31.9 km/h (P7), 8 sprints in the last 5s, block spread 15.8 m. High chaos window — look for the transition outlet."
+    "text": "t+0s — ball in the frontcourt; peak intensity 31.9 km/h (P7), 2 sprint episodes in the last 5s, block spread 15.8 m."
    },
    {
     "t": 6.0,
-    "text": "t+6s — ball in the defensive third; peak intensity 31.7 km/h (P1), 4 sprints in the last 5s, block spread 10.9 m. High chaos window — look for the transition outlet."
+    "text": "t+6s — ball in the frontcourt; peak intensity 31.7 km/h (P1), 2 sprint episodes in the last 5s, block spread 10.9 m."
    },
    {
     "t": 12.0,
-    "text": "t+12s — ball in the defensive third; peak intensity 32.3 km/h (P12), 16 sprints in the last 5s, block spread 18.3 m. High chaos window — look for the transition outlet."
+    "text": "t+12s — ball in the backcourt; peak intensity 32.3 km/h (P12), 9 sprint episodes in the last 5s, block spread 18.3 m. High-intensity window — transition fitness shows here."
    },
    {
     "t": 18.0,
-    "text": "t+18s — ball in the defensive third; peak intensity 32.1 km/h (P7), 16 sprints in the last 5s, block spread 23.9 m. High chaos window — look for the transition outlet."
+    "text": "t+18s — ball in the backcourt; peak intensity 32.1 km/h (P7), 8 sprint episodes in the last 5s, block spread 23.9 m. Space is stretched — move as a unit. High-intensity window — transition fitness shows here."
    },
    {
     "t": 24.0,
-    "text": "t+24s — ball in the defensive third; peak intensity 31.9 km/h (P13), 21 sprints in the last 5s, block spread 27.5 m. High chaos window — look for the transition outlet."
+    "text": "t+24s — ball in the frontcourt; peak intensity 31.9 km/h (P13), 8 sprint episodes in the last 5s, block spread 27.5 m. Space is stretched — move as a unit. High-intensity window — transition fitness shows here."
    },
    {
     "t": 30.0,
-    "text": "t+30s — ball in the defensive third; peak intensity 32.2 km/h (P13), 24 sprints in the last 5s, block spread 27.6 m. High chaos window — look for the transition outlet."
+    "text": "t+30s — ball in the backcourt; peak intensity 32.2 km/h (P13), 5 sprint episodes in the last 5s, block spread 27.6 m. Space is stretched — move as a unit. High-intensity window — transition fitness shows here."
    },
    {
     "t": 36.0,
-    "text": "t+36s — ball in the defensive third; peak intensity 32.3 km/h (P13), 28 sprints in the last 5s, block spread 27.4 m. High chaos window — look for the transition outlet."
+    "text": "t+36s — ball in the backcourt; peak intensity 32.3 km/h (P13), 14 sprint episodes in the last 5s, block spread 27.4 m. Space is stretched — move as a unit. High-intensity window — transition fitness shows here."
    },
    {
     "t": 42.0,
-    "text": "t+42s — ball in the defensive third; peak intensity 32.3 km/h (P13), 14 sprints in the last 5s, block spread 25.1 m. High chaos window — look for the transition outlet."
+    "text": "t+42s — ball in the backcourt; peak intensity 32.3 km/h (P13), 10 sprint episodes in the last 5s, block spread 25.1 m. Space is stretched — move as a unit. High-intensity window — transition fitness shows here."
    },
    {
     "t": 48.0,
-    "text": "t+48s — ball in the defensive third; peak intensity 31.6 km/h (P13), 24 sprints in the last 5s, block spread 25.1 m. High chaos window — look for the transition outlet."
+    "text": "t+48s — ball in the backcourt; peak intensity 31.6 km/h (P13), 12 sprint episodes in the last 5s, block spread 25.1 m. Space is stretched — move as a unit. High-intensity window — transition fitness shows here."
    },
    {
     "t": 54.0,
-    "text": "t+54s — ball in the defensive third; peak intensity 32.1 km/h (P9), 19 sprints in the last 5s, block spread 27.3 m. High chaos window — look for the transition outlet."
+    "text": "t+54s — ball in the backcourt; peak intensity 32.1 km/h (P9), 10 sprint episodes in the last 5s, block spread 27.3 m. Space is stretched — move as a unit. High-intensity window — transition fitness shows here."
    }
   ],
   "video": "samples/demo-basketball-court.mp4",
@@ -1791,43 +1791,43 @@ window.SAMPLE_DATA = {
   "whispers": [
    {
     "t": 0.0,
-    "text": "t+0s — ball in the ?; peak intensity 38.3 km/h (P1), 4 sprints in the last 5s, block spread 1.1 m. High chaos window — look for the transition outlet."
+    "text": "t+0s — peak intensity 38.3 km/h (P1), 1 sprint episodes in the last 5s, spanning 1.1 m of track."
    },
    {
     "t": 6.0,
-    "text": "t+6s — ball in the ?; peak intensity 39.5 km/h (P1), 23 sprints in the last 5s, block spread 9.8 m. High chaos window — look for the transition outlet."
+    "text": "t+6s — peak intensity 39.5 km/h (P1), 4 sprint episodes in the last 5s, spanning 9.8 m of track. High-intensity window — transition fitness shows here."
    },
    {
     "t": 12.0,
-    "text": "t+12s — ball in the ?; peak intensity 39.3 km/h (P1), 10 sprints in the last 5s, block spread 6.9 m. High chaos window — look for the transition outlet."
+    "text": "t+12s — peak intensity 39.3 km/h (P1), 3 sprint episodes in the last 5s, spanning 6.9 m of track."
    },
    {
     "t": 18.0,
-    "text": "t+18s — ball in the ?; peak intensity 39.5 km/h (P1), 23 sprints in the last 5s, block spread 13.2 m. High chaos window — look for the transition outlet."
+    "text": "t+18s — peak intensity 39.5 km/h (P1), 3 sprint episodes in the last 5s, spanning 13.2 m of track."
    },
    {
     "t": 24.0,
-    "text": "t+24s — ball in the ?; peak intensity 38.6 km/h (P1), 34 sprints in the last 5s, block spread 5.6 m. High chaos window — look for the transition outlet."
+    "text": "t+24s — peak intensity 38.6 km/h (P1), 4 sprint episodes in the last 5s, spanning 5.6 m of track. High-intensity window — transition fitness shows here."
    },
    {
     "t": 30.0,
-    "text": "t+30s — ball in the ?; peak intensity 39.3 km/h (P1), 38 sprints in the last 5s, block spread 8.8 m. High chaos window — look for the transition outlet."
+    "text": "t+30s — peak intensity 39.3 km/h (P1), 4 sprint episodes in the last 5s, spanning 8.8 m of track. High-intensity window — transition fitness shows here."
    },
    {
     "t": 36.0,
-    "text": "t+36s — ball in the ?; peak intensity 39.3 km/h (P1), 29 sprints in the last 5s, block spread 8.6 m. High chaos window — look for the transition outlet."
+    "text": "t+36s — peak intensity 39.3 km/h (P1), 4 sprint episodes in the last 5s, spanning 8.6 m of track. High-intensity window — transition fitness shows here."
    },
    {
     "t": 42.0,
-    "text": "t+42s — ball in the ?; peak intensity 39.0 km/h (P1), 29 sprints in the last 5s, block spread 13.0 m. High chaos window — look for the transition outlet."
+    "text": "t+42s — peak intensity 39.0 km/h (P1), 4 sprint episodes in the last 5s, spanning 13.0 m of track. High-intensity window — transition fitness shows here."
    },
    {
     "t": 48.0,
-    "text": "t+48s — ball in the ?; peak intensity 38.5 km/h (P1), 19 sprints in the last 5s, block spread 14.1 m. High chaos window — look for the transition outlet."
+    "text": "t+48s — peak intensity 38.5 km/h (P1), 4 sprint episodes in the last 5s, spanning 14.1 m of track. High-intensity window — transition fitness shows here."
    },
    {
     "t": 54.0,
-    "text": "t+54s — ball in the ?; peak intensity 39.4 km/h (P1), 33 sprints in the last 5s, block spread 10.7 m. High chaos window — look for the transition outlet."
+    "text": "t+54s — peak intensity 39.4 km/h (P1), 4 sprint episodes in the last 5s, spanning 10.7 m of track. High-intensity window — transition fitness shows here."
    }
   ],
   "video": "samples/demo-running-fs.mp4",

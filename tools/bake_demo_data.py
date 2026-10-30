@@ -41,9 +41,11 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("job_id")
     ap.add_argument("sport", choices=["soccer", "basketball", "running"])
-    ap.add_argument("--video", required=True)
-    ap.add_argument("--provenance", required=True)
+    ap.add_argument("--video", default="")
+    ap.add_argument("--provenance", default="")
     ap.add_argument("--badge-suffix", default="")
+    ap.add_argument("--whispers-only", action="store_true",
+                    help="refresh only the whispers array of the existing entry")
     ap.add_argument("--base", default="https://api.statcam.sieralabs.com")
     args = ap.parse_args()
     base = args.base.rstrip("/")
@@ -78,6 +80,16 @@ def main() -> int:
             whispers.append({"t": float(t), "text": str(w.get("text", "")).strip()})
         except Exception as exc:  # noqa: BLE001
             print(f"whisper t={t} failed ({exc})", file=sys.stderr)
+
+    if args.whispers_only:
+        src = DATA.read_text(encoding="utf-8")
+        data = json.loads(src[src.find("{"): src.rfind("}") + 1])
+        data[args.sport]["whispers"] = whispers
+        body = json.dumps(data, ensure_ascii=False, indent=1)
+        DATA.write_text("window.SAMPLE_DATA = " + body + ";\n", encoding="utf-8")
+        json.loads(DATA.read_text().split("=", 1)[1].rsplit(";", 1)[0])
+        print(f"whispers-only {args.sport} <- job {args.job_id}: {len(whispers)} whispers")
+        return 0
 
     entry = {
         "_provenance": args.provenance,

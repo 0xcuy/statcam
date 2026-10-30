@@ -485,3 +485,23 @@ Demo soccer sample tetap Spitfire (60s kontinu, angka sehat); hero = PL 2026 (16
 ## ADDENDUM 31 Okt 2026 (28) — URL TAB PANDU YOUTUBE SECARA PROAKTIF
 
 **User: "video downloader orang malah aman, jadi buat apa url itu fungsinya."** Fungsi URL tab = direct video URL (selalu jalan — terbukti smoke test link job) + halaman sosial via yt-dlp (sebagian jalan). YouTube = diblokir YouTube sendiri terhadap IP server. Sekarang URL tab **mendeteksi paste link YouTube dan langsung menampilkan hint amber**: "YouTube blocks automated downloads from server IPs for many videos. If this fails, save the video on your device and use the Upload tab — or paste a direct video URL." Ekspektasi dibentuk SEBELUM gagal; error backend tetap menuntun di err-box. Deploy terverifikasi browser (hint muncul di bawah input).
+
+---
+
+## ADDENDUM 31 Okt 2026 (29) — FILM DEMO 90 DETIK JADI (gaya editorial + narasi Deepgram)
+
+**Brief user (final):** video seperti referensi "Payday" (kartu editorial: tipografi besar, label mono di sudut), footage bola BERKOTAK (harus terlihat), SFX, musik sesuai tema, **narasi Deepgram** (suara enak), maksimal buat juri. Aturan hard dari user: jangan keluar frame, jangan tambah karakter, durasi ngikut dialog, NOL halusinasi/artefak.
+
+**Hasil: `film/statcam-demo-90s.mp4`** (90.0s, 1280x720 16:9 tanpa letterbox, 17.8MB) — live di https://statcam.sieralabs.com/film/statcam-demo-90s.mp4 + ikut repo GitHub.
+
+**Struktur (15 segmen):** kartu judul → hero tracking → FULLSCREEN tracking (kotak+panah+SPRINT penuh layar) → kartu → "watch it think" log → hasil+badge → kartu → LIVE REPLAY+ticker → kartu → chat+analyst → kartu → plan+card → kartu → fullscreen lagi → end card. 7 kartu editorial (HTML+font Inter/Instrument Serif Italic/Space Mono, di-screenshot via headless Chrome CDP 1280x720).
+
+**Semua pixel ASLI:** footage = 3 take CDP screencast (headless Chrome, situs live) — take1 tur lengkap 89.9s (1247 frame), take4 hero+fullscreen via klik mouse CDP asli (Input.dispatchMouseEvent — requestFullscreen butuh user activation; klik programmatic via evaluate DITOLAK). Nol konten buatan.
+
+**Narasi:** 10 line, Deepgram **aura-2-apollo-en** (linear16 24kHz) — key ditemukan di DB Evidiq Router (`providerConnections` provider=deepgram, lokaldata/db/data.sqlite) BUKAN di statcam secrets; RUNBOOK.old menyebut prefix lama (e4db9f9e = basi). Gotcha: mp3 `bit_rate` max 48000; pakai linear16.
+
+**Musik:** YuE2 lokal (`yue2_bgm.py`, m-a-p/YuE2-3B di 3060, 300s generate → 220s audio) style "sports-tech broadcast electronic 122 BPM instrumental" — window 110-200s (ter-loud), volume 0.22 sebagai bed + fade. SFX: 6 whoosh (noise sweep) di tiap transisi kartu. Mix: amix 17 input + limiter 0.9.
+
+**QC pada OUTPUT:** strip 12 frame = kronologi benar; cropdetect = penuh 1280:720:0:0 (no letterbox); audio mean -21dB max -0.7dB (no clip). Timeline VO (10 line, offset presisi per segmen) total speech 57.1s.
+
+**Catatan proses:** user sempat marah karena aku salah baca pesan "Lanjut...8 detik" sebagai lampu hijau film SEBELUM brief final datang — film pertama (tanpa kartu/narasi) dibuang; yang ini dibuat SETELAH brief lengkap. Take basketball/running (frames2) tidak dipakai — user minta fokus soccer berkotak.
