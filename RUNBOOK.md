@@ -529,3 +529,12 @@ User minta 10/10 + musik ducking. Upgrade: (1) **re-capture 1920x1080** (take5 t
 - Gotcha berlapis: pseudo-fs kena dua jebakan berturut (transformed ancestor, lalu #herovid specificity) — probe computed-style + rects per elemen yang menuntaskan, bukan eyeball screenshot.
 
 Verifikasi: Android element-FS ✓ kotak di pemain; iOS pseudo-fs ✓ kotak di pemain + ✕; desktop 16:9 tetap ✓.
+
+### ADDENDUM 29e — FILM v3 COACH-FIRST + FOOTAGE BASKETBALL NYATA (review user diterapkan)
+
+Review user (ditonton 2x, "SIAP submit" + 3 catatan): (1) tech-first bukan coach-first, (2) tak ada footage olahraga kedua, (3) ekor statis 5s. Ketiganya dikerjakan:
+- **Coach-first**: hasil (badge VERIFIED RUN + KPI) masuk di detik 16, chat 26, plan 36 — tech (SAM/log) baru setelahnya. Kartu di-render ulang (// 02 the payoff, // 03 ask the analyst, // 04 watch it think, // 05 any game "Basketball. Running.").
+- **Footage basket nyata**: take7 (1080p, badge DEMO BASKETBALL · REAL FOOTAGE · VERIFIED RUN, whisper "frontcourt", KPI 26.4 km/h real SAM) — klaim "any game tomorrow" kini didukung gambar.
+- **Ekor**: endcard 7s dengan zoompan halus (push-in 1.0→1.05) — timecode statis tak terasa.
+- Struktur 12 segmen 89.4s: card1 pitch → hero → card2 payoff → results → chat → plan → card3 → log(think+fallback) → fullscreen tracking → card4 → basketball → card5 → endcard(zoom). Ducking sidechain tetap. VO 9 line orion smooth urutan coach-first. Gain 1.7 (max -0.2dB).
+- **PELAJARAN /tmp**: working files hilang 2× oleh auto-clean → pipeline kini PERSISTEN di `film/_pipeline/` (scripts + vo + cards + music; frames besar tetap lokal). YuE2 seed sama = track reproduksi.

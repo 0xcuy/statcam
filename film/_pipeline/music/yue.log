@@ -1,0 +1,79 @@
+[YuE2] Starting Resolving model files: elapsed 0.0s
+[YuE2] Completed Resolving model files: elapsed 0.1s
+[YuE2] Starting Verifying model files: elapsed 0.0s
+[YuE2] Running Verifying model files: elapsed 5.0s
+[YuE2] Completed Verifying model files: elapsed 9.4s
+[yue2] (1/1) generate: statcam_demo_bgm — Confident modern sports-tech broadcast electronic. Driving f...
+[YuE2] Starting Loading model: elapsed 0.0s
+Loading weights:   0%|          | 0/628 [00:00<?, ?it/s]Loading weights: 100%|██████████| 628/628 [00:00<00:00, 11503.69it/s]
+[YuE2] Completed Loading model: elapsed 3.6s
+[YuE2] Starting Planning score: 0 tokens | 0.0 tokens/s | elapsed 0.0s
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+[YuE2] Running Planning score: 292 tokens | 58.4 tokens/s | elapsed 5.0s
+[YuE2] Running Planning score: 618 tokens | 61.8 tokens/s | elapsed 10.0s
+[YuE2] Running Planning score: 944 tokens | 62.9 tokens/s | elapsed 15.0s
+[YuE2] Running Planning score: 1258 tokens | 62.9 tokens/s | elapsed 20.0s
+[YuE2] Running Planning score: 1572 tokens | 62.9 tokens/s | elapsed 25.0s
+[YuE2] Running Planning score: 1878 tokens | 62.6 tokens/s | elapsed 30.0s
+[YuE2] Running Planning score: 2189 tokens | 62.5 tokens/s | elapsed 35.0s
+[YuE2] Running Planning score: 2490 tokens | 62.2 tokens/s | elapsed 40.0s
+[YuE2] Running Planning score: 2782 tokens | 61.8 tokens/s | elapsed 45.0s
+[YuE2] Running Planning score: 3055 tokens | 61.1 tokens/s | elapsed 50.0s
+[YuE2] Running Planning score: 3338 tokens | 60.7 tokens/s | elapsed 55.0s
+[YuE2] Running Planning score: 3605 tokens | 60.1 tokens/s | elapsed 60.0s
+[YuE2] Running Planning score: 3872 tokens | 59.6 tokens/s | elapsed 65.0s
+[YuE2] Finished (generation limit reached) Planning score: 4096 tokens | 59.5 tokens/s | elapsed 68.9s
+[YuE2] Starting Generating song: 0 tokens | 0.0 tokens/s | elapsed 0.0s
+[YuE2] Running Generating song: 240 tokens | 48.0 tokens/s | elapsed 5.0s
+[YuE2] Running Generating song: 535 tokens | 53.5 tokens/s | elapsed 10.0s
+[YuE2] Running Generating song: 833 tokens | 55.5 tokens/s | elapsed 15.0s
+[YuE2] Running Generating song: 1116 tokens | 55.8 tokens/s | elapsed 20.0s
+[YuE2] Running Generating song: 1397 tokens | 55.9 tokens/s | elapsed 25.0s
+[YuE2] Running Generating song: 1668 tokens | 55.6 tokens/s | elapsed 30.0s
+[YuE2] Running Generating song: 1920 tokens | 54.9 tokens/s | elapsed 35.0s
+[YuE2] Running Generating song: 2170 tokens | 54.2 tokens/s | elapsed 40.0s
+[YuE2] Running Generating song: 2419 tokens | 53.8 tokens/s | elapsed 45.0s
+[YuE2] Running Generating song: 2667 tokens | 53.3 tokens/s | elapsed 50.0s
+[YuE2] Running Generating song: 2913 tokens | 53.0 tokens/s | elapsed 55.0s
+[YuE2] Running Generating song: 3162 tokens | 52.7 tokens/s | elapsed 60.0s
+[YuE2] Running Generating song: 3412 tokens | 52.5 tokens/s | elapsed 65.0s
+[YuE2] Running Generating song: 3662 tokens | 52.3 tokens/s | elapsed 70.0s
+[YuE2] Running Generating song: 3913 tokens | 52.2 tokens/s | elapsed 75.0s
+[YuE2] Running Generating song: 4174 tokens | 52.2 tokens/s | elapsed 80.0s
+[YuE2] Running Generating song: 4441 tokens | 52.2 tokens/s | elapsed 85.0s
+[YuE2] Running Generating song: 4707 tokens | 52.3 tokens/s | elapsed 90.0s
+[YuE2] Running Generating song: 4974 tokens | 52.4 tokens/s | elapsed 95.0s
+[YuE2] Running Generating song: 5238 tokens | 52.4 tokens/s | elapsed 100.0s
+[YuE2] Finished (generation limit reached) Generating song: 5500 tokens | 52.4 tokens/s | elapsed 104.9s
+[YuE2] Starting Synthesizing audio: 0 steps | elapsed 0.0s
+[YuE2] Running Synthesizing audio: 1/32 steps (3%) | elapsed 5.0s
+[YuE2] Running Synthesizing audio: 2/32 steps (6%) | elapsed 10.0s
+[YuE2] Running Synthesizing audio: 4/32 steps (12%) | elapsed 15.0s
+[YuE2] Running Synthesizing audio: 5/32 steps (16%) | elapsed 20.0s
+[YuE2] Running Synthesizing audio: 7/32 steps (22%) | elapsed 25.0s
+[YuE2] Running Synthesizing audio: 8/32 steps (25%) | elapsed 30.0s
+[YuE2] Running Synthesizing audio: 10/32 steps (31%) | elapsed 35.0s
+[YuE2] Running Synthesizing audio: 11/32 steps (34%) | elapsed 40.0s
+[YuE2] Running Synthesizing audio: 13/32 steps (41%) | elapsed 45.0s
+[YuE2] Running Synthesizing audio: 15/32 steps (47%) | elapsed 50.0s
+[YuE2] Running Synthesizing audio: 16/32 steps (50%) | elapsed 55.0s
+[YuE2] Running Synthesizing audio: 18/32 steps (56%) | elapsed 60.0s
+[YuE2] Running Synthesizing audio: 19/32 steps (59%) | elapsed 65.0s
+[YuE2] Running Synthesizing audio: 21/32 steps (66%) | elapsed 70.0s
+[YuE2] Running Synthesizing audio: 22/32 steps (69%) | elapsed 75.0s
+[YuE2] Running Synthesizing audio: 23/32 steps (72%) | elapsed 80.0s
+[YuE2] Running Synthesizing audio: 25/32 steps (78%) | elapsed 85.0s
+[YuE2] Running Synthesizing audio: 27/32 steps (84%) | elapsed 90.0s
+[YuE2] Running Synthesizing audio: 28/32 steps (88%) | elapsed 95.0s
+[YuE2] Running Synthesizing audio: 30/32 steps (94%) | elapsed 100.0s
+[YuE2] Running Synthesizing audio: 31/32 steps (97%) | elapsed 105.0s
+[YuE2] Completed Synthesizing audio: 32/32 steps (100%) | elapsed 107.0s
+[YuE2] Starting Loading audio decoder: elapsed 0.0s
+/home/cucu/Kebutuhan PC/YuE/.venv/lib/python3.12/site-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+[YuE2] Completed Loading audio decoder: elapsed 3.7s
+[YuE2] Starting Decoding audio: 0/11 chunks (0%) | elapsed 0.0s
+[YuE2] Running Decoding audio: 6/11 chunks (55%) | elapsed 5.0s
+[YuE2] Completed Decoding audio: 11/11 chunks (100%) | elapsed 8.5s
+[YuE2] Finished (generation limit reached): 220.0s audio in 296.7s
+[yue2] selesai statcam_demo_bgm dalam 297s -> /home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/music/out/statcam_demo_bgm/audio.flac
