@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family:"Inter"; src:url("fonts/Inter.ttf"); font-weight:100 900; }
+@font-face { font-family:"ISerif"; src:url("fonts/InstrumentSerif-Italic.ttf"); }
+@font-face { font-family:"SMono"; src:url("fonts/SpaceMono.ttf"); }
+* { margin:0; box-sizing:border-box; }
+body { background:#FCFCFA; font-family:"Inter"; width:1920px; height:1080px; overflow:hidden; }
+.card { width:1920px; height:1080px; position:relative; background:#FCFCFA; color:#14143C; overflow:hidden; }
+.mono { font-family:"SMono"; font-size:17px; letter-spacing:0.14em; color:#9A9AB0; text-transform:uppercase; }
+.tl { position:absolute; top:34px; left:44px; }
+.tr { position:absolute; top:34px; right:44px; }
+.bl { position:absolute; bottom:34px; left:44px; }
+.br { position:absolute; bottom:34px; right:44px; }
+.center { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:0 90px; transform-origin:center center; }
+.big { font-weight:800; font-size:96px; letter-spacing:-0.045em; color:#14143C; }
+.tag { margin-top:34px; font-weight:600; font-size:38px; color:#14143C; }
+.serif { font-family:"ISerif"; font-style:italic; font-weight:400; color:#2E4FE0; }
+.rule { width:72px; height:5px; background:#2E4FE0; margin:0 auto 38px; }
+</style></head><body>
+<div class="card">
+  <div class="mono tl">// END — TRY IT</div><div class="mono tr" id="tc">STATCAM 00:01:26:00</div>
+  <div class="center" id="zoomee">
+    <div class="rule"></div>
+    <div class="big">statcam.sieralabs.com</div>
+    <div class="tag">Built by SIERA Labs · <span class="serif">powered by Meta AI models</span></div>
+  </div>
+  <div class="mono bl">SIERA LABS</div><div class="mono br">META GLOBAL AI HACKATHON ’26</div>
+</div>
+<script>
+  // live timecode (HH:MM:SS:FF @30fps, starting at 00:01:26:00) + slow push-in
+  let f = 0;
+  const tc = document.getElementById("tc"), zoomee = document.getElementById("zoomee");
+  function pad(n, w) { return String(n).padStart(w, "0"); }
+  function tick() {
+    const s = Math.floor(f / 30), ff = f % 30;
+    const total = 86 + s;
+    tc.textContent = "STATCAM " + pad(Math.floor(total / 3600), 2) + ":" +
+      pad(Math.floor(total / 60) % 60, 2) + ":" + pad(total % 60, 2) + ":" + pad(ff, 2);
+    zoomee.style.transform = "scale(" + (1 + 0.00023 * f).toFixed(5) + ")";
+    f++;
+    requestAnimationFrame(tick);
+  }
+  tick();
+</script>
+</body></html>

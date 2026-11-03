@@ -546,3 +546,7 @@ User: tambah running biar full, durasi gpp. **Skala meter per-sport diperluas**:
 ### ADDENDUM 29g — EKOR ENDcard DIPERBAIKI (regresi 29f) + FILM v5 FINAL 94.8s
 
 Regresi dari 29f: endcard ter-drag 9.2s (kumulatif segmen sebelum endcard = 90.1s, bukan 86.5 seperti desain; -t 90.6 malah memotong endcard jadi 0.5s). Fix: endcard DD 4.5s, -t 94.8, offset audio dihitung ulang dari timeline aktual (card5 87.6-90.1, endcard 90.1-94.6). Film final **94.8s**: coach-first + soccer/basketball/running semua real SAM + ducking + endcard zoom 4.5s. VERIFIKASI frame: t=91 card any-game ✓, t=94.3 endcard URL ✓. Audio max -0.5dB.
+
+### ADDENDUM 29h — ENDCARD HIDUP (regresi "statis" tuntas): timecode TICK + zoom via screencast
+
+User lagi: "ekor statis 8.8s, timecode beku di 1:26". Dua lapis: (1) sebagian = user menonton file lama (live file md5 = final baru, endcard 4.5s) — tapi (2) benar juga bahwa endcard PNG = kartu beku dgn timecode tercetak. Tuntas dgn **endcard hidup**: endcard.html (JS rAF: timecode HH:MM:SS:FF tick per frame mulai 00:01:26:00 + CSS scale push-in 1.0→1.06/7s) → screencast CDP 7s → endcard.mp4 → segmen akhir film. VERIFIKASI frame film: t=94 tc 00:01:28:22, t=96.5 tc 00:01:33:20 = TICK ✓. Film final **97.1s**. Gotcha ke-3 template-literal: shoot_endcard.js menulis ke frames/ lagi (replace tak kena) — frames/ kini = endcard frames; take_tour.mp4/take8b.mp4 aman.

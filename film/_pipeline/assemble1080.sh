@@ -5,7 +5,7 @@ cd "$(dirname "$0")"
 MUSIC=music/out/statcam_demo_bgm/audio.flac
 
 #                  card1    hero     card2    results  chat    plan     card3    log     fs       card4    bb       running  card5    endcard
-V=(card1080-1.mp4 take_tour.mp4 card1080-2.mp4 take_tour.mp4 take_tour.mp4 take_tour.mp4 card1080-3.mp4 take_tour.mp4 take_tour.mp4 card1080-4.mp4 take_tour.mp4 take8b.mp4 card1080-5.mp4 card1080-7.mp4)
+V=(card1080-1.mp4 take_tour.mp4 card1080-2.mp4 take_tour.mp4 take_tour.mp4 take_tour.mp4 card1080-3.mp4 take_tour.mp4 take_tour.mp4 card1080-4.mp4 take_tour.mp4 take8b.mp4 card1080-5.mp4 endcard.mp4)
 SS=(0             5.4      0        35.8     72.7     80.7     0        28.5    11.4     0        55.7     19.5     0        0)
 DD=(8.0           6.5      2.5      11.0     8.5      4.1      2.5      8.0     16.0     2.5      12.0     8.5      2.5      4.5)
 
@@ -43,6 +43,6 @@ $ACHAIN
 [vosum]asplit=2[vskey][vsmix];
 [mus][vskey]sidechaincompress=threshold=0.02:ratio=7:attack=25:release=520[mdyn];
 [mdyn][vsmix][wh0][wh1][wh2][wh3][wh4]amix=inputs=7:normalize=0,alimiter=limit=0.9,afade=t=out:st=94.2:d=1.5[aout]
-" -map "[vout]" -map "[aout]" -t 94.8 -c:v libx264 -preset medium -crf 19 -pix_fmt yuv420p \
+" -map "[vout]" -map "[aout]" -t 97.2 -c:v libx264 -preset medium -crf 19 -pix_fmt yuv420p \
   -c:a aac -b:a 192k -movflags +faststart statcam-demo-final.mp4
 ffprobe -v error -show_entries format=duration,size -of csv=p=0 statcam-demo-final.mp4
