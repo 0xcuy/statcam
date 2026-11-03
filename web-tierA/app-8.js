@@ -231,10 +231,40 @@
     try { heroSim(); } catch (err) { window.__errs.push("heroSim: " + err.message); }
     try { takeOver(); } catch (err) { window.__errs.push("takeOver: " + err.message); }
     var fsBtn = $("hero-fs");
-    if (fsBtn) fsBtn.addEventListener("click", function () {
-      var stage = vid.parentElement;
+    var stage = vid.parentElement;
+    function fsExit() {
       if (document.fullscreenElement) document.exitFullscreen();
-      else if (stage.requestFullscreen) stage.requestFullscreen();
+      else if (document.webkitFullscreenElement && document.webkitExitFullscreen) document.webkitExitFullscreen();
+      else if (stage.classList.contains("pseudo-fs")) {
+        stage.classList.remove("pseudo-fs");
+        document.body.classList.remove("fs-lock");
+        var b = stage.querySelector(".fs-close"); if (b) b.remove();
+      }
+    }
+    if (fsBtn) fsBtn.addEventListener("click", function () {
+      if (document.fullscreenElement || document.webkitFullscreenElement) { fsExit(); return; }
+      if (stage.requestFullscreen) stage.requestFullscreen();
+      else if (stage.webkitRequestFullscreen) stage.webkitRequestFullscreen();
+      else {
+        // iOS Safari: no element fullscreen (and it ignores controlslist) —
+        // keep the overlay on the video with a CSS fullscreen instead
+        stage.classList.add("pseudo-fs");
+        document.body.classList.add("fs-lock");
+        if (!stage.querySelector(".fs-close")) {
+          var x = document.createElement("button");
+          x.className = "fs-close"; x.type = "button"; x.textContent = "✕";
+          x.setAttribute("aria-label", "Exit fullscreen");
+          x.addEventListener("click", function (e) { e.stopPropagation(); fsExit(); });
+          stage.appendChild(x);
+        }
+      }
+    });
+    document.addEventListener("fullscreenchange", function () {
+      if (!document.fullscreenElement && stage.classList.contains("pseudo-fs") === false) return;
+      if (document.fullscreenElement) return;
+      stage.classList.remove("pseudo-fs");
+      document.body.classList.remove("fs-lock");
+      var b = stage.querySelector(".fs-close"); if (b) b.remove();
     });
   })();
 
