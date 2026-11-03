@@ -513,3 +513,19 @@ User menolak suara Apollo (robotik) DAN menolak suara cewek — final = **aura-2
 ### ADDENDUM 29c — FILM 10/10: 1080p + DUCKING + MOMENTS SHOT (HEAD 45b6205)
 
 User minta 10/10 + musik ducking. Upgrade: (1) **re-capture 1920x1080** (take5 tur lengkap 84.7s @1751 frame + take6 moments/chat/plan 49.5s) — kartu ikut di-render 1080p (body zoom 1.5); gotcha: replace-beruntun merusak URL navigasi kartu (card1080-s1080.html → 0 kartu, silent exit). (2) **Sidechain ducking** beneran: VO-sum → asplit → sidechaincompress(threshold .02, ratio 7) menekan musik saat narasi, music pre-gain 0.55. (3) Segmen **moments cards** menggantikan LIVE REPLAY pillarbox. (4) Narasi 11 line urutan cerita baru (honesty diletakkan di atas log CORRECTION yang terlihat). Struktur 16 segmen. Gain VO 1.8 (max -0.1dB). QC: 1920x1080 penuh (cropdet 1920:1072:0:4 = tepi gelap 4px saja), strip 12 frame semua segmen hadir. Material: /tmp/statcam-film/{frames5,frames6,card1080-*,vo11,assemble1080.sh}.
+
+### ADDENDUM 29d — MOBILE FULLSCREEN: KOTAK SAM HILANG KETIKA VIDEO DIBESARKAN (FIXED, HEAD 65a9722)
+
+**Laporan user (mobile): "ketika dibesarin video hero kotak-kotaknya kemana saja".** Akar TIGA lapis:
+1. **iOS Safari tidak punya `requestFullscreen` untuk elemen** → tombol ⛶ mati; user memperbesar lewat **fullscreen native di controls video** (iOS MENGABAIKAN `controlslist="nofullscreen"`) → video pergi sendiri, canvas overlay tertinggal = kotak hilang.
+2. **`#herovid { width:100% }` (selector ID) mengalahkan override class** `.track-stage:fullscreen video` (0,2,1) → di fullscreen portrait, video = 390px squash sementara canvas 1500px → geometri beda = kotak raksasa melayang. (Di desktop 16:9 kebetulan aligned karena stage ≈ aspek video — makanya lolos verifikasi desktop.)
+3. `.track-panel` punya tilt dekoratif (transform 0.4°) → menjadi containing block `position:fixed` — pseudo-fullscreen fixed terkurung di box kecil panel.
+
+**FIX (semua di web-tierA, terverifikasi emulasi CDP 390x844 touch):**
+- **Pseudo-fullscreen iOS**: tanpa element-FS → stage `classList.add("pseudo-fs")` = `position:fixed inset:0` + tombol ✕ + `body.fs-lock`; overlay canvas TETAP di atas video.
+- **Netralkan tilt saat pseudo-fs**: `.track-panel:has(.track-stage.pseudo-fs) { transform:none !important }` — kalau tidak, fixed terkurung di panel.
+- **Geometri ID-scoped di kedua mode fullscreen**: `.track-stage:fullscreen #herovid / #pitch` + `.track-stage.pseudo-fs #herovid` + `.track-stage.pseudo-fs canvas` — video dan canvas dijamin SATU box di layar aspek apa pun.
+- **Canvas internal 640x360 → 1280x720** — kotak tajam saat fullscreen.
+- Gotcha berlapis: pseudo-fs kena dua jebakan berturut (transformed ancestor, lalu #herovid specificity) — probe computed-style + rects per elemen yang menuntaskan, bukan eyeball screenshot.
+
+Verifikasi: Android element-FS ✓ kotak di pemain; iOS pseudo-fs ✓ kotak di pemain + ✕; desktop 16:9 tetap ✓.
