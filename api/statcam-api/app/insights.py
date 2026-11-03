@@ -39,29 +39,43 @@ def _window_metrics(tracks: dict, t0: float, t1: float) -> dict:
     speed, spatial spread of the player block."""
     peak, peak_by, sprints, ball_sp = 0.0, None, 0, 0.0
     positions = []
+    # peak speed uses the same definition the analysis code reports: the fastest
+    # one-second displacement window — single noisy frame steps never inflate it
     for tr in tracks.get("tracks", []):
         is_ball = tr.get("label") == "ball"
         fr = tr["frames"]
-        above, last_cross = False, -9.0  # one episode per crossing, 1.5 s cooldown
-        for a, b in zip(fr, fr[1:]):
-            ta, tb = a["frame"] / FPS, b["frame"] / FPS
-            if tb <= t0 or ta >= t1:
+        per_second = []
+        for i, p in enumerate(fr):
+            ta = p["frame"] / FPS
+            if ta < t0 or ta > t1:
                 continue
-            dt = tb - ta
+            q = None
+            for j in range(i + 1, len(fr)):
+                if fr[j]["frame"] / FPS >= ta + 1.0:
+                    q = fr[j]
+                    break
+            if q is None:
+                continue
+            dt = q["frame"] / FPS - ta
             if dt <= 0:
                 continue
-            sp = math.hypot(b["x"] - a["x"], b["y"] - a["y"]) / dt * 3.6
-            if is_ball:
+            sp = math.hypot(q["x"] - p["x"], q["y"] - p["y"]) / dt * 3.6
+            per_second.append((ta, sp))
+        if is_ball:
+            for _, sp in per_second:
                 ball_sp = max(ball_sp, sp)
-            else:
-                if sp > peak:
-                    peak, peak_by = sp, tr["id"]
-                if sp > SPRINT_KMH and not above and ta - last_cross > 1.5:
-                    sprints += 1
-                    last_cross = ta
-                    above = True
-                elif sp <= SPRINT_KMH * 0.9:
-                    above = False
+            continue
+        for _, sp in per_second:
+            if sp > peak:
+                peak, peak_by = sp, tr["id"]
+        above, last_cross = False, -9.0  # one sprint episode per crossing, 1.5 s cooldown
+        for ta, sp in per_second:
+            if sp > SPRINT_KMH and not above and ta - last_cross > 1.5:
+                sprints += 1
+                last_cross = ta
+                above = True
+            elif sp <= SPRINT_KMH * 0.9:
+                above = False
         if not is_ball:
             positions += [(p["x"], p["y"]) for p in fr
                           if t0 <= p["frame"] / FPS < t1]

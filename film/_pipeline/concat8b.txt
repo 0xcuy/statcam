@@ -1,0 +1,2153 @@
+ffconcat version 1.0
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00000.jpg'
+duration 0.3000
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00001.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00002.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00003.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00004.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00005.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00006.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00007.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00008.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00009.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00010.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00011.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00012.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00013.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00014.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00015.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00016.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00017.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00018.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00019.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00020.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00021.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00022.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00023.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00024.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00025.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00026.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00027.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00028.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00029.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00030.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00031.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00032.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00033.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00034.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00035.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00036.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00037.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00038.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00039.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00040.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00041.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00042.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00043.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00044.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00045.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00046.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00047.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00048.jpg'
+duration 0.1330
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00049.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00050.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00051.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00052.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00053.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00054.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00055.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00056.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00057.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00058.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00059.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00060.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00061.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00062.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00063.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00064.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00065.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00066.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00067.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00068.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00069.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00070.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00071.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00072.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00073.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00074.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00075.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00076.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00077.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00078.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00079.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00080.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00081.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00082.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00083.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00084.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00085.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00086.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00087.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00088.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00089.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00090.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00091.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00092.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00093.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00094.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00095.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00096.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00097.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00098.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00099.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00100.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00101.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00102.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00103.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00104.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00105.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00106.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00107.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00108.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00109.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00110.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00111.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00112.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00113.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00114.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00115.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00116.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00117.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00118.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00119.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00120.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00121.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00122.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00123.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00124.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00125.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00126.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00127.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00128.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00129.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00130.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00131.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00132.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00133.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00134.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00135.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00136.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00137.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00138.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00139.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00140.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00141.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00142.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00143.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00144.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00145.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00146.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00147.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00148.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00149.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00150.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00151.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00152.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00153.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00154.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00155.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00156.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00157.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00158.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00159.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00160.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00161.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00162.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00163.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00164.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00165.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00166.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00167.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00168.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00169.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00170.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00171.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00172.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00173.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00174.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00175.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00176.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00177.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00178.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00179.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00180.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00181.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00182.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00183.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00184.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00185.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00186.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00187.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00188.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00189.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00190.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00191.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00192.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00193.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00194.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00195.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00196.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00197.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00198.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00199.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00200.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00201.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00202.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00203.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00204.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00205.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00206.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00207.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00208.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00209.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00210.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00211.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00212.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00213.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00214.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00215.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00216.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00217.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00218.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00219.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00220.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00221.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00222.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00223.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00224.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00225.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00226.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00227.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00228.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00229.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00230.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00231.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00232.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00233.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00234.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00235.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00236.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00237.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00238.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00239.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00240.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00241.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00242.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00243.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00244.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00245.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00246.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00247.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00248.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00249.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00250.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00251.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00252.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00253.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00254.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00255.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00256.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00257.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00258.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00259.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00260.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00261.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00262.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00263.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00264.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00265.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00266.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00267.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00268.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00269.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00270.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00271.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00272.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00273.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00274.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00275.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00276.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00277.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00278.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00279.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00280.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00281.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00282.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00283.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00284.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00285.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00286.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00287.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00288.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00289.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00290.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00291.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00292.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00293.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00294.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00295.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00296.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00297.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00298.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00299.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00300.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00301.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00302.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00303.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00304.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00305.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00306.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00307.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00308.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00309.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00310.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00311.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00312.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00313.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00314.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00315.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00316.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00317.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00318.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00319.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00320.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00321.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00322.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00323.jpg'
+duration 0.0660
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00324.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00325.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00326.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00327.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00328.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00329.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00330.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00331.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00332.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00333.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00334.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00335.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00336.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00337.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00338.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00339.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00340.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00341.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00342.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00343.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00344.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00345.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00346.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00347.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00348.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00349.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00350.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00351.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00352.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00353.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00354.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00355.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00356.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00357.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00358.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00359.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00360.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00361.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00362.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00363.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00364.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00365.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00366.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00367.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00368.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00369.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00370.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00371.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00372.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00373.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00374.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00375.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00376.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00377.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00378.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00379.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00380.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00381.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00382.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00383.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00384.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00385.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00386.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00387.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00388.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00389.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00390.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00391.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00392.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00393.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00394.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00395.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00396.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00397.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00398.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00399.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00400.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00401.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00402.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00403.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00404.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00405.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00406.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00407.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00408.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00409.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00410.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00411.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00412.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00413.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00414.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00415.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00416.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00417.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00418.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00419.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00420.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00421.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00422.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00423.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00424.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00425.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00426.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00427.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00428.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00429.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00430.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00431.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00432.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00433.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00434.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00435.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00436.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00437.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00438.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00439.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00440.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00441.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00442.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00443.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00444.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00445.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00446.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00447.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00448.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00449.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00450.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00451.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00452.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00453.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00454.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00455.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00456.jpg'
+duration 0.0670
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00457.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00458.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00459.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00460.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00461.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00462.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00463.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00464.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00465.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00466.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00467.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00468.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00469.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00470.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00471.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00472.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00473.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00474.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00475.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00476.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00477.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00478.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00479.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00480.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00481.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00482.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00483.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00484.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00485.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00486.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00487.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00488.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00489.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00490.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00491.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00492.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00493.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00494.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00495.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00496.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00497.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00498.jpg'
+duration 0.0660
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00499.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00500.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00501.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00502.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00503.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00504.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00505.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00506.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00507.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00508.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00509.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00510.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00511.jpg'
+duration 0.2340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00512.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00513.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00514.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00515.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00516.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00517.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00518.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00519.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00520.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00521.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00522.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00523.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00524.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00525.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00526.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00527.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00528.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00529.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00530.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00531.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00532.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00533.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00534.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00535.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00536.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00537.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00538.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00539.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00540.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00541.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00542.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00543.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00544.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00545.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00546.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00547.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00548.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00549.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00550.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00551.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00552.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00553.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00554.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00555.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00556.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00557.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00558.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00559.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00560.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00561.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00562.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00563.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00564.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00565.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00566.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00567.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00568.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00569.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00570.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00571.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00572.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00573.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00574.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00575.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00576.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00577.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00578.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00579.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00580.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00581.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00582.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00583.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00584.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00585.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00586.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00587.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00588.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00589.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00590.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00591.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00592.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00593.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00594.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00595.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00596.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00597.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00598.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00599.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00600.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00601.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00602.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00603.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00604.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00605.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00606.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00607.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00608.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00609.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00610.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00611.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00612.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00613.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00614.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00615.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00616.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00617.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00618.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00619.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00620.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00621.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00622.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00623.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00624.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00625.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00626.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00627.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00628.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00629.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00630.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00631.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00632.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00633.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00634.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00635.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00636.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00637.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00638.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00639.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00640.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00641.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00642.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00643.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00644.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00645.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00646.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00647.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00648.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00649.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00650.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00651.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00652.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00653.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00654.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00655.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00656.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00657.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00658.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00659.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00660.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00661.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00662.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00663.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00664.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00665.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00666.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00667.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00668.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00669.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00670.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00671.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00672.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00673.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00674.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00675.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00676.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00677.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00678.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00679.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00680.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00681.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00682.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00683.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00684.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00685.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00686.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00687.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00688.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00689.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00690.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00691.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00692.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00693.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00694.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00695.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00696.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00697.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00698.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00699.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00700.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00701.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00702.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00703.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00704.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00705.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00706.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00707.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00708.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00709.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00710.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00711.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00712.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00713.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00714.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00715.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00716.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00717.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00718.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00719.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00720.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00721.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00722.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00723.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00724.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00725.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00726.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00727.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00728.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00729.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00730.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00731.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00732.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00733.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00734.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00735.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00736.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00737.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00738.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00739.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00740.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00741.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00742.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00743.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00744.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00745.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00746.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00747.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00748.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00749.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00750.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00751.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00752.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00753.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00754.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00755.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00756.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00757.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00758.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00759.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00760.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00761.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00762.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00763.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00764.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00765.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00766.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00767.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00768.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00769.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00770.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00771.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00772.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00773.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00774.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00775.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00776.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00777.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00778.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00779.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00780.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00781.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00782.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00783.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00784.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00785.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00786.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00787.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00788.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00789.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00790.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00791.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00792.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00793.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00794.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00795.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00796.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00797.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00798.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00799.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00800.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00801.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00802.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00803.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00804.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00805.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00806.jpg'
+duration 0.0660
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00807.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00808.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00809.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00810.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00811.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00812.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00813.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00814.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00815.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00816.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00817.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00818.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00819.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00820.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00821.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00822.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00823.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00824.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00825.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00826.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00827.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00828.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00829.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00830.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00831.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00832.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00833.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00834.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00835.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00836.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00837.jpg'
+duration 0.0670
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00838.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00839.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00840.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00841.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00842.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00843.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00844.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00845.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00846.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00847.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00848.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00849.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00850.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00851.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00852.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00853.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00854.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00855.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00856.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00857.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00858.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00859.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00860.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00861.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00862.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00863.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00864.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00865.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00866.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00867.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00868.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00869.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00870.jpg'
+duration 0.1330
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00871.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00872.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00873.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00874.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00875.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00876.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00877.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00878.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00879.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00880.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00881.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00882.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00883.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00884.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00885.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00886.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00887.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00888.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00889.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00890.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00891.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00892.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00893.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00894.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00895.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00896.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00897.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00898.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00899.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00900.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00901.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00902.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00903.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00904.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00905.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00906.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00907.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00908.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00909.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00910.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00911.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00912.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00913.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00914.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00915.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00916.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00917.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00918.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00919.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00920.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00921.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00922.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00923.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00924.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00925.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00926.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00927.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00928.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00929.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00930.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00931.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00932.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00933.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00934.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00935.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00936.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00937.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00938.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00939.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00940.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00941.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00942.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00943.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00944.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00945.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00946.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00947.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00948.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00949.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00950.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00951.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00952.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00953.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00954.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00955.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00956.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00957.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00958.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00959.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00960.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00961.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00962.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00963.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00964.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00965.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00966.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00967.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00968.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00969.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00970.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00971.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00972.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00973.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00974.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00975.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00976.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00977.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00978.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00979.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00980.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00981.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00982.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00983.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00984.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00985.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00986.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00987.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00988.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00989.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00990.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00991.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00992.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00993.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00994.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00995.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00996.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00997.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00998.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f00999.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01000.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01001.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01002.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01003.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01004.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01005.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01006.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01007.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01008.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01009.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01010.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01011.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01012.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01013.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01014.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01015.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01016.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01017.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01018.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01019.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01020.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01021.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01022.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01023.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01024.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01025.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01026.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01027.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01028.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01029.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01030.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01031.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01032.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01033.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01034.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01035.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01036.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01037.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01038.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01039.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01040.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01041.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01042.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01043.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01044.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01045.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01046.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01047.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01048.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01049.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01050.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01051.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01052.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01053.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01054.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01055.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01056.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01057.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01058.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01059.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01060.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01061.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01062.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01063.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01064.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01065.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01066.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01067.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01068.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01069.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01070.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01071.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01072.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01073.jpg'
+duration 0.0340
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01074.jpg'
+duration 0.0333
+file '/home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/frames/f01075.jpg'
+duration 0.0333

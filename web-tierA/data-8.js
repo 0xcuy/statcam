@@ -1587,68 +1587,74 @@ window.SAMPLE_DATA = {
   "cardFile": "sample-card-basketball.svg"
  },
  "running": {
-  "_provenance": "VERIFIED LIVE RUN 1486e74ab4de (SAM 3.1 + Muse Spark + E2B) on real footage: 'Range of Motion - Stride Length' running film (archive.org) — a single-subject film, so SAM 3.1 tracks one athlete.",
+  "_provenance": "VERIFIED LIVE RUN a975a326c3e1 (SAM 3.1 + Muse Spark + E2B, no fallback) on real footage: 'Range of Motion - Stride Length' running film (archive.org) — a single-subject training film, meters scaled to the ~17 m visible park width. Demo use with credit; all rights remain with the rights holder.",
   "job": {
-   "id": "1486e74ab4de",
+   "id": "a975a326c3e1",
    "agent_log": [
     {
-     "t": 1793387778.5,
+     "t": 1793741014.9,
      "stage": "plan",
-     "text": "Plan: ① download from link → ② extract frames → ③ track players (sam-3.1) → ④ write stats code (spark-1.3) → ⑤ execute (e2b) → ⑥ dashboard"
+     "text": "Plan: ① ingest upload → ② extract frames → ③ track players (sam-3.1) → ④ write stats code (spark-1.3) → ⑤ execute (e2b) → ⑥ dashboard"
     },
     {
-     "t": 1793387783.3,
+     "t": 1793741015.9,
      "stage": "frames",
      "text": "8 preview frames extracted from a 30 fps source"
     },
     {
-     "t": 1793387905.9,
+     "t": 1793741209.7,
      "stage": "track",
-     "text": "Tracking locked: 1 object at 100.0% coverage"
+     "text": "Tracking locked: 2 objects at 100.0% confidence"
     },
     {
-     "t": 1793387905.9,
+     "t": 1793741209.7,
      "stage": "correct",
-     "text": "Correction: only 1 object tracked — this is a single-runner training film, so squad-level stats are a lower bound"
+     "text": "Correction: only 2 objects tracked — pitch coverage is thin, treat squad-level stats as a lower bound"
     },
     {
-     "t": 1793387955.9,
+     "t": 1793741270.7,
      "stage": "codegen",
      "text": "Stats code ready (spark-1.3)"
     },
     {
-     "t": 1793387958.9,
+     "t": 1793741273.9,
      "stage": "analyze",
-     "text": "Analyst read: P1 is the engine: 0.5 km covered — 100% of the squad-median workload."
+     "text": "Analyst read: P1 is the engine: 0.2 km covered — 100% of the squad-median workload."
     }
    ]
   },
   "result": {
    "mode": "live",
+   "pipeline": {
+    "track": "sam-3.1",
+    "codegen": "spark-1.3",
+    "exec": "e2b"
+   },
    "sport": "running",
    "label": "Running",
-   "fileName": "link · archive.org",
+   "fileName": "demo-running-fs.mp4",
    "duration": "01:00",
-   "trackedLabel": "TRACKING · 1 RUNNER",
-   "confidence": "28.3%",
+   "trackedLabel": "TRACKING · 2 PLAYERS",
+   "confidence": "43.3%",
    "frames": "1,800",
-   "positionsCount": "1,800",
-   "summaryText": "P1 ran 0.5 km",
+   "positionsCount": "3,600",
+   "summaryText": "P1 ran 0.2 km",
+   "notes": "fps=30.0 thr=16.0 km/h; x,y=center(m) no rescale; distance=sum consecutive displacement; top_speed=max 1s-window displacement/dt; sprints=non-overlapping 1s windows>thr; heatmap=3x8 global bounds x[5.98,12.72] y[4.94,8.63] normalized; span=1800 frames.",
    "kpis": [
     {
-     "value": "0.5",
+     "value": "0.2",
      "unit": " km",
      "label": "TOP DISTANCE",
      "sub": "P1"
     },
     {
-     "value": "38.7",
+     "value": "18.8",
      "unit": " km/h",
      "label": "TOP SPEED",
      "sub": "P1"
     },
     {
-     "value": "47",
+     "value": "2",
      "unit": "",
      "label": "SPRINTS",
      "sub": "TEAM"
@@ -1658,65 +1664,227 @@ window.SAMPLE_DATA = {
     "P1": {
      "id": "P1",
      "name": "P1 · Tracked",
-     "distance": "0.5 km",
+     "color": "#4DA3FF",
+     "badgeBg": "#0064E0",
+     "distance": "0.2 km",
      "pct": 100,
-     "topSpeed": "38.7 km/h",
-     "sprints": 47
+     "topSpeed": "18.8 km/h",
+     "sprints": 2,
+     "animClass": "sc-p7",
+     "heatmap": [
+      [
+       0.08163265306122448,
+       0.3163265306122449,
+       0.5561224489795918,
+       0.5,
+       0.061224489795918366,
+       0.061224489795918366,
+       0.0,
+       0.0
+      ],
+      [
+       0.061224489795918366,
+       0.413265306122449,
+       1.0,
+       0.6938775510204082,
+       0.23469387755102042,
+       0.07653061224489796,
+       0.08163265306122448,
+       0.025510204081632654
+      ],
+      [
+       0.07142857142857142,
+       0.07653061224489796,
+       0.17857142857142858,
+       0.10204081632653061,
+       0.02040816326530612,
+       0.0,
+       0.030612244897959183,
+       0.025510204081632654
+      ]
+     ]
+    },
+    "P2": {
+     "id": "P2",
+     "name": "P2 · Tracked",
+     "color": "#FF6B6B",
+     "badgeBg": "#E0245E",
+     "distance": "0.1 km",
+     "pct": 39,
+     "topSpeed": "13.9 km/h",
+     "sprints": 0,
+     "animClass": "sc-p10",
+     "heatmap": [
+      [
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.1796875,
+       0.3671875,
+       0.78125,
+       1.0,
+       0.671875,
+       0.28125,
+       0.09375,
+       0.0078125
+      ],
+      [
+       0.015625,
+       0.921875,
+       0.2890625,
+       0.203125,
+       0.1015625,
+       0.0390625,
+       0.0703125,
+       0.0
+      ]
+     ]
     }
    },
    "analysis": {
     "tactical": [
-     "P1 is the engine: 0.5 km covered — 100% of the squad-median workload.",
-     "Speed profile: P1 peaks at 38.7 km/h — that is the transition outlet when possession turns over.",
-     "Work-rate spread is 0% between the most and least active player (P1 vs P1) — pressing is not collective yet.",
-     "Team sprint volume: 47 in the analyzed segment — high-intensity chaos, expect late-game fatigue."
+     "P1 is the engine: 0.2 km covered — 100% of the squad-median workload.",
+     "Speed profile: P1 peaks at 18.8 km/h — that is the transition outlet when possession turns over.",
+     "Work-rate spread is 61% between the most and least active player (P1 vs P2) — pressing is not collective yet.",
+     "Team sprint volume: 2 in the analyzed segment — controlled intensity."
     ],
-    "forward": "Next session: build drills that lift the median (0.5 km) rather than the top — collective pressing over individual workload. Re-run the other segment of this match to compare halves.",
+    "forward": "Next session: build drills that lift the median (0.2 km) rather than the top — collective pressing over individual workload. Re-run the other segment of this match to compare halves.",
     "computed": true,
     "note": "Computed from tracking data. Spark's full tactical reasoning activates with API keys."
+   },
+   "_raw_stats": {
+    "players": [
+     {
+      "id": "P1",
+      "distance_m": 203.7322890576384,
+      "top_speed_kmh": 18.757133171143188,
+      "sprints": 2,
+      "heatmap": [
+       [
+        0.08163265306122448,
+        0.3163265306122449,
+        0.5561224489795918,
+        0.5,
+        0.061224489795918366,
+        0.061224489795918366,
+        0.0,
+        0.0
+       ],
+       [
+        0.061224489795918366,
+        0.413265306122449,
+        1.0,
+        0.6938775510204082,
+        0.23469387755102042,
+        0.07653061224489796,
+        0.08163265306122448,
+        0.025510204081632654
+       ],
+       [
+        0.07142857142857142,
+        0.07653061224489796,
+        0.17857142857142858,
+        0.10204081632653061,
+        0.02040816326530612,
+        0.0,
+        0.030612244897959183,
+        0.025510204081632654
+       ]
+      ]
+     },
+     {
+      "id": "P2",
+      "distance_m": 79.94621336985661,
+      "top_speed_kmh": 13.90022422840725,
+      "sprints": 0,
+      "heatmap": [
+       [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+       ],
+       [
+        0.1796875,
+        0.3671875,
+        0.78125,
+        1.0,
+        0.671875,
+        0.28125,
+        0.09375,
+        0.0078125
+       ],
+       [
+        0.015625,
+        0.921875,
+        0.2890625,
+        0.203125,
+        0.1015625,
+        0.0390625,
+        0.0703125,
+        0.0
+       ]
+      ]
+     }
+    ],
+    "confidence": 0.43277777777777776,
+    "notes": "fps=30.0 thr=16.0 km/h; x,y=center(m) no rescale; distance=sum consecutive displacement; top_speed=max 1s-window displacement/dt; sprints=non-overlapping 1s windows>thr; heatmap=3x8 global bounds x[5.98,12.72] y[4.94,8.63] normalized; span=1800 frames."
    }
   },
   "moments": [
    {
-    "peak_kmh": 39.5,
+    "peak_kmh": 18.8,
     "peak_by": "P1",
-    "sprints": 18,
+    "sprints": 0,
     "ball_kmh": 0.0,
-    "spread_m": 5.2,
-    "start_s": 0.0,
-    "end_s": 5.0,
-    "label": "Fastest burst",
-    "description": "peak 39.5 km/h (P1), 18 sprints, ball at 0.0 km/h, block spread 5.2 m",
-    "intent": "speed"
-   },
-   {
-    "peak_kmh": 39.5,
-    "peak_by": "P1",
-    "sprints": 11,
-    "ball_kmh": 0.0,
-    "spread_m": 7.3,
+    "spread_m": 6.1,
     "start_s": 5.0,
     "end_s": 10.0,
     "label": "Fastest burst",
-    "description": "peak 39.5 km/h (P1), 11 sprints, ball at 0.0 km/h, block spread 7.3 m",
+    "description": "peak 18.8 km/h (P1), 0 sprint episodes, over 6.1 m of range",
     "intent": "speed"
    },
    {
-    "peak_kmh": 39.5,
+    "peak_kmh": 15.3,
     "peak_by": "P1",
-    "sprints": 24,
+    "sprints": 0,
     "ball_kmh": 0.0,
-    "spread_m": 10.6,
+    "spread_m": 5.9,
+    "start_s": 10.0,
+    "end_s": 15.0,
+    "label": "Fastest burst",
+    "description": "peak 15.3 km/h (P1), 0 sprint episodes, over 5.9 m of range",
+    "intent": "speed"
+   },
+   {
+    "peak_kmh": 14.5,
+    "peak_by": "P1",
+    "sprints": 0,
+    "ball_kmh": 0.0,
+    "spread_m": 4.8,
     "start_s": 15.0,
     "end_s": 20.0,
     "label": "Fastest burst",
-    "description": "peak 39.5 km/h (P1), 24 sprints, ball at 0.0 km/h, block spread 10.6 m",
+    "description": "peak 14.5 km/h (P1), 0 sprint episodes, over 4.8 m of range",
     "intent": "speed"
    }
   ],
   "plan": {
    "focus": [
-    "Repeat-sprint conditioning — 47 team sprints, expect late-game fatigue"
+    "Collective pressing — work-rate gap is 61% (P1 vs P2)",
+    "Tempo control — low sprint volume, raise intentional off-ball movement",
+    "Raise the floor — P2 covered 0.08 km, half the median"
    ],
    "sessions": [
     {
@@ -1726,7 +1894,7 @@ window.SAMPLE_DATA = {
       {
        "name": "5v5 +3 press triggers",
        "duration_min": 25,
-       "why": "Close the 0% work-rate gap as a unit, not individually"
+       "why": "Close the 61% work-rate gap as a unit, not individually"
       },
       {
        "name": "Shadow-press rondo",
@@ -1742,7 +1910,7 @@ window.SAMPLE_DATA = {
       {
        "name": "10 × 30m shuttles @ 90%",
        "duration_min": 20,
-       "why": "Match the peak demand: P1 hit 38.7 km/h"
+       "why": "Match the peak demand: P1 hit 18.8 km/h"
       },
       {
        "name": "Transition 3v2 chains",
@@ -1763,7 +1931,7 @@ window.SAMPLE_DATA = {
       {
        "name": "Median-load conditioning test",
        "duration_min": 10,
-       "why": "Target: lift squad median from 0.51 km toward 0.51 km"
+       "why": "Target: lift squad median from 0.20 km toward 0.20 km"
       }
      ]
     }
@@ -1774,60 +1942,60 @@ window.SAMPLE_DATA = {
   "chat": [
    {
     "q": "Who was the fastest player?",
-    "a": "P1 · Tracked was fastest at 38.7 km/h — 47 sprints, 0.5 km covered.\nSole tracked player in 60s segment (1,800 frames, 28.3% confidence).",
+    "a": "P1 was fastest: 18.8 km/h top speed vs P2 13.9 km/h. P1 covered 0.2 km with 2 sprints; P2 covered 0.1 km with 0 sprints.",
     "mode": "spark"
    },
    {
-    "q": "Why did we look weak?",
-    "a": "Tracked 10-70s: only P1 tracked at 28.3% confidence.\n\nP1 covered 0.5 km [514.6m] at 38.7 km/h top with 47 sprints - 100% workload.\n\nP1 vs P1 spread 0%: pressing not collective, P1 alone as transition outlet.\n\n47 team sprints = high-intensity chaos, expect late-game fatigue.",
+    "q": "Who worked the hardest?",
+    "a": "P1 worked hardest: 0.2 km (203.7 m), 100% workload, 18.8 km/h top speed, 2 sprints.\n\nP2 managed 0.1 km (79.9 m), 13.9 km/h, 0 sprints. Spread 61% P1 vs P2.\n\nTeam: 2 sprints in 60.0s / 1,800 frames at 43.3% confidence.",
     "mode": "spark"
    },
    {
-    "q": "Which player covered the most distance?",
-    "a": "P1 · Tracked covered the most distance: 0.5 km — 514.6 m, 100% of tracked workload.",
+    "q": "What should we train this week?",
+    "a": "Train collective pressing to close 61% gap: P1 0.2 km [203.7m], 18.8 km/h, 2 sprints vs P2 0.1 km [79.9m], 13.9 km/h, 0 sprints. Team: 2 sprints in 01:00, 1,800 frames. Lift median 0.2 km, use P1 as transition outlet. Confidence 43.3%.",
     "mode": "spark"
    }
   ],
   "whispers": [
    {
     "t": 0.0,
-    "text": "t+0s — peak intensity 38.3 km/h (P1), 1 sprint episodes in the last 5s, spanning 1.1 m of track."
+    "text": "t+0s — peak intensity 5.6 km/h (P1), 0 sprint episodes in the last 5s, spanning 1.4 m of track."
    },
    {
     "t": 6.0,
-    "text": "t+6s — peak intensity 39.5 km/h (P1), 4 sprint episodes in the last 5s, spanning 9.8 m of track. High-intensity window — transition fitness shows here."
+    "text": "t+6s — peak intensity 9.9 km/h (P1), 0 sprint episodes in the last 5s, spanning 3.3 m of track."
    },
    {
     "t": 12.0,
-    "text": "t+12s — peak intensity 39.3 km/h (P1), 3 sprint episodes in the last 5s, spanning 6.9 m of track."
+    "text": "t+12s — peak intensity 18.8 km/h (P1), 0 sprint episodes in the last 5s, spanning 6.0 m of track."
    },
    {
     "t": 18.0,
-    "text": "t+18s — peak intensity 39.5 km/h (P1), 3 sprint episodes in the last 5s, spanning 13.2 m of track."
+    "text": "t+18s — peak intensity 14.5 km/h (P1), 0 sprint episodes in the last 5s, spanning 6.2 m of track."
    },
    {
     "t": 24.0,
-    "text": "t+24s — peak intensity 38.6 km/h (P1), 4 sprint episodes in the last 5s, spanning 5.6 m of track. High-intensity window — transition fitness shows here."
+    "text": "t+24s — peak intensity 5.5 km/h (P1), 0 sprint episodes in the last 5s, spanning 1.9 m of track."
    },
    {
     "t": 30.0,
-    "text": "t+30s — peak intensity 39.3 km/h (P1), 4 sprint episodes in the last 5s, spanning 8.8 m of track. High-intensity window — transition fitness shows here."
+    "text": "t+30s — peak intensity 10.3 km/h (P1), 0 sprint episodes in the last 5s, spanning 3.2 m of track."
    },
    {
     "t": 36.0,
-    "text": "t+36s — peak intensity 39.3 km/h (P1), 4 sprint episodes in the last 5s, spanning 8.6 m of track. High-intensity window — transition fitness shows here."
+    "text": "t+36s — peak intensity 8.1 km/h (P1), 0 sprint episodes in the last 5s, spanning 2.7 m of track."
    },
    {
     "t": 42.0,
-    "text": "t+42s — peak intensity 39.0 km/h (P1), 4 sprint episodes in the last 5s, spanning 13.0 m of track. High-intensity window — transition fitness shows here."
+    "text": "t+42s — peak intensity 13.4 km/h (P2), 0 sprint episodes in the last 5s, spanning 3.8 m of track."
    },
    {
     "t": 48.0,
-    "text": "t+48s — peak intensity 38.5 km/h (P1), 4 sprint episodes in the last 5s, spanning 14.1 m of track. High-intensity window — transition fitness shows here."
+    "text": "t+48s — peak intensity 13.9 km/h (P2), 0 sprint episodes in the last 5s, spanning 4.3 m of track."
    },
    {
     "t": 54.0,
-    "text": "t+54s — peak intensity 39.4 km/h (P1), 4 sprint episodes in the last 5s, spanning 10.7 m of track. High-intensity window — transition fitness shows here."
+    "text": "t+54s — peak intensity 10.4 km/h (P2), 0 sprint episodes in the last 5s, spanning 3.0 m of track."
    }
   ],
   "video": "samples/demo-running-fs.mp4",

@@ -205,12 +205,12 @@ async def run_pipeline(job_id: str):
             try:
                 # a fixed full-court camera sees ~28 m of court, not a 60 m
                 # broadcast frame — the width drives every meters conversion
-                is_bb = (job.get("sport") or "") == "basketball"
-                # a fixed full-court camera sees ~28 m of court, not a 60 m
-                # broadcast frame; on a small court, adjacent players sit close,
-                # so identity switches hide just under the soccer speed cap
-                vis_m = 28.0 if is_bb else None
-                mps = 9.0 if is_bb else 11.0
+                sport = job.get("sport") or ""
+                # a fixed full-court camera sees ~28 m of court and a stride
+                # film ~17 m of park — not a 60 m broadcast frame; on smaller
+                # stages adjacent identities sit close under the soccer cap
+                vis_m = {"basketball": 28.0, "running": 17.0}.get(sport)
+                mps = 9.0 if sport == "basketball" else 11.0
                 tracks = await meta.sam_track_video(
                     src, job.get("prompt") or "track players and the ball",
                     note_cb=lambda txt: _log(job_id, "correct", txt),
@@ -257,10 +257,9 @@ async def run_pipeline(job_id: str):
         # the source fps, so dt math is exact.
         # a 25 km/h sprint bar is a soccer number; on a 28 m court basketball
         # bursts peak near 32 km/h, so bar the threshold to the sport's scale
-        is_bb = (job.get("sport") or "") == "basketball"
         codegen_meta = {"sport": job.get("sport"), "fps": 30.0,
                         "meters_per_pixel": 1.0,
-                        "sprint_threshold_kmh": 22.0 if is_bb else 25.0,
+                        "sprint_threshold_kmh": {"basketball": 22.0, "running": 16.0}.get(job.get("sport"), 25.0),
                         "coordinates": "x,y = tracked center point in meters; w,h = size in meters"}
         tracks_preview = tracks_path.read_text()[:6000]
         if use_spark:

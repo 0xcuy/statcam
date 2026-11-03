@@ -1,2 +1,3 @@
-2026/11/04-03:48:23.572 a16b Creating DB /home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/chrome-tour/Default/Sync Data/LevelDB since it was missing.
-2026/11/04-03:48:23.575 a16b Reusing MANIFEST /home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/chrome-tour/Default/Sync Data/LevelDB/MANIFEST-000001
+2026/11/04-04:29:51.139 1360f Reusing MANIFEST /home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/chrome-tour/Default/Sync Data/LevelDB/MANIFEST-000001
+2026/11/04-04:29:51.140 1360f Recovering log #3
+2026/11/04-04:29:51.140 1360f Reusing old log /home/cucu/Kebutuhan PC/siera-statcam/film/_pipeline/chrome-tour/Default/Sync Data/LevelDB/000003.log 
