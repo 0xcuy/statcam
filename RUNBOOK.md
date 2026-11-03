@@ -542,3 +542,7 @@ Review user (ditonton 2x, "SIAP submit" + 3 catatan): (1) tech-first bukan coach
 ### ADDENDUM 29f — FILM v4: RUNNING MASUK (ketiga olahraga nyata), 95.7s
 
 User: tambah running biar full, durasi gpp. **Skala meter per-sport diperluas**: running = 17 m (park) + sprint threshold 16 km/h (pipeline.py) — tanpa ini klip stride jadi 38.7 km/h / 47 sprints (60 m soccer scale). **insights.py whisper/moments peak kini 1s-window** (definisi sama dengan kode Spark) — bukan langkah frame tunggal. Job running baru a975a326c3e1 (SAM+Spark+E2B semua asli, 18.8 km/h / 0.2 km / 2 sprints ✓ masuk akal) → re-bake demo running. Take8b (1080p) → segmen running masuk film setelah basketball. Film final **95.7s**: card1 → hero → card2 payoff → results soccer → chat → plan → card3 → log → fullscreen → card4 → basketball → RUNNING → card5 → endcard zoom. Gotcha yang menyisa: take8/take8b script menimpa frames/ (template literal tak kena replace) — take_tour.mp4 selamat, frames/ kini = take8b; pipeline scripts persisten di film/_pipeline/.
+
+### ADDENDUM 29g — EKOR ENDcard DIPERBAIKI (regresi 29f) + FILM v5 FINAL 94.8s
+
+Regresi dari 29f: endcard ter-drag 9.2s (kumulatif segmen sebelum endcard = 90.1s, bukan 86.5 seperti desain; -t 90.6 malah memotong endcard jadi 0.5s). Fix: endcard DD 4.5s, -t 94.8, offset audio dihitung ulang dari timeline aktual (card5 87.6-90.1, endcard 90.1-94.6). Film final **94.8s**: coach-first + soccer/basketball/running semua real SAM + ducking + endcard zoom 4.5s. VERIFIKASI frame: t=91 card any-game ✓, t=94.3 endcard URL ✓. Audio max -0.5dB.
